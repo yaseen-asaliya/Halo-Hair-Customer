@@ -1,12 +1,93 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:viewmodels="clr-namespace:customer_app.ViewModels"
+             xmlns:view="clr-namespace:customer_app.Views"
              x:Class="customer_app.Views.SearchServicesPage">
+    <ContentPage.BindingContext>
+        <viewmodels:SearchServicesViewModels/>
+    </ContentPage.BindingContext>
+    
     <ContentPage.Content>
         <StackLayout>
-            <Label Text="Welcome to Xamarin.Forms!"
-                VerticalOptions="CenterAndExpand" 
-                HorizontalOptions="CenterAndExpand" />
+            <Frame Margin="30,25,30,0" CornerRadius="20" BorderColor="Gray" WidthRequest="60" HeightRequest="30">
+
+                <SearchBar  Placeholder="Type here to search.."
+                       WidthRequest="60" HeightRequest="30"
+                       CancelButtonColor="Purple"
+                       PlaceholderColor="black"
+                       TextColor="Black"
+                       TextTransform="Lowercase"
+                       FontSize="Medium"
+                       FontAttributes="Italic" />
+            </Frame>
+            
+            <Frame Margin="20,10,20,10" CornerRadius="20">
+                <ListView ItemsSource="{Binding Services}" HasUnevenRows="True" >
+                    <ListView.ItemTemplate>
+                        <DataTemplate>
+                            <ViewCell>
+                                <StackLayout>
+                                    <Line Margin="0,5,0,5"/>
+                                    <StackLayout Orientation="Horizontal" >
+                                        <StackLayout>
+                                            <Frame CornerRadius="100" 
+                                                   HeightRequest="50"
+                                                   WidthRequest="50"
+                                                   HorizontalOptions="Center"
+                                                   Padding="0"
+                                                   IsClippedToBounds="True">
+                                                <Image Source="" 
+                                                       HorizontalOptions="Center"
+                                                       VerticalOptions="Center" />
+                                            </Frame>
+                                        </StackLayout>
+                                        <StackLayout Orientation="Vertical" HorizontalOptions="StartAndExpand" >
+                                            <Label Text="{Binding Service_Name}" VerticalOptions="StartAndExpand" FontAttributes="Bold"/>
+                                            <StackLayout Orientation="Horizontal">
+                                                <Label Text="{Binding Prices}" VerticalOptions="CenterAndExpand" Margin="10,5,0,0"/>
+                                                <Label Text="₪" Margin="0,5,0,0" FontSize="12"/>
+                                            </StackLayout> 
+                                            <StackLayout Orientation="Horizontal">
+                                                <Label Text="{Binding Time_Needed}" VerticalOptions="EndAndExpand" Margin="10,5,0,0"/>
+                                                <Label Text="min" Margin="0,5,0,0" FontSize="12"/>
+                                            </StackLayout>
+                                        </StackLayout>
+                                        <StackLayout VerticalOptions="CenterAndExpand">
+                                            <CheckBox  Color="Black" />
+                                        </StackLayout>
+
+                                    </StackLayout>
+
+                                </StackLayout>
+                            </ViewCell>
+
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                </ListView>
+            </Frame>
+
+            <StackLayout>
+                
+                <Button Margin="225,10,20,20"
+                WidthRequest="207"
+                HeightRequest="46"
+                Text="Next"
+                TextColor="#FFFFFF"
+                FontAttributes="Bold"
+                BackgroundColor="#603D8F"
+                CornerRadius="20"
+                Font="Segoe UI"
+                FontSize="16"
+                    Command="{Binding AddServicesCommand}"
+                >
+                </Button>
+            </StackLayout>
+
         </StackLayout>
+
+        
+
+
     </ContentPage.Content>
 </ContentPage>

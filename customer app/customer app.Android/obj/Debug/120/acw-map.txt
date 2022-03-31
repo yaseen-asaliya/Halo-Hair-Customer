@@ -1285,6 +1285,9 @@ androidx.viewpager2.widget.ViewPager2$ScrollState;androidx.viewpager2.widget.Vie
 AndroidX.ViewPager2.Adapter.IStatefulAdapter, Xamarin.AndroidX.ViewPager2;androidx.viewpager2.adapter.StatefulAdapter
 AndroidX.ViewPager2.Adapter.IStatefulAdapter;androidx.viewpager2.adapter.StatefulAdapter
 androidx.viewpager2.adapter.StatefulAdapter;androidx.viewpager2.adapter.StatefulAdapter
+Xamarin.Essentials.Connectivity+EssentialsNetworkCallback, Xamarin.Essentials;crc64a0e0a82d0db9a07d.Connectivity_EssentialsNetworkCallback
+Xamarin.Essentials.Connectivity.EssentialsNetworkCallback;crc64a0e0a82d0db9a07d.Connectivity_EssentialsNetworkCallback
+xamarin.essentials.Connectivity_EssentialsNetworkCallback;crc64a0e0a82d0db9a07d.Connectivity_EssentialsNetworkCallback
 Xamarin.Essentials.AccelerometerListener, Xamarin.Essentials;crc64a0e0a82d0db9a07d.AccelerometerListener
 Xamarin.Essentials.AccelerometerListener;crc64a0e0a82d0db9a07d.AccelerometerListener
 xamarin.essentials.AccelerometerListener;crc64a0e0a82d0db9a07d.AccelerometerListener
@@ -2308,3 +2311,9 @@ com.google.android.material.animation.TransformationCallback;com.google.android.
 Google.Common.Util.Concurrent.IListenableFuture, Xamarin.Google.Guava.ListenableFuture;com.google.common.util.concurrent.ListenableFuture
 Google.Common.Util.Concurrent.IListenableFuture;com.google.common.util.concurrent.ListenableFuture
 com.google.common.util.concurrent.ListenableFuture;com.google.common.util.concurrent.ListenableFuture
+XamForms.Controls.Droid.CalendarButtonRenderer, XamForms.Controls.Calendar.Droid;crc64fd013b27b0f98839.CalendarButtonRenderer
+XamForms.Controls.Droid.CalendarButtonRenderer;crc64fd013b27b0f98839.CalendarButtonRenderer
+xamforms.controls.droid.CalendarButtonRenderer;crc64fd013b27b0f98839.CalendarButtonRenderer
+XamForms.Controls.Droid.TextDrawable, XamForms.Controls.Calendar.Droid;crc64fd013b27b0f98839.TextDrawable
+XamForms.Controls.Droid.TextDrawable;crc64fd013b27b0f98839.TextDrawable
+xamforms.controls.droid.TextDrawable;crc64fd013b27b0f98839.TextDrawable

@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
+using customer_app.Views;
 
 namespace customer_app.Views
 {
@@ -15,6 +16,15 @@ namespace customer_app.Views
         public HomePage()
         {
             InitializeComponent();
+        }
+
+        private void Button_Clicked(object sender, EventArgs e)
+        {
+            Navigation.PushModalAsync(new SearchServicesPage());
+        }
+        private void loadBarbers(object sender, EventArgs e)
+        {
+            Navigation.PushModalAsync(new SearchBarberPage());
         }
     }
 }

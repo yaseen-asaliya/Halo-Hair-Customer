@@ -6,7 +6,10 @@
         <StackLayout>
             <Label Text="Welcome to Xamarin.Forms!"
                 VerticalOptions="CenterAndExpand" 
-                HorizontalOptions="CenterAndExpand" />
-        </StackLayout>
+                HorizontalOptions="CenterAndExpand"/>
+            <Button Text="Search Services" Clicked="Button_Clicked" BackgroundColor="Purple"></Button>
+            <Button Text="search Barber" Clicked="loadBarbers" BackgroundColor="Purple"></Button>
+            
+        </StackLayout> 
     </ContentPage.Content>
-</ContentPage>
+</ContentPage> 

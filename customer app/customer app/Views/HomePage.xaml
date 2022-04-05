@@ -1,15 +1,67 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:viewmodels="clr-namespace:customer_app.ViewModels"
+             xmlns:loca="clr-namespace:customer_app.Views"
              x:Class="customer_app.Views.HomePage">
+
+    <ContentPage.BindingContext>
+        <viewmodels:HomePageViewModels/>
+    </ContentPage.BindingContext>
+
     <ContentPage.Content>
         <StackLayout>
-            <Label Text="Welcome to Xamarin.Forms!"
-                VerticalOptions="CenterAndExpand" 
-                HorizontalOptions="CenterAndExpand"/>
-            <Button Text="Search Services" Clicked="Button_Clicked" BackgroundColor="Purple"></Button>
-            <Button Text="search Barber" Clicked="loadBarbers" BackgroundColor="Purple"></Button>
-            
-        </StackLayout> 
+            <Frame Margin="15,15,15,15" CornerRadius="20" BorderColor="Purple" BackgroundColor="Wheat" WidthRequest="50" HeightRequest="30">
+
+                <SearchBar  Placeholder="Type here to search.."
+                       WidthRequest="60" HeightRequest="30"
+                        
+                       CancelButtonColor="Purple"
+                       BackgroundColor="Wheat"
+                       PlaceholderColor="black"
+                       TextColor="Black"
+                       TextTransform="Lowercase"
+                       FontSize="Medium"
+                       FontAttributes="Italic" />
+            </Frame>
+
+
+            <StackLayout>
+                <Frame x:Name="homepage" 
+                           BindingContextChanged="loadBarbers"
+                           CornerRadius="30"
+                           BorderColor="Purple"
+                           BackgroundColor="gray"
+                           Margin="40,150,50,80"
+                           HeightRequest="250"
+                           WidthRequest="200"
+                           Padding="0"
+                           
+                           IsClippedToBounds="True">
+                    <Frame>
+                        <StackLayout Orientation="Vertical" HorizontalOptions="StartAndExpand" >
+                            <Label x:Name="title" Text="beard shaving" HorizontalOptions="Center" VerticalOptions="Center" FontSize="30" TextColor="gray"/>
+                            <Label Text="{Binding Title}" VerticalOptions="Center" FontAttributes="Bold" HorizontalOptions="CenterAndExpand"/>
+
+
+                            <Label  x:Name="discount" Text="50% Discount" HorizontalOptions="Center" VerticalOptions="Center" FontSize="40" TextColor="Purple"/>
+                            <Label Text="{Binding descount}" VerticalOptions="Center" FontAttributes="Bold" HorizontalOptions="CenterAndExpand"/>
+
+                            <Label  x:Name="discribtion" Text="Only 15 minutes to finish the service" HorizontalOptions="Center" VerticalOptions="Center" FontSize="Medium" TextColor="Purple"/>
+                            <Label Text="{Binding Description}" VerticalOptions="Center" FontAttributes="Bold" HorizontalOptions="CenterAndExpand"/>
+
+
+                            <!-- <Label Text="{Binding Offer}" VerticalOptions="EndAndExpand" FontAttributes="Bold"/> -->
+                        </StackLayout>
+                    </Frame>
+
+                </Frame>
+            </StackLayout>
+            <StackLayout>
+                <Button CornerRadius="20" Margin="40,20,40,20" WidthRequest="40" HeightRequest="40" Text="Search Services" Clicked="Button_Clicked" BackgroundColor="Purple"></Button>
+                <Button CornerRadius="20" Margin="40,20,40,20" WidthRequest="40" HeightRequest="40" Text="Search Barbar" Clicked="Button_Clicked" BackgroundColor="Purple"></Button>
+            </StackLayout>
+
+        </StackLayout>
     </ContentPage.Content>
-</ContentPage> 
+</ContentPage>

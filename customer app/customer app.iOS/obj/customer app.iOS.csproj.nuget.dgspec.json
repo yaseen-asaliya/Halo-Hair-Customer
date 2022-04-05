@@ -1,21 +1,25 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\MT2X\\source\\repos\\customer app\\customer app\\customer app.iOS\\customer app.iOS.csproj": {}
+    "Y:\\Halo-Hair---customer\\customer app\\customer app.iOS\\customer app.iOS.csproj": {}
   },
   "projects": {
-    "C:\\Users\\MT2X\\source\\repos\\customer app\\customer app\\customer app.iOS\\customer app.iOS.csproj": {
+    "Y:\\Halo-Hair---customer\\customer app\\customer app.iOS\\customer app.iOS.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\MT2X\\source\\repos\\customer app\\customer app\\customer app.iOS\\customer app.iOS.csproj",
+        "projectUniqueName": "Y:\\Halo-Hair---customer\\customer app\\customer app.iOS\\customer app.iOS.csproj",
         "projectName": "customer app.iOS",
-        "projectPath": "C:\\Users\\MT2X\\source\\repos\\customer app\\customer app\\customer app.iOS\\customer app.iOS.csproj",
-        "packagesPath": "C:\\Users\\MT2X\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\MT2X\\source\\repos\\customer app\\customer app\\customer app.iOS\\obj\\",
+        "projectPath": "Y:\\Halo-Hair---customer\\customer app\\customer app.iOS\\customer app.iOS.csproj",
+        "packagesPath": "C:\\Users\\Yazeed\\.nuget\\packages\\",
+        "outputPath": "Y:\\Halo-Hair---customer\\customer app\\customer app.iOS\\obj\\",
         "projectStyle": "PackageReference",
         "skipContentFileWrite": true,
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        ],
         "configFilePaths": [
-          "C:\\Users\\MT2X\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Yazeed\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -28,8 +32,8 @@
         "frameworks": {
           "xamarinios10": {
             "projectReferences": {
-              "C:\\Users\\MT2X\\source\\repos\\customer app\\customer app\\customer app\\customer app.csproj": {
-                "projectPath": "C:\\Users\\MT2X\\source\\repos\\customer app\\customer app\\customer app\\customer app.csproj"
+              "Y:\\Halo-Hair---customer\\customer app\\customer app\\customer app.csproj": {
+                "projectPath": "Y:\\Halo-Hair---customer\\customer app\\customer app\\customer app.csproj"
               }
             }
           }
@@ -69,17 +73,21 @@
         }
       }
     },
-    "C:\\Users\\MT2X\\source\\repos\\customer app\\customer app\\customer app\\customer app.csproj": {
+    "Y:\\Halo-Hair---customer\\customer app\\customer app\\customer app.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\MT2X\\source\\repos\\customer app\\customer app\\customer app\\customer app.csproj",
+        "projectUniqueName": "Y:\\Halo-Hair---customer\\customer app\\customer app\\customer app.csproj",
         "projectName": "customer app",
-        "projectPath": "C:\\Users\\MT2X\\source\\repos\\customer app\\customer app\\customer app\\customer app.csproj",
-        "packagesPath": "C:\\Users\\MT2X\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\MT2X\\source\\repos\\customer app\\customer app\\customer app\\obj\\",
+        "projectPath": "Y:\\Halo-Hair---customer\\customer app\\customer app\\customer app.csproj",
+        "packagesPath": "C:\\Users\\Yazeed\\.nuget\\packages\\",
+        "outputPath": "Y:\\Halo-Hair---customer\\customer app\\customer app\\obj\\",
         "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        ],
         "configFilePaths": [
-          "C:\\Users\\MT2X\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Yazeed\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -138,7 +146,7 @@
           ],
           "assetTargetFallback": true,
           "warn": true,
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.101\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.200\\RuntimeIdentifierGraph.json"
         }
       }
     }

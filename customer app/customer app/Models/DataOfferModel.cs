@@ -9,5 +9,7 @@ namespace customer_app.Models
         public string Titel { get; set; }
         public string Descount { get; set; }
         public string Description { get; set; }
+
+
     }
 }

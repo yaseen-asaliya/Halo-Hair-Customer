@@ -33,5 +33,7 @@ namespace customer_app.Services
 
             return dataOffers;
         }
+
+
     }
 }

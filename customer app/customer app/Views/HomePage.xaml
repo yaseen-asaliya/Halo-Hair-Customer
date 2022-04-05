@@ -61,6 +61,8 @@
                 <Button CornerRadius="20" Margin="40,20,40,20" WidthRequest="40" HeightRequest="40" Text="Search Services" Clicked="Button_Clicked" BackgroundColor="Purple"></Button>
                 <Button CornerRadius="20" Margin="40,20,40,20" WidthRequest="40" HeightRequest="40" Text="Search Barbar" Clicked="Button_Clicked" BackgroundColor="Purple"></Button>
             </StackLayout>
+            
+            
 
         </StackLayout>
     </ContentPage.Content>

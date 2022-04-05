@@ -5,10 +5,12 @@
              xmlns:loca="clr-namespace:customer_app.Views"
              x:Class="customer_app.Views.HomePage">
 
+    
     <ContentPage.BindingContext>
         <viewmodels:HomePageViewModels/>
     </ContentPage.BindingContext>
 
+    
     <ContentPage.Content>
         <StackLayout>
             <Frame Margin="15,15,15,15" CornerRadius="20" BorderColor="Purple" BackgroundColor="Wheat" WidthRequest="50" HeightRequest="30">
@@ -55,7 +57,7 @@
                         </StackLayout>
                     </Frame>
 
-                   
+               
                 </Frame>
             </StackLayout>
             <StackLayout>

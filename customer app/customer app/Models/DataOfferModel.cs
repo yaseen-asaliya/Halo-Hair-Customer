@@ -4,6 +4,7 @@ using System.Text;
 
 namespace customer_app.Models
 {
+
     public class DataOfferModel
     {
         public string Titel { get; set; }

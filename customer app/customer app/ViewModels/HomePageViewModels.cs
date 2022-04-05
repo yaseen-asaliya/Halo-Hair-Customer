@@ -9,6 +9,7 @@ using customer_app.Services;
 
 namespace customer_app.ViewModels
 {
+
     public class HomePageViewModels : BaseViewModel
     {
         FireBaseHaloHair firebase;
@@ -21,4 +22,5 @@ namespace customer_app.ViewModels
             Offer = firebase.GetDataOffers();
         }
     }
+
 }

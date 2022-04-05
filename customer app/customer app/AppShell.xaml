@@ -32,6 +32,8 @@
         </ResourceDictionary>
     </Shell.Resources>
 
+    
+    
     <TabBar>
         <ShellContent Title="SearchServices" Icon="about.png" Route="SearchServices" ContentTemplate="{DataTemplate local:HomePage}" />
         <ShellContent Title="SearchBarbar" Icon="about.png" Route="SearchBarbar" ContentTemplate="{DataTemplate local:SearchBarberPage}" />

@@ -21,6 +21,4 @@ namespace customer_app.ViewModels
             Offer = firebase.GetDataOffers();
         }
     }
-
-
 }

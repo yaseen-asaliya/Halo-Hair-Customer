@@ -27,6 +27,7 @@ namespace customer_app.Services
             return dataSalons;
         }
 
+
         public ObservableCollection<DataOfferModel> GetDataOffers()
         {
             var dataOffers = firebaseClient.Child("Offer").AsObservable<DataOfferModel>().AsObservableCollection();

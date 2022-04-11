@@ -3,7 +3,7 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="customer_app.Views.Components.ServicesList">
     <ContentView.Content>
-        <StackLayout>
+        <StackLayout HeightRequest="500">
             <Frame Margin="20,10,20,10" CornerRadius="20">
                 <ListView ItemsSource="{TemplateBinding Services}" HasUnevenRows="True" >
                     <ListView.ItemTemplate>

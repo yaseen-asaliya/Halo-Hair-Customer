@@ -104,17 +104,25 @@
               "version": "[2.0.3, )",
               "autoReferenced": true
             },
+            "Plugin.XCalendar": {
+              "target": "Package",
+              "version": "[2.1.0, )"
+            },
+            "Syncfusion.Xamarin.SfListView": {
+              "target": "Package",
+              "version": "[20.1.0.47, )"
+            },
             "XamForms.Controls.Calendar": {
               "target": "Package",
               "version": "[1.1.1, )"
             },
             "Xamarin.Essentials": {
               "target": "Package",
-              "version": "[1.7.1, )"
+              "version": "[1.7.2, )"
             },
             "Xamarin.Forms": {
               "target": "Package",
-              "version": "[5.0.0.2337, )"
+              "version": "[5.0.0.2401, )"
             }
           },
           "imports": [

@@ -1,9 +1,46 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
-             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" xmlns:cont="clr-namespace:customer_app.Views.Components"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             Shell.NavBarIsVisible="False"
+             xmlns:cont="clr-namespace:customer_app.Views.Components"
              x:Class="customer_app.Views.HistoryPage">
     <ContentPage.Content>
         <StackLayout>
+            <cont:navigationComponent Titles="History"/>
+            <StackLayout HeightRequest="500">
+                <Frame Margin="20,10,20,10" CornerRadius="20" BorderColor="Purple">
+                    <StackLayout>
+                        <ListView x:Name="SearchBarber" HasUnevenRows="True" >
+                            <ListView.ItemTemplate>
+                                <DataTemplate>
+                                    <ViewCell>
+                                        <StackLayout>
+                                            <Line Margin="0,5,0,5"/>
+                                            <StackLayout Orientation="Horizontal">
+                                                <StackLayout Orientation="Vertical" HorizontalOptions="StartAndExpand" >
+                                                    <Label Text="max salon" VerticalOptions="EndAndExpand" FontAttributes="Bold"/>
+                                                    <Label Text="3:00 PM - 3:30 PM" VerticalOptions="CenterAndExpand"/>
+                                                    <StackLayout Orientation="Horizontal">
+                                                        <Label Text="Open : "/>
+                                                        <Label Text="" VerticalOptions="StartAndExpand"/>
+                                                        <Label Text="AM"/>
+                                                        <Label Text="-" FontSize="15"/>
+                                                        <Label Text="" VerticalOptions="EndAndExpand"/>
+                                                        <Label Text="PM"/>
+                                                    </StackLayout>
+                                                </StackLayout>
+                                                <StackLayout VerticalOptions="CenterAndExpand">
+                                                    <ImageButton Source="icon_about.png" HorizontalOptions="EndAndExpand" BackgroundColor="White"/>
+                                                </StackLayout>
+                                            </StackLayout>
+                                        </StackLayout>
+                                    </ViewCell>
+                                </DataTemplate>
+                            </ListView.ItemTemplate>
+                        </ListView>
+                    </StackLayout>
+                </Frame>
+            </StackLayout>
             <Button Text="service" Clicked="Button_Clicked"/>
             <Button Text="search Barber" Clicked="loadBarbers" />
             <Button Text="search time" Clicked="LoadTime" />

@@ -7,8 +7,10 @@
 
   <ItemGroup>
     <PackageReference Include="FirebaseDatabase.net" Version="4.0.7" />
-    <PackageReference Include="Xamarin.Forms" Version="5.0.0.2337" />  
-    <PackageReference Include="Xamarin.Essentials" Version="1.7.1" />  
+    <PackageReference Include="Plugin.XCalendar" Version="2.1.0" />
+    <PackageReference Include="Syncfusion.Xamarin.SfListView" Version="20.1.0.47" />
+    <PackageReference Include="Xamarin.Forms" Version="5.0.0.2401" />  
+    <PackageReference Include="Xamarin.Essentials" Version="1.7.2" />  
     <PackageReference Include="XamForms.Controls.Calendar" Version="1.1.1" />
   </ItemGroup>
 

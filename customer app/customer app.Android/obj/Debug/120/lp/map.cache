@@ -1,4 +1,6 @@
 FormsViewGroup.dll
+Syncfusion.Core.XForms.Android.dll
+Syncfusion.SfListView.XForms.Android.dll
 Xamarin.AndroidX.Activity.dll
 Xamarin.AndroidX.Annotation.dll
 Xamarin.AndroidX.Annotation.Experimental.dll
@@ -51,6 +53,7 @@ Xamarin.AndroidX.VectorDrawable.dll
 Xamarin.AndroidX.VersionedParcelable.dll
 Xamarin.AndroidX.ViewPager.dll
 Xamarin.AndroidX.ViewPager2.dll
+Xamarin.CommunityToolkit.dll
 Xamarin.Essentials.dll
 Xamarin.Forms.Platform.Android.dll
 Xamarin.Forms.Platform.dll

@@ -1,12 +1,20 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="customer_app.Views.SearchTimePage">
+             x:Class="customer_app.Views.SearchTimePage"
+             xmlns:xc="clr-namespace:XCalendar;assembly=XCalendar" 
+             xmlns:cont="clr-namespace:customer_app.Views.Components">
+
     <ContentPage.Content>
         <StackLayout>
-            <Label Text="Welcome to Xamarin.Forms!"
-                VerticalOptions="CenterAndExpand" 
-                HorizontalOptions="CenterAndExpand" />
+            <cont:navigationComponent Titles="Search Times"/>
+            <Frame CornerRadius="10" Margin="10">
+                <xc:CalendarView NavigationBackgroundColor="Purple" Margin="0"/>
+            </Frame>
+
+            <StackLayout x:Name="MyButtons" Margin="10" Orientation="Horizontal"/>
+
+            <cont:ButtonComponent NameButton="Book an appointment" Margin="20"/>
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>

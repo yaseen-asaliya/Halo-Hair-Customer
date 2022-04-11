@@ -8,6 +8,13 @@ public class MonoPackageManager_Resources {
 		"FormsViewGroup.dll",
 		"LiteDB.dll",
 		"Newtonsoft.Json.dll",
+		"Syncfusion.Core.XForms.Android.dll",
+		"Syncfusion.Core.XForms.dll",
+		"Syncfusion.DataSource.Portable.dll",
+		"Syncfusion.GridCommon.Portable.dll",
+		"Syncfusion.Licensing.dll",
+		"Syncfusion.SfListView.XForms.Android.dll",
+		"Syncfusion.SfListView.XForms.dll",
 		"System.Reactive.dll",
 		"Xamarin.AndroidX.Activity.dll",
 		"Xamarin.AndroidX.Annotation.dll",
@@ -61,6 +68,7 @@ public class MonoPackageManager_Resources {
 		"Xamarin.AndroidX.VersionedParcelable.dll",
 		"Xamarin.AndroidX.ViewPager.dll",
 		"Xamarin.AndroidX.ViewPager2.dll",
+		"Xamarin.CommunityToolkit.dll",
 		"Xamarin.Essentials.dll",
 		"Xamarin.Forms.Core.dll",
 		"Xamarin.Forms.Platform.Android.dll",
@@ -70,6 +78,7 @@ public class MonoPackageManager_Resources {
 		"Xamarin.Google.Guava.ListenableFuture.dll",
 		"XamForms.Controls.Calendar.dll",
 		"XamForms.Controls.Calendar.Droid.dll",
+		"XCalendar.dll",
 	};
 	public static String[] Dependencies = new String[]{
 	};

@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "rwYi8ZIazU7JeLKsaBAXZtO8ggY7rwQXMS5XiL4/5YNrV5trN4+cDOJU4DnGJRRobXZEc6ys7DeWOErYnHKAjA==",
+  "dgSpecHash": "7BVlu6ENMIxC0uGn27mYenkHxHQOXebdrh/sm8VzMK8plAVDOQGbu81xbm/pPR4nCAovjavXOv6xBe91mAlNgA==",
   "success": true,
-  "projectFilePath": "C:\\Users\\MT2X\\source\\repos\\customer app\\customer app\\customer app.iOS\\customer app.iOS.csproj",
+  "projectFilePath": "C:\\Users\\MT2X\\Documents\\GitHub\\Halo-Hair---customer\\customer app\\customer app.iOS\\customer app.iOS.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\MT2X\\.nuget\\packages\\firebasedatabase.net\\4.0.7\\firebasedatabase.net.4.0.7.nupkg.sha512",
     "C:\\Users\\MT2X\\.nuget\\packages\\litedb\\4.1.4\\litedb.4.1.4.nupkg.sha512",

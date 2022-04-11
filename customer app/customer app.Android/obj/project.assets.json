@@ -3573,11 +3573,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\MT2X\\source\\repos\\customer app\\customer app\\customer app.Android\\customer app.Android.csproj",
+      "projectUniqueName": "C:\\Users\\MT2X\\Documents\\GitHub\\Halo-Hair---customer\\customer app\\customer app.Android\\customer app.Android.csproj",
       "projectName": "customer app.Android",
-      "projectPath": "C:\\Users\\MT2X\\source\\repos\\customer app\\customer app\\customer app.Android\\customer app.Android.csproj",
+      "projectPath": "C:\\Users\\MT2X\\Documents\\GitHub\\Halo-Hair---customer\\customer app\\customer app.Android\\customer app.Android.csproj",
       "packagesPath": "C:\\Users\\MT2X\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\MT2X\\source\\repos\\customer app\\customer app\\customer app.Android\\obj\\",
+      "outputPath": "C:\\Users\\MT2X\\Documents\\GitHub\\Halo-Hair---customer\\customer app\\customer app.Android\\obj\\",
       "projectStyle": "PackageReference",
       "skipContentFileWrite": true,
       "configFilePaths": [
@@ -3594,8 +3594,8 @@
       "frameworks": {
         "monoandroid12.0": {
           "projectReferences": {
-            "C:\\Users\\MT2X\\source\\repos\\customer app\\customer app\\customer app\\customer app.csproj": {
-              "projectPath": "C:\\Users\\MT2X\\source\\repos\\customer app\\customer app\\customer app\\customer app.csproj"
+            "C:\\Users\\MT2X\\Documents\\GitHub\\Halo-Hair---customer\\customer app\\customer app\\customer app.csproj": {
+              "projectPath": "C:\\Users\\MT2X\\Documents\\GitHub\\Halo-Hair---customer\\customer app\\customer app\\customer app.csproj"
             }
           }
         }

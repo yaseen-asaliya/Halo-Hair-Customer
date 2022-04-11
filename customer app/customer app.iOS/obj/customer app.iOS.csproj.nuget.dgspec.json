@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\MT2X\\source\\repos\\customer app\\customer app\\customer app.iOS\\customer app.iOS.csproj": {}
+    "C:\\Users\\MT2X\\Documents\\GitHub\\Halo-Hair---customer\\customer app\\customer app.iOS\\customer app.iOS.csproj": {}
   },
   "projects": {
-    "C:\\Users\\MT2X\\source\\repos\\customer app\\customer app\\customer app.iOS\\customer app.iOS.csproj": {
+    "C:\\Users\\MT2X\\Documents\\GitHub\\Halo-Hair---customer\\customer app\\customer app.iOS\\customer app.iOS.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\MT2X\\source\\repos\\customer app\\customer app\\customer app.iOS\\customer app.iOS.csproj",
+        "projectUniqueName": "C:\\Users\\MT2X\\Documents\\GitHub\\Halo-Hair---customer\\customer app\\customer app.iOS\\customer app.iOS.csproj",
         "projectName": "customer app.iOS",
-        "projectPath": "C:\\Users\\MT2X\\source\\repos\\customer app\\customer app\\customer app.iOS\\customer app.iOS.csproj",
+        "projectPath": "C:\\Users\\MT2X\\Documents\\GitHub\\Halo-Hair---customer\\customer app\\customer app.iOS\\customer app.iOS.csproj",
         "packagesPath": "C:\\Users\\MT2X\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\MT2X\\source\\repos\\customer app\\customer app\\customer app.iOS\\obj\\",
+        "outputPath": "C:\\Users\\MT2X\\Documents\\GitHub\\Halo-Hair---customer\\customer app\\customer app.iOS\\obj\\",
         "projectStyle": "PackageReference",
         "skipContentFileWrite": true,
         "configFilePaths": [
@@ -28,8 +28,8 @@
         "frameworks": {
           "xamarinios10": {
             "projectReferences": {
-              "C:\\Users\\MT2X\\source\\repos\\customer app\\customer app\\customer app\\customer app.csproj": {
-                "projectPath": "C:\\Users\\MT2X\\source\\repos\\customer app\\customer app\\customer app\\customer app.csproj"
+              "C:\\Users\\MT2X\\Documents\\GitHub\\Halo-Hair---customer\\customer app\\customer app\\customer app.csproj": {
+                "projectPath": "C:\\Users\\MT2X\\Documents\\GitHub\\Halo-Hair---customer\\customer app\\customer app\\customer app.csproj"
               }
             }
           }
@@ -69,14 +69,14 @@
         }
       }
     },
-    "C:\\Users\\MT2X\\source\\repos\\customer app\\customer app\\customer app\\customer app.csproj": {
+    "C:\\Users\\MT2X\\Documents\\GitHub\\Halo-Hair---customer\\customer app\\customer app\\customer app.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\MT2X\\source\\repos\\customer app\\customer app\\customer app\\customer app.csproj",
+        "projectUniqueName": "C:\\Users\\MT2X\\Documents\\GitHub\\Halo-Hair---customer\\customer app\\customer app\\customer app.csproj",
         "projectName": "customer app",
-        "projectPath": "C:\\Users\\MT2X\\source\\repos\\customer app\\customer app\\customer app\\customer app.csproj",
+        "projectPath": "C:\\Users\\MT2X\\Documents\\GitHub\\Halo-Hair---customer\\customer app\\customer app\\customer app.csproj",
         "packagesPath": "C:\\Users\\MT2X\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\MT2X\\source\\repos\\customer app\\customer app\\customer app\\obj\\",
+        "outputPath": "C:\\Users\\MT2X\\Documents\\GitHub\\Halo-Hair---customer\\customer app\\customer app\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\MT2X\\AppData\\Roaming\\NuGet\\NuGet.Config",

@@ -26,5 +26,10 @@ namespace customer_app.Views
                 SearchBarber.SelectedItem = null;
             }
         }
+
+        private async void ImageButton_Clicked(object sender, EventArgs e)
+        {
+                     
+        }
     }
 }

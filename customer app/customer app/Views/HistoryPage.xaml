@@ -6,7 +6,7 @@
         <StackLayout>
             <Button Text="service" Clicked="Button_Clicked"/>
             <Button Text="search Barber" Clicked="loadBarbers" />
-            <Button Text="search Barber" Clicked="LoadTime" />
+            <Button Text="search time" Clicked="LoadTime" />
 
         </StackLayout>
     </ContentPage.Content>

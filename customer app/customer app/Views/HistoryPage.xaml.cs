@@ -30,6 +30,7 @@ namespace customer_app.Views
         {
             Navigation.PushModalAsync(new SearchTimePage());
         }
-        
+      
+
     }
 }

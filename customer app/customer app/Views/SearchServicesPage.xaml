@@ -17,7 +17,7 @@
             <!-- <cont:ServicesList Service_Name="Services" Prices="Prices" Time_Needed="Time_Needed"/> -->
 
             <StackLayout HeightRequest="500">
-                <Frame Margin="20,0,20,10" CornerRadius="20" >
+                <Frame Margin="20,0,20,10" CornerRadius="20" BorderColor="Purple">
                     <ListView ItemsSource="{Binding Services}" HasUnevenRows="True" >
                         <ListView.ItemTemplate>
                             <DataTemplate>

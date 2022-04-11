@@ -4,7 +4,7 @@
              x:Class="customer_app.Views.Components.BarbersList">
     <ContentView.ControlTemplate>
         <ControlTemplate>
-            <StackLayout>
+            <StackLayout HeightRequest="500">
 
                 <Frame Margin="20,10,20,10" CornerRadius="40">
                     <StackLayout>

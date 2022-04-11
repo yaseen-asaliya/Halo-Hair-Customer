@@ -1,53 +1,47 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             xmlns:viewmodel="clr-namespace:customer_app.ViewModels"
+             xmlns:viewmodel="clr-namespace:customer_app.ViewModels" xmlns:cont="clr-namespace:customer_app.Views.Components"
              x:Class="customer_app.Views.SalonInDetailsPage">
 
     <ContentPage.BindingContext>
         <viewmodel:SalonInDetailsViewModels/>
     </ContentPage.BindingContext>
     <ContentPage.Content>
+        <StackLayout>
+            <cont:navigationComponent Titles="Search Barbers"/>
+            <StackLayout HorizontalOptions="Center">
 
-        <StackLayout HorizontalOptions="Center">
-            <Frame CornerRadius="100" 
+                <Frame CornerRadius="100" 
                    Margin="20,40"
                    HeightRequest="120"
                    WidthRequest="120"
                    HorizontalOptions="Center">
-                <Image Source=""
-                HorizontalOptions="Center"
-                VerticalOptions="Center" />
-            </Frame>
+                    <Image Source="user.png"
+                           HorizontalOptions="Center"
+                           VerticalOptions="Center" />
+                </Frame>
 
-            <Label x:Name="NameSalon" FontSize="30" HorizontalTextAlignment="Center" FontFamily="Segoe UI"/>
+                <Label x:Name="NameSalon" FontSize="30" HorizontalTextAlignment="Center" FontFamily="Segoe UI" FontAttributes="Bold"/>
 
-            <StackLayout Orientation="Horizontal" Padding="30,0,0,0" >
-                <Label x:Name="StartTime" FontSize="15"/>
-                <Label Text="-" FontSize="15"/>
-                <Label x:Name="EndTime" FontSize="15"/>
-                <Label Text="4.7" Margin="140,0,0,0" FontSize="15"/>
+                <StackLayout Orientation="Horizontal" Padding="10,10,0,0" >
+                    <Label x:Name="StartTime" FontSize="15" />
+                    <Label Text=":00 AM" FontSize="15"/>
+                    <Label Text="-" FontSize="15"/>
+                    <Label x:Name="EndTime" FontSize="15"/>
+                    <Label Text=":00 PM" FontSize="15"/>
+                    <Label Text="4.7" Margin="100,0,0,0" FontSize="15"/>
+                </StackLayout>
+
+                <Label Text="Location" FontFamily="Segoe UI" FontSize="25" Margin="0,16"/>
+                <Frame BorderColor="Purple"
+                       CornerRadius="15"
+                       WidthRequest="300"
+                       HeightRequest="150"/>
+
+                <cont:ButtonComponent NameButton="Next" Margin="0,20"/> 
             </StackLayout>
-
-            <Label Text="Location" FontFamily="Segoe UI" FontSize="25" Margin="0,16"/> 
-            <Frame BorderColor="Gray"
-                   WidthRequest="300"
-                   HeightRequest="150"
-            />
-
-            <Button Margin="10,20,10,10"
-                WidthRequest="207"
-                HeightRequest="46"
-                Text="Appointment now!"
-                TextColor="#FFFFFF"
-                FontAttributes="Bold"
-                BackgroundColor="#603D8F"
-                CornerRadius="20"
-                Font="Segoe UI"
-                FontSize="16"
-                    Command="{Binding}"
-                >
-            </Button>
         </StackLayout>
+        
     </ContentPage.Content>
 </ContentPage>

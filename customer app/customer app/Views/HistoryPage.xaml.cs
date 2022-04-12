@@ -16,5 +16,21 @@ namespace customer_app.Views
         {
             InitializeComponent();
         }
+
+       
+        private void Button_Clicked(object sender, EventArgs e)
+        {
+            Navigation.PushModalAsync(new SearchServicesPage());
+        }
+        private void loadBarbers(object sender, EventArgs e)
+        {
+            Navigation.PushModalAsync(new SearchBarberPage());
+        }
+        private void LoadTime(object sender, EventArgs e)
+        {
+            Navigation.PushModalAsync(new SearchTimePage());
+        }
+      
+
     }
 }

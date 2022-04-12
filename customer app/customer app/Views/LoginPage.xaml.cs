@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-
+using customer_app.Views;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
@@ -15,6 +15,11 @@ namespace customer_app.Views
         public LoginPage()
         {
             InitializeComponent();
+        }
+
+        private void SignUp(object sender, EventArgs e)
+        {
+            Navigation.PushModalAsync(new RegisterPage()); 
         }
     }
 }

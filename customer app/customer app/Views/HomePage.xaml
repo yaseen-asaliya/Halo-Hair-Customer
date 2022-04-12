@@ -1,15 +1,47 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
-             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+             xmlns:viewmodel="clr-namespace:customer_app.Views.Components"
+             Shell.NavBarIsVisible="False"
              x:Class="customer_app.Views.HomePage">
     <ContentPage.Content>
         <StackLayout>
-            <Label Text="Welcome to Xamarin.Forms!"
-                VerticalOptions="CenterAndExpand" 
-                HorizontalOptions="CenterAndExpand"/>
-            <Button Text="Search Services" Clicked="Button_Clicked" BackgroundColor="Purple"></Button>
-            <Button Text="search Barber" Clicked="loadBarbers" BackgroundColor="Purple"></Button>
-            
+            <StackLayout Orientation="Horizontal" Margin="0,10">
+                <Grid WidthRequest="70"
+                      HeightRequest="70" 
+                      HorizontalOptions="Start">
+                    <Image Source="Logo.png"/>
+                </Grid>
+
+                <Label Text="Hi," FontSize="20" Margin="60,30,0,0"/>
+                <Label Text="Yaseen" FontSize="20" Margin="0,30"/>
+
+                <Grid  
+                      HorizontalOptions="EndAndExpand">
+                    <ImageButton Source="notification.png"
+                                 BackgroundColor="White"
+                                 Margin="0,0,20,0" 
+                                 WidthRequest="30"
+                                 HeightRequest="10"/>
+                </Grid>
+            </StackLayout>
+            <Label Text="Search for barbers or services" FontSize="20" Margin="10" Font="Segoe UI"/>
+            <Grid>
+                <ImageButton Source="search.png" 
+                             BackgroundColor="White"
+                             Clicked="Button_Clicked"/>
+            </Grid>
+
+            <StackLayout Margin="0,50,0,0">
+                <viewmodel:AsdAndOffersComponent/>
+            </StackLayout>
+
+            <Frame Margin="20,30,20,0" CornerRadius="20" HasShadow="True" BorderColor="MediumPurple">
+                <StackLayout Orientation="Horizontal" HorizontalOptions="Center">
+                    <Label Text="Your next appointment after :" FontSize="18"/>
+                    <Label Text="10h" FontSize="18"/>
+                </StackLayout>
+            </Frame>
         </StackLayout> 
     </ContentPage.Content>
 </ContentPage> 

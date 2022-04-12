@@ -4,9 +4,76 @@
              x:Class="customer_app.Views.ProfileSettingsPage">
     <ContentPage.Content>
         <StackLayout>
-            <Label Text="Welcome to Xamarin.Forms!"
-                VerticalOptions="CenterAndExpand" 
-                HorizontalOptions="CenterAndExpand" />
+            <StackLayout Margin="0,50,0,0">
+                <Frame CornerRadius="100" 
+                    HeightRequest="100"
+                    WidthRequest="100"
+                    HorizontalOptions="Center"
+                    Padding="0"
+                    HasShadow="False">
+                    <Image Source="prof.png"
+                       HorizontalOptions="Center"
+                       VerticalOptions="Center" />
+                </Frame>
+            </StackLayout>
+            <StackLayout  Margin="60,50,50,20">
+                <StackLayout Orientation="Horizontal">
+                    <StackLayout Orientation="Vertical" x:Name="Button1">
+                        <Button 
+                                Text="About" BackgroundColor="White"
+                    TextColor="Black" BorderColor="White"
+                    Padding="0" HeightRequest="20" WidthRequest="70" />
+                        <BoxView Color="#603D8F" HeightRequest="3" WidthRequest="90" HorizontalOptions="CenterAndExpand" IsVisible="True" />
+                    </StackLayout>
+                    <StackLayout Orientation="Vertical" Margin="80,0,50,0" >
+                        <Button x:Name="settingsbutton" Text="SETTINGS" BackgroundColor="White"
+                    TextColor="Black" BorderColor="White" 
+                    Padding="0" HeightRequest="20" WidthRequest="70"  />
+                        <BoxView Color="#603D8F" HeightRequest="3" WidthRequest="90" 
+                     HorizontalOptions="CenterAndExpand" IsVisible="true" />
+                    </StackLayout>
+                </StackLayout>
+                <StackLayout Orientation="Vertical" Padding="0,40,0,0" >
+                    <Frame Padding="0">
+                        <Frame.GestureRecognizers>
+                            <TapGestureRecognizer  />
+                        </Frame.GestureRecognizers>
+                        <StackLayout Orientation="Horizontal" >
+                            <Label x:Name="labe" Text="Add Time" FontSize="Medium" VerticalOptions="Center" Padding="12"/>
+                            <Image Source="ar1.png" HorizontalOptions="EndAndExpand"/>
+                        </StackLayout>
+                    </Frame>
+                    <Frame Padding="0">
+                        <Frame.GestureRecognizers>
+                            <TapGestureRecognizer Tapped="TapGestureRecognizer_Tapped" />
+                        </Frame.GestureRecognizers>
+                        <StackLayout Orientation="Horizontal" >
+                            <Label Text="My Service" FontSize="Medium" VerticalOptions="Center" Padding="12"/>
+                            <Image Source="ar1.png" HorizontalOptions="EndAndExpand"/>
+                        </StackLayout>
+                    </Frame>
+                    <Frame Padding="12">
+                        <StackLayout Orientation="Horizontal" >
+                            <Label Text="Language" FontSize="Medium"/>
+                            <Switch HorizontalOptions="EndAndExpand"/>
+                        </StackLayout>
+                    </Frame>
+                    <Frame Padding="12">
+                        <StackLayout Orientation="Horizontal" >
+                            <Label Text="Notification" FontSize="Medium"/>
+                            <Switch HorizontalOptions="EndAndExpand"/>
+                        </StackLayout>
+                    </Frame>
+                    <Frame Padding="12">
+                        <StackLayout Orientation="Horizontal" >
+                            <Label Text="Alarm" FontSize="Medium"/>
+                            <Switch HorizontalOptions="EndAndExpand"/>
+                        </StackLayout>
+
+                    </Frame>
+
+                </StackLayout>
+            </StackLayout>
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>

@@ -16,5 +16,14 @@ namespace customer_app.Views
         {
             InitializeComponent();
         }
+        public async void aboutbutton_Clicked()
+        {
+            await Navigation.PushModalAsync(new ProfileAboutPage());
+        }
+
+        private void TapGestureRecognizer_Tapped(object sender, EventArgs e)
+        {
+
+        }
     }
 }

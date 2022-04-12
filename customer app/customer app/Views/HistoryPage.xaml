@@ -58,9 +58,9 @@
                     </StackLayout>
                 </Frame>
             </StackLayout>
-            <!--<Button Text="service" Clicked="Button_Clicked"/>
+            <Button Text="service" Clicked="Button_Clicked"/>
             <Button Text="search Barber" Clicked="loadBarbers" />
-            <Button Text="search time" Clicked="LoadTime" /> -->
+            <Button Text="search time" Clicked="LoadTime" />
 
         </StackLayout>
     </ContentPage.Content>

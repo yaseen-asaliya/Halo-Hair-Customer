@@ -28,16 +28,24 @@
             <StackLayout  Margin="60,50,50,20">
                 <StackLayout Orientation="Horizontal" Margin="60,10,30,10">
                     <StackLayout Orientation="Vertical" x:Name="Button1">
-                        <Button x:Name="aboutbutton" Text="About"  BackgroundColor="White"
-                    TextColor="Black" 
-                    Padding="0" HeightRequest="20" WidthRequest="70" />
+                        <Button x:Name="aboutbutton"
+                                Text="About" 
+                                BackgroundColor="White"
+                                TextColor="Black" 
+                                Padding="0"
+                                HeightRequest="20"
+                                WidthRequest="70"/>
                         <BoxView Color="#603D8F" HeightRequest="3" WidthRequest="90" HorizontalOptions="CenterAndExpand" IsVisible="True" />
-                    </StackLayout>
+                    </StackLayout> 
                     <StackLayout Orientation="Vertical" Margin="80,0,50,0" >
-                        <Button x:Name="settingsbutton" Text="SETTINGS"  BackgroundColor="White"
-                    TextColor="Black"  
-                    Padding="0" HeightRequest="20" WidthRequest="70"  />
-                        <BoxView Color="#603D8F" HeightRequest="3" WidthRequest="90" 
+                        <Button Clicked="Button_Clicked"
+                                Text="SETTINGS"  
+                                BackgroundColor="White"
+                                TextColor="Black"  
+                                Padding="0"
+                                HeightRequest="20"
+                                WidthRequest="70"/>
+                        <BoxView Color="MediumPurple" HeightRequest="3" WidthRequest="90" 
                      HorizontalOptions="CenterAndExpand" IsVisible="true" />
                     </StackLayout>
                 </StackLayout>

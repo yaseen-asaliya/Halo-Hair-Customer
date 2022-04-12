@@ -1,12 +1,102 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
-             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" xmlns:viewmodels="clr-namespace:customer_app.ViewModels"
              x:Class="customer_app.Views.ProfileAboutPage">
+    <ContentPage.BindingContext>
+        <viewmodels:ProfileAboutViewModels/>
+    </ContentPage.BindingContext>
+
+
     <ContentPage.Content>
         <StackLayout>
-            <Label Text="Welcome to Xamarin.Forms!"
-                VerticalOptions="CenterAndExpand" 
-                HorizontalOptions="CenterAndExpand" />
+            <StackLayout>
+                <Label Text="Profile" VerticalOptions="Center"
+                   HorizontalOptions="Center"
+                   FontSize="30"/>
+            </StackLayout>
+            <StackLayout Margin="0,50,0,0">
+                <Frame CornerRadius="100" 
+                    HeightRequest="100"
+                    WidthRequest="100"
+                    HorizontalOptions="Center"
+                    Padding="0" HasShadow="False">
+                    <Image Source="prof.png"
+                       HorizontalOptions="Center"
+                       VerticalOptions="Center" />
+                </Frame>
+            </StackLayout>
+            <StackLayout  Margin="60,50,50,20">
+                <StackLayout Orientation="Horizontal" Margin="60,10,30,10">
+                    <StackLayout Orientation="Vertical" x:Name="Button1">
+                        <Button x:Name="aboutbutton" Text="About"  BackgroundColor="White"
+                    TextColor="Black" 
+                    Padding="0" HeightRequest="20" WidthRequest="70" />
+                        <BoxView Color="#603D8F" HeightRequest="3" WidthRequest="90" HorizontalOptions="CenterAndExpand" IsVisible="True" />
+                    </StackLayout>
+                    <StackLayout Orientation="Vertical" Margin="80,0,50,0" >
+                        <Button x:Name="settingsbutton" Text="SETTINGS"  BackgroundColor="White"
+                    TextColor="Black"  
+                    Padding="0" HeightRequest="20" WidthRequest="70"  />
+                        <BoxView Color="#603D8F" HeightRequest="3" WidthRequest="90" 
+                     HorizontalOptions="CenterAndExpand" IsVisible="true" />
+                    </StackLayout>
+                </StackLayout>
+
+                <StackLayout Orientation="Vertical" Padding="0,40,0,0" >
+                    <Frame Padding="12" CornerRadius="5">
+                        <StackLayout Orientation="Horizontal" >
+                            <StackLayout>
+                                <Entry Text="{Binding Name}" Placeholder="Customer Name" PlaceholderColor="Black" WidthRequest="300" HeightRequest="40"/>
+                            </StackLayout>
+                            <StackLayout Orientation="Vertical" HorizontalOptions="EndAndExpand" VerticalOptions="CenterAndExpand">
+                                <Button Text="Edit" Command="{Binding .}"  BackgroundColor="White"
+                                    TextColor="#603D8F" HeightRequest="20" WidthRequest="10"/>
+                                <BoxView WidthRequest="30" Color="#603D8F" HeightRequest="1"/>
+                            </StackLayout>
+                        </StackLayout>
+                    </Frame>
+
+                    <Frame Padding="12" CornerRadius="5" Margin="0,10,0,0">
+                        <StackLayout Orientation="Horizontal" >
+                            <StackLayout>
+                                <Entry Text="{Binding Phone}" Placeholder="Phone Number" PlaceholderColor="Black" WidthRequest="300" HeightRequest="40" />
+                            </StackLayout>
+                            <StackLayout Orientation="Vertical" HorizontalOptions="EndAndExpand" VerticalOptions="CenterAndExpand">
+                                <Button Text="Edit" Command="{Binding .}"  BackgroundColor="White"
+                                    TextColor="#603D8F" HeightRequest="20" WidthRequest="10"/>
+                                <BoxView WidthRequest="30" Color="#603D8F" HeightRequest="1"/>
+                            </StackLayout>
+                        </StackLayout>
+                    </Frame>
+
+                    <Frame Padding="12" CornerRadius="5" Margin="0,10,0,0">
+                        <StackLayout Orientation="Horizontal" >
+                            <StackLayout>
+                                <Entry Text="{Binding Email}" Placeholder="Email" PlaceholderColor="Black" WidthRequest="300" HeightRequest="40" />
+                            </StackLayout>
+                            <StackLayout Orientation="Vertical" HorizontalOptions="EndAndExpand" VerticalOptions="CenterAndExpand">
+                                <Button Text="Edit" Command="{Binding .}"  BackgroundColor="White"
+                                    TextColor="#603D8F" HeightRequest="20" WidthRequest="10"/>
+                                <BoxView WidthRequest="30" Color="#603D8F" HeightRequest="1"/>
+                            </StackLayout>
+                        </StackLayout>
+                    </Frame>
+
+                    <Frame Padding="12" CornerRadius="5" Margin="0,10,0,0">
+                        <StackLayout Orientation="Horizontal" >
+                            <StackLayout>
+                                <Entry Text="{Binding Password}" Placeholder="Password" PlaceholderColor="Black" IsPassword="True" WidthRequest="300" HeightRequest="40" />
+                            </StackLayout>
+                            <StackLayout Orientation="Vertical" HorizontalOptions="EndAndExpand" VerticalOptions="CenterAndExpand">
+                                <Button Text="Edit" Command="{Binding .}"  BackgroundColor="White"
+                                    TextColor="Black" HeightRequest="20" WidthRequest="10"/>
+                                <BoxView WidthRequest="30" Color="#603D8F" HeightRequest="1"/>
+                            </StackLayout>
+                        </StackLayout>
+                    </Frame>
+                </StackLayout>
+
+            </StackLayout>
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>

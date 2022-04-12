@@ -29,6 +29,12 @@ namespace customer_app.Services
             return dataSalons;
         }
 
+        public ObservableCollection<DataReservationsModel> GetDataReservation()
+        {
+            var dataReservation = firebaseClient.Child("History").AsObservable<DataReservationsModel>().AsObservableCollection();
+
+            return dataReservation;
+        }
         public async Task AddNewUser(string name, long phone, string ulr, string location)
         {
             Console.WriteLine(ulr.ToString());
@@ -43,6 +49,12 @@ namespace customer_app.Services
             }
             await firebaseClient.Child("Users_Customer").PostAsync(addUser);
 
+        }
+        public ObservableCollection<Authentication> GetAuthentications()
+        {
+            var dataprofile = firebaseClient.Child("Authentication").AsObservable<Authentication>().AsObservableCollection();
+
+            return dataprofile;
         }
     }
 }

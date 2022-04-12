@@ -12,10 +12,17 @@ namespace customer_app.Views
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class SalonInDetailsPage : ContentPage
     {
+        private Authentication profile;
+
         public SalonInDetailsPage(DataSalon dataSalon)
         {
             InitializeComponent();
             GetInfoSalon(dataSalon);
+        }
+
+        public SalonInDetailsPage(Authentication profile)
+        {
+            this.profile = profile;
         }
 
         public void GetInfoSalon(DataSalon dataSalon)

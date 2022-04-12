@@ -32,6 +32,7 @@
     <TabBar>
         <ShellContent Title="SearchServices" Icon="about.png" Route="SearchServices" ContentTemplate="{DataTemplate local:HomePage}" />
         <ShellContent Title="SearchBarbar" Icon="about.png" Route="SearchBarbar" ContentTemplate="{DataTemplate local:SearchBarberPage}" />
+        <ShellContent Title="about" Icon="about.png" Route="aboute" ContentTemplate="{DataTemplate local:ProfileAboutPage}" />
     </TabBar>
 
     <!--

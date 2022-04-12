@@ -26,5 +26,11 @@ namespace customer_app.Services
 
             return dataSalons;
         }
+        public ObservableCollection<Authentication> GetAuthentications()
+        {
+            var dataprofile = firebaseClient.Child("Authentication").AsObservable<Authentication>().AsObservableCollection();
+
+            return dataprofile;
+        }
     }
 }

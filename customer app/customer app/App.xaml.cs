@@ -7,12 +7,23 @@ namespace customer_app
 {
     public partial class App : Application
     {
-
+        IAuth auths;
         public App()
         {
             InitializeComponent();
+            auths = DependencyService.Get<IAuth>();
 
-            MainPage = new AppShell();
+            if (auths.IsSigIn())
+            {
+                MainPage = new AppShell();
+            }
+            else
+            {
+                MainPage = new LoginPage();
+            }
+
+
+
         }
 
         protected override void OnStart()

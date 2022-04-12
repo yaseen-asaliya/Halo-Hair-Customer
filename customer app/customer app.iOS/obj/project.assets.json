@@ -159,6 +159,13 @@
           "lib/xamarinios10/_._": {}
         }
       },
+      "Xamarin.Build.Download/0.11.0": {
+        "type": "package",
+        "build": {
+          "buildTransitive/Xamarin.Build.Download.props": {},
+          "buildTransitive/Xamarin.Build.Download.targets": {}
+        }
+      },
       "Xamarin.CommunityToolkit/1.3.0": {
         "type": "package",
         "dependencies": {
@@ -192,6 +199,42 @@
         },
         "runtime": {
           "lib/xamarinios10/Xamarin.Essentials.dll": {}
+        }
+      },
+      "Xamarin.Firebase.iOS.Auth/8.10.0": {
+        "type": "package",
+        "dependencies": {
+          "Xamarin.Build.Download": "0.11.0",
+          "Xamarin.Firebase.iOS.Core": "8.10.0"
+        },
+        "frameworkAssemblies": [
+          "System.Drawing.Common.dll",
+          "Xamarin.iOS"
+        ],
+        "compile": {
+          "lib/xamarinios10/Firebase.Auth.dll": {}
+        },
+        "runtime": {
+          "lib/xamarinios10/Firebase.Auth.dll": {}
+        }
+      },
+      "Xamarin.Firebase.iOS.Core/8.10.0": {
+        "type": "package",
+        "dependencies": {
+          "Xamarin.Build.Download": "0.11.0"
+        },
+        "frameworkAssemblies": [
+          "System.Drawing.Common.dll",
+          "Xamarin.iOS"
+        ],
+        "compile": {
+          "lib/xamarinios10/Firebase.Core.dll": {}
+        },
+        "runtime": {
+          "lib/xamarinios10/Firebase.Core.dll": {}
+        },
+        "build": {
+          "buildTransitive/Xamarin.Firebase.iOS.Core.targets": {}
         }
       },
       "Xamarin.Forms/5.0.0.2337": {
@@ -508,6 +551,13 @@
           "lib/xamarinios10/_._": {}
         }
       },
+      "Xamarin.Build.Download/0.11.0": {
+        "type": "package",
+        "build": {
+          "buildTransitive/Xamarin.Build.Download.props": {},
+          "buildTransitive/Xamarin.Build.Download.targets": {}
+        }
+      },
       "Xamarin.CommunityToolkit/1.3.0": {
         "type": "package",
         "dependencies": {
@@ -541,6 +591,42 @@
         },
         "runtime": {
           "lib/xamarinios10/Xamarin.Essentials.dll": {}
+        }
+      },
+      "Xamarin.Firebase.iOS.Auth/8.10.0": {
+        "type": "package",
+        "dependencies": {
+          "Xamarin.Build.Download": "0.11.0",
+          "Xamarin.Firebase.iOS.Core": "8.10.0"
+        },
+        "frameworkAssemblies": [
+          "System.Drawing.Common.dll",
+          "Xamarin.iOS"
+        ],
+        "compile": {
+          "lib/xamarinios10/Firebase.Auth.dll": {}
+        },
+        "runtime": {
+          "lib/xamarinios10/Firebase.Auth.dll": {}
+        }
+      },
+      "Xamarin.Firebase.iOS.Core/8.10.0": {
+        "type": "package",
+        "dependencies": {
+          "Xamarin.Build.Download": "0.11.0"
+        },
+        "frameworkAssemblies": [
+          "System.Drawing.Common.dll",
+          "Xamarin.iOS"
+        ],
+        "compile": {
+          "lib/xamarinios10/Firebase.Core.dll": {}
+        },
+        "runtime": {
+          "lib/xamarinios10/Firebase.Core.dll": {}
+        },
+        "build": {
+          "buildTransitive/Xamarin.Firebase.iOS.Core.targets": {}
         }
       },
       "Xamarin.Forms/5.0.0.2337": {
@@ -857,6 +943,13 @@
           "lib/xamarinios10/_._": {}
         }
       },
+      "Xamarin.Build.Download/0.11.0": {
+        "type": "package",
+        "build": {
+          "buildTransitive/Xamarin.Build.Download.props": {},
+          "buildTransitive/Xamarin.Build.Download.targets": {}
+        }
+      },
       "Xamarin.CommunityToolkit/1.3.0": {
         "type": "package",
         "dependencies": {
@@ -890,6 +983,42 @@
         },
         "runtime": {
           "lib/xamarinios10/Xamarin.Essentials.dll": {}
+        }
+      },
+      "Xamarin.Firebase.iOS.Auth/8.10.0": {
+        "type": "package",
+        "dependencies": {
+          "Xamarin.Build.Download": "0.11.0",
+          "Xamarin.Firebase.iOS.Core": "8.10.0"
+        },
+        "frameworkAssemblies": [
+          "System.Drawing.Common.dll",
+          "Xamarin.iOS"
+        ],
+        "compile": {
+          "lib/xamarinios10/Firebase.Auth.dll": {}
+        },
+        "runtime": {
+          "lib/xamarinios10/Firebase.Auth.dll": {}
+        }
+      },
+      "Xamarin.Firebase.iOS.Core/8.10.0": {
+        "type": "package",
+        "dependencies": {
+          "Xamarin.Build.Download": "0.11.0"
+        },
+        "frameworkAssemblies": [
+          "System.Drawing.Common.dll",
+          "Xamarin.iOS"
+        ],
+        "compile": {
+          "lib/xamarinios10/Firebase.Core.dll": {}
+        },
+        "runtime": {
+          "lib/xamarinios10/Firebase.Core.dll": {}
+        },
+        "build": {
+          "buildTransitive/Xamarin.Firebase.iOS.Core.targets": {}
         }
       },
       "Xamarin.Forms/5.0.0.2337": {
@@ -1206,6 +1335,13 @@
           "lib/xamarinios10/_._": {}
         }
       },
+      "Xamarin.Build.Download/0.11.0": {
+        "type": "package",
+        "build": {
+          "buildTransitive/Xamarin.Build.Download.props": {},
+          "buildTransitive/Xamarin.Build.Download.targets": {}
+        }
+      },
       "Xamarin.CommunityToolkit/1.3.0": {
         "type": "package",
         "dependencies": {
@@ -1239,6 +1375,42 @@
         },
         "runtime": {
           "lib/xamarinios10/Xamarin.Essentials.dll": {}
+        }
+      },
+      "Xamarin.Firebase.iOS.Auth/8.10.0": {
+        "type": "package",
+        "dependencies": {
+          "Xamarin.Build.Download": "0.11.0",
+          "Xamarin.Firebase.iOS.Core": "8.10.0"
+        },
+        "frameworkAssemblies": [
+          "System.Drawing.Common.dll",
+          "Xamarin.iOS"
+        ],
+        "compile": {
+          "lib/xamarinios10/Firebase.Auth.dll": {}
+        },
+        "runtime": {
+          "lib/xamarinios10/Firebase.Auth.dll": {}
+        }
+      },
+      "Xamarin.Firebase.iOS.Core/8.10.0": {
+        "type": "package",
+        "dependencies": {
+          "Xamarin.Build.Download": "0.11.0"
+        },
+        "frameworkAssemblies": [
+          "System.Drawing.Common.dll",
+          "Xamarin.iOS"
+        ],
+        "compile": {
+          "lib/xamarinios10/Firebase.Core.dll": {}
+        },
+        "runtime": {
+          "lib/xamarinios10/Firebase.Core.dll": {}
+        },
+        "build": {
+          "buildTransitive/Xamarin.Firebase.iOS.Core.targets": {}
         }
       },
       "Xamarin.Forms/5.0.0.2337": {
@@ -1885,6 +2057,28 @@
         "system.runtime.interopservices.windowsruntime.nuspec"
       ]
     },
+    "Xamarin.Build.Download/0.11.0": {
+      "sha512": "35/X1Lz4KNoD0VjmDRO/Ap8U823odTUVWGnAmdoweFvjbE3CJ+B8zzOAp+MzvheuEBYlGfX5P4gjvLRZhVTCDg==",
+      "type": "package",
+      "path": "xamarin.build.download/0.11.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "THIRD-PARTY-NOTICE.txt",
+        "build/Microsoft.Win32.Registry.dll",
+        "build/Newtonsoft.Json.dll",
+        "build/Xamarin.Build.Download.dll",
+        "build/Xamarin.Build.Download.props",
+        "build/Xamarin.Build.Download.targets",
+        "buildTransitive/Microsoft.Win32.Registry.dll",
+        "buildTransitive/Newtonsoft.Json.dll",
+        "buildTransitive/Xamarin.Build.Download.dll",
+        "buildTransitive/Xamarin.Build.Download.props",
+        "buildTransitive/Xamarin.Build.Download.targets",
+        "xamarin.build.download.0.11.0.nupkg.sha512",
+        "xamarin.build.download.nuspec"
+      ]
+    },
     "Xamarin.CommunityToolkit/1.3.0": {
       "sha512": "sZwmH0zI1YVNOWRMUIIjrpqHJhWdkpZPhah8IehEFu2KUvCUToxXg+4Hk96JYHxzWlq1HJdgVbibtqOARCbBHw==",
       "type": "package",
@@ -1967,6 +2161,38 @@
         "readme.txt",
         "xamarin.essentials.1.7.1.nupkg.sha512",
         "xamarin.essentials.nuspec"
+      ]
+    },
+    "Xamarin.Firebase.iOS.Auth/8.10.0": {
+      "sha512": "G3GmWoAfCZ+0N8pAiVGFmcWuncn+cpjhq6n6ShZiL5qKCOC5+9BB6BW96xIOfdVHwh1jP5U+2mw7NVFo3QIbRA==",
+      "type": "package",
+      "path": "xamarin.firebase.ios.auth/8.10.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "License.md",
+        "THIRD-PARTY-NOTICES.txt",
+        "firebaseiosauth_128x128.png",
+        "lib/xamarinios10/Firebase.Auth.dll",
+        "xamarin.firebase.ios.auth.8.10.0.nupkg.sha512",
+        "xamarin.firebase.ios.auth.nuspec"
+      ]
+    },
+    "Xamarin.Firebase.iOS.Core/8.10.0": {
+      "sha512": "6sMOvWFTAATbK19q2xGr1IdOsRFKtMwgoTOy0rLcZKoZm3BTvDAscTcxBbn5lcS/fG5ZIKP6mENhrxiCqokOhQ==",
+      "type": "package",
+      "path": "xamarin.firebase.ios.core/8.10.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "License.md",
+        "THIRD-PARTY-NOTICES.txt",
+        "build/Xamarin.Firebase.iOS.Core.targets",
+        "buildTransitive/Xamarin.Firebase.iOS.Core.targets",
+        "firebaseioscore_128x128.png",
+        "lib/xamarinios10/Firebase.Core.dll",
+        "xamarin.firebase.ios.core.8.10.0.nupkg.sha512",
+        "xamarin.firebase.ios.core.nuspec"
       ]
     },
     "Xamarin.Forms/5.0.0.2337": {
@@ -2220,25 +2446,31 @@
       "FirebaseDatabase.net >= 4.0.7",
       "XamForms.Controls.Calendar >= 1.1.1",
       "Xamarin.Essentials >= 1.7.1",
+      "Xamarin.Firebase.iOS.Auth >= 8.10.0",
       "Xamarin.Forms >= 5.0.0.2337",
       "customer app >= 1.0.0"
     ]
   },
   "packageFolders": {
-    "C:\\Users\\MT2X\\.nuget\\packages\\": {}
+    "C:\\Users\\abood\\.nuget\\packages\\": {},
+    "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\MT2X\\Documents\\GitHub\\Halo-Hair---customer\\customer app\\customer app.iOS\\customer app.iOS.csproj",
+      "projectUniqueName": "C:\\Users\\abood\\Desktop\\Customer\\customer app\\customer app.iOS\\customer app.iOS.csproj",
       "projectName": "customer app.iOS",
-      "projectPath": "C:\\Users\\MT2X\\Documents\\GitHub\\Halo-Hair---customer\\customer app\\customer app.iOS\\customer app.iOS.csproj",
-      "packagesPath": "C:\\Users\\MT2X\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\MT2X\\Documents\\GitHub\\Halo-Hair---customer\\customer app\\customer app.iOS\\obj\\",
+      "projectPath": "C:\\Users\\abood\\Desktop\\Customer\\customer app\\customer app.iOS\\customer app.iOS.csproj",
+      "packagesPath": "C:\\Users\\abood\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\abood\\Desktop\\Customer\\customer app\\customer app.iOS\\obj\\",
       "projectStyle": "PackageReference",
       "skipContentFileWrite": true,
+      "fallbackFolders": [
+        "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+      ],
       "configFilePaths": [
-        "C:\\Users\\MT2X\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\abood\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -2251,8 +2483,8 @@
       "frameworks": {
         "xamarinios10": {
           "projectReferences": {
-            "C:\\Users\\MT2X\\Documents\\GitHub\\Halo-Hair---customer\\customer app\\customer app\\customer app.csproj": {
-              "projectPath": "C:\\Users\\MT2X\\Documents\\GitHub\\Halo-Hair---customer\\customer app\\customer app\\customer app.csproj"
+            "C:\\Users\\abood\\Desktop\\Customer\\customer app\\customer app\\customer app.csproj": {
+              "projectPath": "C:\\Users\\abood\\Desktop\\Customer\\customer app\\customer app\\customer app.csproj"
             }
           }
         }
@@ -2272,6 +2504,10 @@
           "Xamarin.Essentials": {
             "target": "Package",
             "version": "[1.7.1, )"
+          },
+          "Xamarin.Firebase.iOS.Auth": {
+            "target": "Package",
+            "version": "[8.10.0, )"
           },
           "Xamarin.Forms": {
             "target": "Package",

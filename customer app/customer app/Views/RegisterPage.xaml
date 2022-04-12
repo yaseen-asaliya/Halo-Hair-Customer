@@ -1,12 +1,52 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
-             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" xmlns:viewmodel="clr-namespace:customer_app.ViewModels"
              x:Class="customer_app.Views.RegisterPage">
+    <ContentPage.BindingContext>
+        <viewmodel:RegisterViewModels/>
+    </ContentPage.BindingContext>
     <ContentPage.Content>
         <StackLayout>
-            <Label Text="Welcome to Xamarin.Forms!"
-                VerticalOptions="CenterAndExpand" 
-                HorizontalOptions="CenterAndExpand" />
+            <StackLayout Orientation="Vertical" HorizontalOptions="CenterAndExpand">
+                <Label Text="Welcome!" FontSize="Title" />
+                <Label Text="Create Your Account" FontSize="Small"/>
+            </StackLayout>
+            <StackLayout>
+                <Frame CornerRadius="15" Margin="25,10,25,10" HasShadow="True" HeightRequest="40" Padding="0">
+                    <Entry Text="{Binding name }" Placeholder="Name"/>
+                </Frame>
+                <Frame CornerRadius="15" Margin="25,10,25,10" HasShadow="True" HeightRequest="40" Padding="0">
+                    <Entry Text="{Binding email }" Placeholder="Email"/>
+                </Frame>
+                <Frame CornerRadius="15" Margin="25,10,25,10" HasShadow="True" HeightRequest="40" Padding="0">
+                    <Entry Text="{Binding phone }" Placeholder="Phone"/>
+                </Frame>
+                <Frame CornerRadius="15" Margin="25,10,25,10" HasShadow="True" HeightRequest="40" Padding="0">
+                    <Entry Text="{Binding password }" Placeholder="Password" IsPassword="True"/>
+                </Frame>
+                <Frame CornerRadius="15" Margin="25,10,25,10" HasShadow="True" HeightRequest="40" Padding="0">
+                    <Entry  Placeholder="Confirm Password"  IsPassword="True"/>
+                </Frame>
+               
+                <Frame CornerRadius="15" Margin="25,10,25,10" HasShadow="True" HeightRequest="40" Padding="0">
+                    <Entry Text="{Binding location }" Placeholder="Location"/>
+                </Frame>
+                <Frame HasShadow="True" Padding="0" WidthRequest="150" HorizontalOptions="Center" CornerRadius="15">
+
+                </Frame>
+                <Button Margin="20"
+                WidthRequest="207"
+                HeightRequest="46"
+                Text="Sign Up"
+                TextColor="#FFFFFF"
+                FontAttributes="Bold"
+                BackgroundColor="#603D8F"
+                CornerRadius="20"
+                Font="Segoe UI"
+               Command="{Binding SigUpCommad}"
+                FontSize="16"></Button>
+
+            </StackLayout>
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>

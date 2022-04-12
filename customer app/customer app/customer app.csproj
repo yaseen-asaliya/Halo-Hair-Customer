@@ -13,6 +13,9 @@
     <PackageReference Include="Xamarin.Essentials" Version="1.7.2" />  
     <PackageReference Include="XamForms.Controls.Calendar" Version="1.1.1" />
   </ItemGroup>
+	<ItemGroup>
+		<GoogleServicesJson Include="google-services.json" />
+	</ItemGroup>
 
   <ItemGroup>
     <EmbeddedResource Update="Views\Components\AsdAndOffersComponent.xaml">

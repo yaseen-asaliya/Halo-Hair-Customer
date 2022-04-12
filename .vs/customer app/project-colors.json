@@ -15,7 +15,12 @@
       "ProjectGuid": "3390bca9-96f8-4ea4-8349-1331b1854bbd",
       "DisplayName": "customer app.Android",
       "ColorIndex": 1
+    },
+    "e998434c-92ad-45b7-bfcb-63faab676aff": {
+      "ProjectGuid": "e998434c-92ad-45b7-bfcb-63faab676aff",
+      "DisplayName": "customer app.iOS",
+      "ColorIndex": 2
     }
   },
-  "NextColorIndex": 2
+  "NextColorIndex": 3
 }

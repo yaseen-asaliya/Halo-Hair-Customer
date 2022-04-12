@@ -1887,19 +1887,24 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\MT2X\\.nuget\\packages\\": {}
+    "C:\\Users\\abood\\.nuget\\packages\\": {},
+    "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\MT2X\\Documents\\GitHub\\Halo-Hair---customer\\customer app\\customer app\\customer app.csproj",
+      "projectUniqueName": "C:\\Users\\abood\\Desktop\\Customer\\customer app\\customer app\\customer app.csproj",
       "projectName": "customer app",
-      "projectPath": "C:\\Users\\MT2X\\Documents\\GitHub\\Halo-Hair---customer\\customer app\\customer app\\customer app.csproj",
-      "packagesPath": "C:\\Users\\MT2X\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\MT2X\\Documents\\GitHub\\Halo-Hair---customer\\customer app\\customer app\\obj\\",
+      "projectPath": "C:\\Users\\abood\\Desktop\\Customer\\customer app\\customer app\\customer app.csproj",
+      "packagesPath": "C:\\Users\\abood\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\abood\\Desktop\\Customer\\customer app\\customer app\\obj\\",
       "projectStyle": "PackageReference",
+      "fallbackFolders": [
+        "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+      ],
       "configFilePaths": [
-        "C:\\Users\\MT2X\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\abood\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [

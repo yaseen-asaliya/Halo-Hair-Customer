@@ -1661,11 +1661,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "Y:\\Halo-Hair---customer\\customer app\\customer app.iOS\\customer app.iOS.csproj",
+      "projectUniqueName": "D:\\Downloads\\Halo-Hair---customer\\customer app\\customer app.iOS\\customer app.iOS.csproj",
       "projectName": "customer app.iOS",
-      "projectPath": "Y:\\Halo-Hair---customer\\customer app\\customer app.iOS\\customer app.iOS.csproj",
+      "projectPath": "D:\\Downloads\\Halo-Hair---customer\\customer app\\customer app.iOS\\customer app.iOS.csproj",
       "packagesPath": "C:\\Users\\Yazeed\\.nuget\\packages\\",
-      "outputPath": "Y:\\Halo-Hair---customer\\customer app\\customer app.iOS\\obj\\",
+      "outputPath": "D:\\Downloads\\Halo-Hair---customer\\customer app\\customer app.iOS\\obj\\",
       "projectStyle": "PackageReference",
       "skipContentFileWrite": true,
       "fallbackFolders": [
@@ -1686,8 +1686,8 @@
       "frameworks": {
         "xamarinios10": {
           "projectReferences": {
-            "Y:\\Halo-Hair---customer\\customer app\\customer app\\customer app.csproj": {
-              "projectPath": "Y:\\Halo-Hair---customer\\customer app\\customer app\\customer app.csproj"
+            "D:\\Downloads\\Halo-Hair---customer\\customer app\\customer app\\customer app.csproj": {
+              "projectPath": "D:\\Downloads\\Halo-Hair---customer\\customer app\\customer app\\customer app.csproj"
             }
           }
         }

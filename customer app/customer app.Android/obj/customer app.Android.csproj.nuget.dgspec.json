@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "Y:\\Halo-Hair---customer\\customer app\\customer app.Android\\customer app.Android.csproj": {}
+    "D:\\Downloads\\Halo-Hair---customer\\customer app\\customer app.Android\\customer app.Android.csproj": {}
   },
   "projects": {
-    "Y:\\Halo-Hair---customer\\customer app\\customer app.Android\\customer app.Android.csproj": {
+    "D:\\Downloads\\Halo-Hair---customer\\customer app\\customer app.Android\\customer app.Android.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "Y:\\Halo-Hair---customer\\customer app\\customer app.Android\\customer app.Android.csproj",
+        "projectUniqueName": "D:\\Downloads\\Halo-Hair---customer\\customer app\\customer app.Android\\customer app.Android.csproj",
         "projectName": "customer app.Android",
-        "projectPath": "Y:\\Halo-Hair---customer\\customer app\\customer app.Android\\customer app.Android.csproj",
+        "projectPath": "D:\\Downloads\\Halo-Hair---customer\\customer app\\customer app.Android\\customer app.Android.csproj",
         "packagesPath": "C:\\Users\\Yazeed\\.nuget\\packages\\",
-        "outputPath": "Y:\\Halo-Hair---customer\\customer app\\customer app.Android\\obj\\",
+        "outputPath": "D:\\Downloads\\Halo-Hair---customer\\customer app\\customer app.Android\\obj\\",
         "projectStyle": "PackageReference",
         "skipContentFileWrite": true,
         "fallbackFolders": [
@@ -32,8 +32,8 @@
         "frameworks": {
           "monoandroid12.0": {
             "projectReferences": {
-              "Y:\\Halo-Hair---customer\\customer app\\customer app\\customer app.csproj": {
-                "projectPath": "Y:\\Halo-Hair---customer\\customer app\\customer app\\customer app.csproj"
+              "D:\\Downloads\\Halo-Hair---customer\\customer app\\customer app\\customer app.csproj": {
+                "projectPath": "D:\\Downloads\\Halo-Hair---customer\\customer app\\customer app\\customer app.csproj"
               }
             }
           }
@@ -62,14 +62,14 @@
         }
       }
     },
-    "Y:\\Halo-Hair---customer\\customer app\\customer app\\customer app.csproj": {
+    "D:\\Downloads\\Halo-Hair---customer\\customer app\\customer app\\customer app.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "Y:\\Halo-Hair---customer\\customer app\\customer app\\customer app.csproj",
+        "projectUniqueName": "D:\\Downloads\\Halo-Hair---customer\\customer app\\customer app\\customer app.csproj",
         "projectName": "customer app",
-        "projectPath": "Y:\\Halo-Hair---customer\\customer app\\customer app\\customer app.csproj",
+        "projectPath": "D:\\Downloads\\Halo-Hair---customer\\customer app\\customer app\\customer app.csproj",
         "packagesPath": "C:\\Users\\Yazeed\\.nuget\\packages\\",
-        "outputPath": "Y:\\Halo-Hair---customer\\customer app\\customer app\\obj\\",
+        "outputPath": "D:\\Downloads\\Halo-Hair---customer\\customer app\\customer app\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"

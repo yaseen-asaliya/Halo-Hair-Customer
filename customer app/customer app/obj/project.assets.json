@@ -1380,11 +1380,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "Y:\\Halo-Hair---customer\\customer app\\customer app\\customer app.csproj",
+      "projectUniqueName": "D:\\Downloads\\Halo-Hair---customer\\customer app\\customer app\\customer app.csproj",
       "projectName": "customer app",
-      "projectPath": "Y:\\Halo-Hair---customer\\customer app\\customer app\\customer app.csproj",
+      "projectPath": "D:\\Downloads\\Halo-Hair---customer\\customer app\\customer app\\customer app.csproj",
       "packagesPath": "C:\\Users\\Yazeed\\.nuget\\packages\\",
-      "outputPath": "Y:\\Halo-Hair---customer\\customer app\\customer app\\obj\\",
+      "outputPath": "D:\\Downloads\\Halo-Hair---customer\\customer app\\customer app\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"

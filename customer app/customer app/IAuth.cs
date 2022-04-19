@@ -11,6 +11,7 @@ namespace customer_app
         Task<string> SignUpWithEmailAndPassword(string email, string password);
         bool IsSigIn();
         bool IsSigOut();
+        Task ResetPassword(string Email);
 
     }
 }

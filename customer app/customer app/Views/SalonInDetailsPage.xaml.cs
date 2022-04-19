@@ -20,9 +20,9 @@ namespace customer_app.Views
 
         public void GetInfoSalon(DataSalon dataSalon)
         {
-            NameSalon.Text = dataSalon.SalonName;
-            EndTime.Text = dataSalon.EndTime;
-            StartTime.Text = dataSalon.StartTime;
+            NameSalon.Text = dataSalon.NameSalon;
+            EndTime.Text = dataSalon.EndTime.ToString();
+            StartTime.Text = dataSalon.StartTime.ToString();
         }
     }
 }

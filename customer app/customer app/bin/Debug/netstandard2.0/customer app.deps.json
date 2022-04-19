@@ -12,10 +12,11 @@
           "FirebaseDatabase.net": "4.0.7",
           "NETStandard.Library": "2.0.3",
           "Plugin.XCalendar": "2.1.0",
-          "Syncfusion.Xamarin.SfListView": "20.1.0.47",
+          "Syncfusion.Xamarin.SfListView": "20.1.0.48",
           "XamForms.Controls.Calendar": "1.1.1",
           "Xamarin.Essentials": "1.7.2",
-          "Xamarin.Forms": "5.0.0.2401"
+          "Xamarin.Forms": "5.0.0.2401",
+          "Xamarin.Forms.InputKit": "3.7.2"
         },
         "runtime": {
           "customer app.dll": {}
@@ -73,53 +74,53 @@
           }
         }
       },
-      "Syncfusion.Licensing/20.1.0.47": {
+      "Syncfusion.Licensing/20.1.0.48": {
         "runtime": {
           "lib/netstandard2.0/Syncfusion.Licensing.dll": {
-            "assemblyVersion": "20.1.0.47",
-            "fileVersion": "20.1.0.47"
+            "assemblyVersion": "20.1.0.48",
+            "fileVersion": "20.1.0.48"
           }
         }
       },
-      "Syncfusion.Xamarin.Core/20.1.0.47": {
+      "Syncfusion.Xamarin.Core/20.1.0.48": {
         "dependencies": {
-          "Syncfusion.Licensing": "20.1.0.47",
+          "Syncfusion.Licensing": "20.1.0.48",
           "Xamarin.Forms": "5.0.0.2401"
         },
         "runtime": {
           "lib/netstandard2.0/Syncfusion.Core.XForms.dll": {
-            "assemblyVersion": "20.1451.0.47",
-            "fileVersion": "20.1451.0.47"
+            "assemblyVersion": "20.1451.0.48",
+            "fileVersion": "20.1451.0.48"
           }
         }
       },
-      "Syncfusion.Xamarin.DataSource/20.1.0.47": {
+      "Syncfusion.Xamarin.DataSource/20.1.0.48": {
         "runtime": {
           "lib/netstandard2.0/Syncfusion.DataSource.Portable.dll": {
-            "assemblyVersion": "20.1451.0.47",
-            "fileVersion": "20.1451.0.47"
+            "assemblyVersion": "20.1451.0.48",
+            "fileVersion": "20.1451.0.48"
           }
         }
       },
-      "Syncfusion.Xamarin.GridCommon/20.1.0.47": {
+      "Syncfusion.Xamarin.GridCommon/20.1.0.48": {
         "runtime": {
           "lib/netstandard2.0/Syncfusion.GridCommon.Portable.dll": {
-            "assemblyVersion": "20.1451.0.47",
-            "fileVersion": "20.1451.0.47"
+            "assemblyVersion": "20.1451.0.48",
+            "fileVersion": "20.1451.0.48"
           }
         }
       },
-      "Syncfusion.Xamarin.SfListView/20.1.0.47": {
+      "Syncfusion.Xamarin.SfListView/20.1.0.48": {
         "dependencies": {
-          "Syncfusion.Xamarin.Core": "20.1.0.47",
-          "Syncfusion.Xamarin.DataSource": "20.1.0.47",
-          "Syncfusion.Xamarin.GridCommon": "20.1.0.47",
+          "Syncfusion.Xamarin.Core": "20.1.0.48",
+          "Syncfusion.Xamarin.DataSource": "20.1.0.48",
+          "Syncfusion.Xamarin.GridCommon": "20.1.0.48",
           "Xamarin.Forms": "5.0.0.2401"
         },
         "runtime": {
           "lib/netstandard2.0/Syncfusion.SfListView.XForms.dll": {
-            "assemblyVersion": "20.1451.0.47",
-            "fileVersion": "20.1451.0.47"
+            "assemblyVersion": "20.1451.0.48",
+            "fileVersion": "20.1451.0.48"
           }
         }
       },
@@ -288,6 +289,14 @@
           }
         }
       },
+      "Xamarin.Forms.InputKit/3.7.2": {
+        "runtime": {
+          "lib/netstandard2.0/Plugin.InputKit.dll": {
+            "assemblyVersion": "3.7.2.0",
+            "fileVersion": "3.7.2.0"
+          }
+        }
+      },
       "XamForms.Controls.Calendar/1.1.1": {
         "dependencies": {
           "Xamarin.Forms": "5.0.0.2401"
@@ -356,40 +365,40 @@
       "path": "plugin.xcalendar/2.1.0",
       "hashPath": "plugin.xcalendar.2.1.0.nupkg.sha512"
     },
-    "Syncfusion.Licensing/20.1.0.47": {
+    "Syncfusion.Licensing/20.1.0.48": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-wvtXu+N9seO8rHt18VmOGX9B2/aAzyxKteyDVXJPUBcuLf8PuRppBE9cx3gKeBokvMK03zihC/39xcz4kWdtNA==",
-      "path": "syncfusion.licensing/20.1.0.47",
-      "hashPath": "syncfusion.licensing.20.1.0.47.nupkg.sha512"
+      "sha512": "sha512-f+nrjyw08N1OIUmDbn+zv2MKDf03o5yf5j/Ypk2DIZDfQuIKp5t9zyxOtfL3Ya7oNUtmSPJQ5zNuAzZln4JreA==",
+      "path": "syncfusion.licensing/20.1.0.48",
+      "hashPath": "syncfusion.licensing.20.1.0.48.nupkg.sha512"
     },
-    "Syncfusion.Xamarin.Core/20.1.0.47": {
+    "Syncfusion.Xamarin.Core/20.1.0.48": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-L6RiJZK7BZ/ijjjXYolMf1wkz4+gep6tLmeZqzsr9+d0WcFmAN4YwLV5i3gQq7gvqo2Niij/+CPCWr55VADzvg==",
-      "path": "syncfusion.xamarin.core/20.1.0.47",
-      "hashPath": "syncfusion.xamarin.core.20.1.0.47.nupkg.sha512"
+      "sha512": "sha512-VjJoDhx6PrQiTe6hMx92okWPAzaA/O0LVDXNOLV9hB3H/7s49z5XxM8DYnu6f7HjCLG81Wdw39U8N+Z3KVuB1Q==",
+      "path": "syncfusion.xamarin.core/20.1.0.48",
+      "hashPath": "syncfusion.xamarin.core.20.1.0.48.nupkg.sha512"
     },
-    "Syncfusion.Xamarin.DataSource/20.1.0.47": {
+    "Syncfusion.Xamarin.DataSource/20.1.0.48": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-2ZN4lJ6j8ueiGt2Os+pxEMjQJiHUIitBhA8ARonWVLFuJDVS4c9RIVEqD5uwiglZoc67aa3mGI3tbWRJp7km8A==",
-      "path": "syncfusion.xamarin.datasource/20.1.0.47",
-      "hashPath": "syncfusion.xamarin.datasource.20.1.0.47.nupkg.sha512"
+      "sha512": "sha512-qx+NcTXf63bkW4hVFJ1HYpmvV1nPwNuRnYR8a4ZrC+XmQ2bwh5lY5RgwZiiBeuGNmE5bl9SrskpvjYNzxGF1JA==",
+      "path": "syncfusion.xamarin.datasource/20.1.0.48",
+      "hashPath": "syncfusion.xamarin.datasource.20.1.0.48.nupkg.sha512"
     },
-    "Syncfusion.Xamarin.GridCommon/20.1.0.47": {
+    "Syncfusion.Xamarin.GridCommon/20.1.0.48": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-OKIyvV5pfMEQvitcU6li257xpCFOTkykXdL/6gf1IsSYaYT/OqsiVN7UGTqoUnEVjTqjn0WAe84bzldN7Y6x9Q==",
-      "path": "syncfusion.xamarin.gridcommon/20.1.0.47",
-      "hashPath": "syncfusion.xamarin.gridcommon.20.1.0.47.nupkg.sha512"
+      "sha512": "sha512-zfzPIHfDEpHD2EdbJY8Q12lhWPJHw3DToNO/oPHioFpH0h9AXOSgbUiRzuHDU7VOzdaFRBvrglNlk35TmuC0Eg==",
+      "path": "syncfusion.xamarin.gridcommon/20.1.0.48",
+      "hashPath": "syncfusion.xamarin.gridcommon.20.1.0.48.nupkg.sha512"
     },
-    "Syncfusion.Xamarin.SfListView/20.1.0.47": {
+    "Syncfusion.Xamarin.SfListView/20.1.0.48": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-NBDwWtUYIiNqfbaBRHnIOP7vSfW6j2ldlDhkQO0N/b4gpBLARIA1q1T3nnbfmGTSTL60V8FstIrmEt58f5IQbw==",
-      "path": "syncfusion.xamarin.sflistview/20.1.0.47",
-      "hashPath": "syncfusion.xamarin.sflistview.20.1.0.47.nupkg.sha512"
+      "sha512": "sha512-qqEskc7LoD0J4tIcRUrjbDGsruDB+0bPWAjPDa0iC6+i3WaIIPg2tejkfnUuZTs5aqhK2907IqySJUvUVbkLSQ==",
+      "path": "syncfusion.xamarin.sflistview/20.1.0.48",
+      "hashPath": "syncfusion.xamarin.sflistview.20.1.0.48.nupkg.sha512"
     },
     "System.IO/4.3.0": {
       "type": "package",
@@ -509,6 +518,13 @@
       "sha512": "sha512-fk/V8QWjeyo8UXcsqsNRMd6o1H5PBfyXYm97nxvhMsJIdeqDgfRWyIsSurM8uLGLQGdQP23R+hHj7vcTSo2UjQ==",
       "path": "xamarin.forms/5.0.0.2401",
       "hashPath": "xamarin.forms.5.0.0.2401.nupkg.sha512"
+    },
+    "Xamarin.Forms.InputKit/3.7.2": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-RVjq8yqh/+MQ/pSLBHEfVqeqOtjJV9H3htHM0U3K0omD/RNeHJZLKDQAgDAgzQan6m5DBkrGoIqOtacTNRGueg==",
+      "path": "xamarin.forms.inputkit/3.7.2",
+      "hashPath": "xamarin.forms.inputkit.3.7.2.nupkg.sha512"
     },
     "XamForms.Controls.Calendar/1.1.1": {
       "type": "package",

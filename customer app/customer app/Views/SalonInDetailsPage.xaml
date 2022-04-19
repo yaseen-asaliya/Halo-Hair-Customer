@@ -39,9 +39,9 @@
                        WidthRequest="300"
                        HeightRequest="150"/>
 
-                <cont:ButtonComponent NameButton="Next" Margin="0,20"/> 
+                <cont:ButtonComponent NameButton="Next" Margin="0,20"/>
             </StackLayout>
         </StackLayout>
-        
+
     </ContentPage.Content>
 </ContentPage>

@@ -3,22 +3,18 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:viewmodels="clr-namespace:customer_app.ViewModels"
              Shell.NavBarIsVisible="False"
-             xmlns:view="clr-namespace:customer_app.Views"
-             xmlns:cont="clr-namespace:customer_app.Views.Components"
+             xmlns:cont="clr-namespace:customer_app.Views.Components" xmlns:input="clr-namespace:Plugin.InputKit.Shared.Controls;assembly=Plugin.InputKit"
              x:Class="customer_app.Views.SearchServicesPage">
-    <ContentPage.BindingContext>
-        <viewmodels:SearchServicesViewModels/>
-    </ContentPage.BindingContext>
-    
+
     <ContentPage.Content>
         <StackLayout>
             <cont:navigationComponent Titles="Search Services"/>
             <cont:SearchBarComponent Margin="10,10,0,30"/>
-            <!-- <cont:ServicesList Service_Name="Services" Prices="Prices" Time_Needed="Time_Needed"/> -->
+            <cont:ServicesList Service_Name="Services" Prices="Prices" Time_Needed="Time_Needed"/>
 
             <StackLayout HeightRequest="500">
                 <Frame Margin="20,0,20,10" CornerRadius="20" BorderColor="Purple">
-                    <ListView ItemsSource="{Binding Services}" HasUnevenRows="True" >
+                    <ListView ItemsSource="{Binding FilltedServices}"  >
                         <ListView.ItemTemplate>
                             <DataTemplate>
                                 <ViewCell>
@@ -48,8 +44,10 @@
                                                     <Label Text="min" Margin="0,5,0,0" FontSize="12"/>
                                                 </StackLayout>
                                             </StackLayout>
-                                            <StackLayout VerticalOptions="CenterAndExpand">
-                                                <CheckBox  Color="Black" />
+                                            <StackLayout>
+                                                <input:CheckBox Text="{Binding Name}" Type="Check" Color="White" BoxBackgroundColor="Black" TextColor="White" 
+
+                                             CheckChanged="checkbox_CheckChanged" BindingContext="{Binding .}"/>
                                             </StackLayout>
                                         </StackLayout>
                                     </StackLayout>
@@ -59,9 +57,8 @@
                     </ListView>
                 </Frame>
             </StackLayout>
+            <Button Clicked="Button_ClickedAsync" Text="Next"></Button>
 
-            <cont:ButtonComponent NameButton="Next" Margin="225,10,20,20"/>          
-
-        </StackLayout> 
+        </StackLayout>
     </ContentPage.Content>
 </ContentPage>

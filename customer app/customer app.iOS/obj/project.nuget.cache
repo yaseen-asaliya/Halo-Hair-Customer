@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "r+hUlPK3JI9r3WSScdiKzCk/p83ZDey5UhSVGMuRA+vnCvd0HEyCOo6DArre5v12OSbG/3yRpLyG7lP+iHqBPg==",
+  "dgSpecHash": "3o/VKvVSfY/nYknpZ4xmLQGyzOjnWlV3sdb4ar2IUz3HxOPoRNwtN72OmOFxL1Pf2U7UhL9LT2miGQoXShtFgw==",
   "success": true,
   "projectFilePath": "C:\\Users\\MT2X\\Documents\\GitHub\\Halo-Hair---customer\\customer app\\customer app.iOS\\customer app.iOS.csproj",
   "expectedPackageFiles": [
@@ -8,11 +8,11 @@
     "C:\\Users\\MT2X\\.nuget\\packages\\litedb\\4.1.4\\litedb.4.1.4.nupkg.sha512",
     "C:\\Users\\MT2X\\.nuget\\packages\\newtonsoft.json\\11.0.2\\newtonsoft.json.11.0.2.nupkg.sha512",
     "C:\\Users\\MT2X\\.nuget\\packages\\plugin.xcalendar\\2.1.0\\plugin.xcalendar.2.1.0.nupkg.sha512",
-    "C:\\Users\\MT2X\\.nuget\\packages\\syncfusion.licensing\\20.1.0.47\\syncfusion.licensing.20.1.0.47.nupkg.sha512",
-    "C:\\Users\\MT2X\\.nuget\\packages\\syncfusion.xamarin.core\\20.1.0.47\\syncfusion.xamarin.core.20.1.0.47.nupkg.sha512",
-    "C:\\Users\\MT2X\\.nuget\\packages\\syncfusion.xamarin.datasource\\20.1.0.47\\syncfusion.xamarin.datasource.20.1.0.47.nupkg.sha512",
-    "C:\\Users\\MT2X\\.nuget\\packages\\syncfusion.xamarin.gridcommon\\20.1.0.47\\syncfusion.xamarin.gridcommon.20.1.0.47.nupkg.sha512",
-    "C:\\Users\\MT2X\\.nuget\\packages\\syncfusion.xamarin.sflistview\\20.1.0.47\\syncfusion.xamarin.sflistview.20.1.0.47.nupkg.sha512",
+    "C:\\Users\\MT2X\\.nuget\\packages\\syncfusion.licensing\\20.1.0.48\\syncfusion.licensing.20.1.0.48.nupkg.sha512",
+    "C:\\Users\\MT2X\\.nuget\\packages\\syncfusion.xamarin.core\\20.1.0.48\\syncfusion.xamarin.core.20.1.0.48.nupkg.sha512",
+    "C:\\Users\\MT2X\\.nuget\\packages\\syncfusion.xamarin.datasource\\20.1.0.48\\syncfusion.xamarin.datasource.20.1.0.48.nupkg.sha512",
+    "C:\\Users\\MT2X\\.nuget\\packages\\syncfusion.xamarin.gridcommon\\20.1.0.48\\syncfusion.xamarin.gridcommon.20.1.0.48.nupkg.sha512",
+    "C:\\Users\\MT2X\\.nuget\\packages\\syncfusion.xamarin.sflistview\\20.1.0.48\\syncfusion.xamarin.sflistview.20.1.0.48.nupkg.sha512",
     "C:\\Users\\MT2X\\.nuget\\packages\\system.numerics.vectors\\4.5.0\\system.numerics.vectors.4.5.0.nupkg.sha512",
     "C:\\Users\\MT2X\\.nuget\\packages\\system.reactive\\4.0.0\\system.reactive.4.0.0.nupkg.sha512",
     "C:\\Users\\MT2X\\.nuget\\packages\\system.reflection\\4.3.0\\system.reflection.4.3.0.nupkg.sha512",
@@ -24,6 +24,7 @@
     "C:\\Users\\MT2X\\.nuget\\packages\\xamarin.firebase.ios.auth\\8.10.0\\xamarin.firebase.ios.auth.8.10.0.nupkg.sha512",
     "C:\\Users\\MT2X\\.nuget\\packages\\xamarin.firebase.ios.core\\8.10.0\\xamarin.firebase.ios.core.8.10.0.nupkg.sha512",
     "C:\\Users\\MT2X\\.nuget\\packages\\xamarin.forms\\5.0.0.2337\\xamarin.forms.5.0.0.2337.nupkg.sha512",
+    "C:\\Users\\MT2X\\.nuget\\packages\\xamarin.forms.inputkit\\3.7.2\\xamarin.forms.inputkit.3.7.2.nupkg.sha512",
     "C:\\Users\\MT2X\\.nuget\\packages\\xamforms.controls.calendar\\1.1.1\\xamforms.controls.calendar.1.1.1.nupkg.sha512"
   ],
   "logs": [

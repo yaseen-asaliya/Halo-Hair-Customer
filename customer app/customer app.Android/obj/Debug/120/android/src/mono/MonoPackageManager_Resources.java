@@ -9,6 +9,7 @@ public class MonoPackageManager_Resources {
 		"LiteDB.dll",
 		"Microsoft.Bcl.AsyncInterfaces.dll",
 		"Newtonsoft.Json.dll",
+		"Plugin.InputKit.dll",
 		"Syncfusion.Core.XForms.Android.dll",
 		"Syncfusion.Core.XForms.dll",
 		"Syncfusion.DataSource.Portable.dll",

@@ -54,7 +54,11 @@ namespace customer_app.iOS
                     return ex.Message;
                 }
             }
+        public async Task ResetPassword(string Email)
+        {
+            await Auth.DefaultInstance.SendPasswordResetAsync(Email);
+        }
 
-      
+
     }
 }

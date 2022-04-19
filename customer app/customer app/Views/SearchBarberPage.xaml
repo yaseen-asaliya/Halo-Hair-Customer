@@ -11,12 +11,11 @@
     <ContentPage.Content>
         <StackLayout>
             <cont:navigationComponent Titles="Search Barbers"/>
-            <cont:SearchBarComponent Margin="10,10,0,30"/>
-            <!-- <cont:BarbersList /> -->
+
             <StackLayout HeightRequest="500">
                 <Frame Margin="20,10,20,10" CornerRadius="20" BorderColor="Purple">
                     <StackLayout>
-                        <ListView x:Name="SearchBarber" ItemTapped="OnItemSelected" ItemsSource="{Binding Salon}" HasUnevenRows="True" >
+                        <ListView x:Name="SearchBarber"  ItemsSource="{Binding Salon}" HasUnevenRows="True" >
                             <ListView.ItemTemplate>
                                 <DataTemplate>
                                     <ViewCell>
@@ -36,7 +35,7 @@
                                                     </Frame>
                                                 </StackLayout>
                                                 <StackLayout Orientation="Vertical" HorizontalOptions="StartAndExpand" >
-                                                    <Label Text="{Binding SalonName}" VerticalOptions="EndAndExpand" FontAttributes="Bold"/>
+                                                    <Label Text="{Binding NameSalon}" VerticalOptions="EndAndExpand" FontAttributes="Bold"/>
                                                     <Label Text="{Binding Location}" VerticalOptions="CenterAndExpand"/>
                                                     <StackLayout Orientation="Horizontal">
                                                         <Label Text="Open : "/>
@@ -45,14 +44,22 @@
                                                         <Label Text="-" FontSize="15"/>
                                                         <Label Text="{Binding EndTime}" VerticalOptions="EndAndExpand"/>
                                                         <Label Text="PM"/>
+                                                        <Label Text="{Binding AccessToken_Barbar}"  IsVisible="false" />
+
                                                     </StackLayout>
                                                 </StackLayout>
                                                 <StackLayout VerticalOptions="CenterAndExpand">
-                                                    <ImageButton Source="icon_about.png" HorizontalOptions="EndAndExpand" BackgroundColor="White" Clicked="ImageButton_Clicked"/>
+
+                                                    <Button Text="Show Barbar" 
+                                                                Command="{Binding Path=BindingContext.ShowBarbarCommand,Source={x:Reference SearchBarber}}"
+                                                                CommandParameter="{Binding .}"
+                                                                BackgroundColor="White"
+                                                  TextColor="Black" BorderColor="White" HorizontalOptions="CenterAndExpand"
+                                                      Padding="0,0,0,0" HeightRequest="20" WidthRequest="50"/>
                                                 </StackLayout>
                                             </StackLayout>
-                                            
-                                        </StackLayout>                                        
+
+                                        </StackLayout>
                                     </ViewCell>
                                 </DataTemplate>
                             </ListView.ItemTemplate>
@@ -60,8 +67,8 @@
                     </StackLayout>
                 </Frame>
             </StackLayout>
-            
+
         </StackLayout>
     </ContentPage.Content>
-   
+
 </ContentPage>

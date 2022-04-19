@@ -1,59 +1,74 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
-             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" xmlns:viewmodel="clr-namespace:customer_app.ViewModels"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+             xmlns:viewmodel="clr-namespace:customer_app.ViewModels"
+               Shell.NavBarIsVisible="False"
              x:Class="customer_app.Views.LoginPage">
+
     <ContentPage.BindingContext>
         <viewmodel:LoginViewModels/>
     </ContentPage.BindingContext>
     <ContentPage.Content>
         <StackLayout>
 
-            <Image Source=""/>
-            <StackLayout Orientation="Vertical" HorizontalOptions="Center">
-                <Label Text="Welcome back!" FontSize="Large" TextColor="black"/>
-                <Label Text="Login to your Account" TextColor="Gray"/>
-            </StackLayout>
-            <StackLayout Orientation="Vertical" Margin="15">
-                <Frame CornerRadius="15" Padding="0" WidthRequest="150" Margin="15">
-                    <Entry Text="{Binding Email}" Placeholder="Phone" />
-                </Frame>
-                <Frame CornerRadius="15" Padding="0" WidthRequest="150" Margin="15">
-                    <Entry Text="{Binding Password}" Placeholder="Password" IsPassword="True" />
-                </Frame>
-            </StackLayout>
-            <StackLayout HorizontalOptions="Center">
-                <Button Margin="20"
+            <StackLayout>
+                <StackLayout>
+                    <Image Source="Logo.png" VerticalOptions="Center" HorizontalOptions="Center"
+                   HeightRequest="150" WidthRequest="150" Margin="0,50,0,0"/>
+                    <StackLayout Orientation="Vertical" HorizontalOptions="Center">
+                        <Label Text="Welcome back!" FontSize="Large" TextColor="black"/>
+                        <Label Text="Login to your Account" TextColor="Gray"/>
+                    </StackLayout>
+                    <StackLayout Orientation="Vertical" Margin="30">
+                        <Frame CornerRadius="15" Padding="0" WidthRequest="150">
+                            <Entry Text="{Binding Email}" Placeholder="Email" FontFamily="Segoe UI"/>
+                        </Frame>
+                        <Frame CornerRadius="15" Padding="0" WidthRequest="150" Margin="0,15,0,0" >
+                            <Entry Text="{Binding Password}" Placeholder="Password" FontFamily="Segoe UI" IsPassword="True" />
+                        </Frame>
+                        <Label Margin="0,15,0,0">
+                            <Label.FormattedText>
+                                <FormattedString>
+                                    <Span Text="Forget Password ?"
+                              TextColor="#603D8F" >
+                                        <Span.GestureRecognizers>
+                                            <TapGestureRecognizer  Command="{Binding ResetPasswordCommad}"/>
+                                        </Span.GestureRecognizers>
+                                    </Span>
+                                </FormattedString>
+                            </Label.FormattedText>
+                        </Label>
+                    </StackLayout>
+                    <Button Margin="20"
                 WidthRequest="207"
                 HeightRequest="46"
                 Text="Sign in"
                 TextColor="#FFFFFF"
-                FontAttributes="Bold"
                 BackgroundColor="#603D8F"
-                CornerRadius="20"
-                Font="Segoe UI"
+                CornerRadius="20"  FontFamily="Segoe UI"
                 Command="{Binding SubmitCommand}"
-                FontSize="16">
-
-                </Button>
-                <Button BackgroundColor="White"  Command="{Binding .}" BorderColor="White" TextColor="#603D8F" Text="Forget Password?"/>
-                <Label Text="Dont have an account ?" HorizontalOptions="Center"  VerticalOptions="Center"/>
-            </StackLayout>
-            <StackLayout HorizontalOptions="Center">
-
-                <Button 
-                       Margin="20"
-                WidthRequest="207"
-                HeightRequest="46"
-                Text="Sign Up here"
-                TextColor="#FFFFFF"
-        
-                FontAttributes="Bold"
-                BackgroundColor="#603D8F"
-                CornerRadius="20"
-                Font="Segoe UI"
-                Clicked="SignUp" 
-                FontSize="16"></Button>
+                FontSize="16"
+                HorizontalOptions="CenterAndExpand"/>
+                    <StackLayout Orientation="Vertical" HorizontalOptions="Center">
+                        <StackLayout Orientation="Horizontal">
+                            <Label Text="Dont have an account ?" HorizontalOptions="Center" VerticalOptions="Center"/>
+                            <Label>
+                                <Label.FormattedText>
+                                    <FormattedString>
+                                        <Span Text="Sign Up"
+                                      TextColor="#603D8F" >
+                                            <Span.GestureRecognizers>
+                                                <TapGestureRecognizer Tapped="TapGestureRecognizer_Tapped_1"/>
+                                            </Span.GestureRecognizers>
+                                        </Span>
+                                    </FormattedString>
+                                </Label.FormattedText>
+                            </Label>
+                        </StackLayout>
+                    </StackLayout>
+                </StackLayout>
             </StackLayout>
         </StackLayout>
+
     </ContentPage.Content>
 </ContentPage>

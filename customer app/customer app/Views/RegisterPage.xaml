@@ -24,10 +24,8 @@
                 <Frame CornerRadius="15" Margin="25,10,25,10" HasShadow="True" HeightRequest="40" Padding="0">
                     <Entry Text="{Binding password }" Placeholder="Password" IsPassword="True"/>
                 </Frame>
-                <Frame CornerRadius="15" Margin="25,10,25,10" HasShadow="True" HeightRequest="40" Padding="0">
-                    <Entry  Placeholder="Confirm Password"  IsPassword="True"/>
-                </Frame>
-               
+
+
                 <Frame CornerRadius="15" Margin="25,10,25,10" HasShadow="True" HeightRequest="40" Padding="0">
                     <Entry Text="{Binding location }" Placeholder="Location"/>
                 </Frame>

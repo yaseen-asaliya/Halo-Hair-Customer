@@ -10049,12 +10049,13 @@ public final class R {
     public static final int notification_tile_bg=0x7f0700c7;
     public static final int notify_panel_notification_icon_bg=0x7f0700c8;
     public static final int preference_list_divider_material=0x7f0700c9;
-    public static final int search=0x7f0700ca;
-    public static final int test_custom_background=0x7f0700cb;
-    public static final int tooltip_frame_dark=0x7f0700cc;
-    public static final int tooltip_frame_light=0x7f0700cd;
-    public static final int user=0x7f0700ce;
-    public static final int xamarin_logo=0x7f0700cf;
+    public static final int profile=0x7f0700ca;
+    public static final int search=0x7f0700cb;
+    public static final int test_custom_background=0x7f0700cc;
+    public static final int tooltip_frame_dark=0x7f0700cd;
+    public static final int tooltip_frame_light=0x7f0700ce;
+    public static final int user=0x7f0700cf;
+    public static final int xamarin_logo=0x7f0700d0;
   }
   public static final class id {
     public static final int ALT=0x7f080000;

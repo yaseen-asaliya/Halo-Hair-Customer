@@ -17,14 +17,12 @@ namespace customer_app.Views
             InitializeComponent();
         }
 
-        /*
         private void aboutbutton_Clicked(object sender, EventArgs e)
         {
             BoxAbout.IsVisible = true;
             aboutview.IsVisible = true;
             Settingsview.IsVisible = false;
             BoxSettings.IsVisible = false;
-
         }
 
         private void settingsbutton_Clicked(object sender, EventArgs e)
@@ -34,7 +32,6 @@ namespace customer_app.Views
             aboutview.IsVisible = false;
             BoxAbout.IsVisible = false;
         }
-        */
         private void Button_Clicked(object sender, EventArgs e)
         {
             Navigation.PushModalAsync(new ProfileSettingsPage());

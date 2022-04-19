@@ -15,12 +15,20 @@
             <Frame CornerRadius="10" Margin="10">
                 <StackLayout>
                     <controls:Calendar  SelectedDate="{Binding CalendarSelectedDate, Mode=TwoWay}" 
-                            x:Name="calendar"  HorizontalOptions="Center"
-                            VerticalOptions="Center" WidthRequest="371" HeightRequest="340" BackgroundColor="White"
-                            BorderColor="White" SelectedBackgroundColor="#603D8F" SelectedTextColor="White"
-                            SelectedBorderColor="#603D8F" TitleRightArrowTextColor= "Black"
-                            TitleLeftArrowTextColor="Black" TitleLabelFontFamily="" TitleLabelFontSize="20"
-                            />
+                                        x:Name="calendar"  
+                                        HorizontalOptions="Center"
+                                        VerticalOptions="Center"
+                                        WidthRequest="371"
+                                        HeightRequest="340"
+                                        BackgroundColor="White"
+                                        BorderColor="white"
+                                        SelectedBackgroundColor="#603D8F" 
+                                        SelectedTextColor="White"
+                                        SelectedBorderColor="#603D8F" 
+                                        TitleRightArrowTextColor= "Black"
+                                        TitleLeftArrowTextColor="Black" 
+                                        TitleLabelFontFamily="" 
+                                        TitleLabelFontSize="20"/>
                 </StackLayout>
             </Frame>
 
@@ -32,30 +40,25 @@
                         <Grid>
                             <Grid.ColumnDefinitions>
                                 <ColumnDefinition Width="0.5*"/>
-                                <ColumnDefinition Width="0.5*"/>
-                                <ColumnDefinition Width="0.5*"/>
-
                             </Grid.ColumnDefinitions>
                             <Grid.RowDefinitions>
                                 <RowDefinition Height="50" />
                             </Grid.RowDefinitions>
 
-                            <Button Grid.Column="0" x:Name="buttonTime" 
-                                        Command="{Binding Path=BindingContext.TimesCommand,Source={x:Reference Times}}"
-                                                                CommandParameter="{Binding .}"
+                            <Button Grid.Column="0" 
+                                    Command="{Binding Path=BindingContext.TimesCommand,Source={x:Reference Times}}"
+                                    CommandParameter="{Binding .}"
                                     Text="{Binding time}" 
-                                    HorizontalOptions="Center" 
-                                    Margin="10"
-                                    BackgroundColor="Purple"/>
-
+                                    HorizontalOptions="Center"
+                                    Margin="3"
+                                    BackgroundColor="Purple"/> 
                         </Grid>
                     </DataTemplate>
                 </CollectionView.ItemTemplate>
             </CollectionView>
 
 
-
-            <Button Text="Book an appointment" Margin="20" Command="{Binding appointment}"/>
+            <cont:ButtonComponent Margin="30" NameButton="Book an appointment" CommandParameter="{Binding appointment}"/>
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>

@@ -9,55 +9,65 @@
     <ContentPage.Content>
         <StackLayout>
             <cont:navigationComponent Titles="Search Services"/>
-            <cont:SearchBarComponent Margin="10,10,0,30"/>
-            <cont:ServicesList Service_Name="Services" Prices="Prices" Time_Needed="Time_Needed"/>
+            <cont:SearchBarComponent Margin="10"/>
 
             <StackLayout HeightRequest="500">
                 <Frame Margin="20,0,20,10" CornerRadius="20" BorderColor="Purple">
-                    <ListView ItemsSource="{Binding FilltedServices}"  >
-                        <ListView.ItemTemplate>
+                    <CollectionView ItemsSource="{Binding FilltedServices}"  >
+                        <CollectionView.ItemTemplate>
                             <DataTemplate>
-                                <ViewCell>
-                                    <StackLayout>
-                                        <Line Margin="0,5,0,5"/>
-                                        <StackLayout Orientation="Horizontal" >
-                                            <StackLayout>
-                                                <Frame CornerRadius="100" 
+                                <StackLayout>
+                                    <Line Stroke="black" Margin="10"/>
+                                    <StackLayout Orientation="Horizontal" >
+                                        <StackLayout>
+                                            <Frame CornerRadius="100" 
                                                    HeightRequest="50"
                                                    WidthRequest="50"
                                                    HorizontalOptions="Center"
                                                    Padding="0"
                                                    IsClippedToBounds="True">
-                                                    <Image Source="" 
+                                                <Image Source="{Binding Image}" 
                                                        HorizontalOptions="Center"
                                                        VerticalOptions="Center" />
-                                                </Frame>
-                                            </StackLayout>
-                                            <StackLayout Orientation="Vertical" HorizontalOptions="StartAndExpand" >
-                                                <Label Text="{Binding Service_Name}" VerticalOptions="StartAndExpand" FontAttributes="Bold"/>
-                                                <StackLayout Orientation="Horizontal">
-                                                    <Label Text="{Binding Prices}" VerticalOptions="CenterAndExpand" Margin="10,5,0,0"/>
-                                                    <Label Text="₪" Margin="0,5,0,0" FontSize="12"/>
-                                                </StackLayout>
-                                                <StackLayout Orientation="Horizontal">
-                                                    <Label Text="{Binding Time_Needed}" VerticalOptions="EndAndExpand" Margin="10,5,0,0"/>
-                                                    <Label Text="min" Margin="0,5,0,0" FontSize="12"/>
-                                                </StackLayout>
-                                            </StackLayout>
-                                            <StackLayout>
-                                                <input:CheckBox Text="{Binding Name}" Type="Check" Color="White" BoxBackgroundColor="Black" TextColor="White" 
+                                            </Frame>
+                                        </StackLayout>
 
-                                             CheckChanged="checkbox_CheckChanged" BindingContext="{Binding .}"/>
+                                        <StackLayout Orientation="Vertical" HorizontalOptions="StartAndExpand">
+                                            <Label Text="{Binding Service_Name}" VerticalOptions="StartAndExpand" FontAttributes="Bold"/>
+                                            <StackLayout Orientation="Horizontal">
+                                                <Label Text="{Binding Prices}" VerticalOptions="CenterAndExpand" Margin="10,5,0,0"/>
+                                                <Label Text="₪" Margin="0,5,0,0" FontSize="12"/>
+                                            </StackLayout>
+                                            <StackLayout Orientation="Horizontal">
+                                                <Label Text="{Binding Time_Needed}" VerticalOptions="EndAndExpand" Margin="10,5,0,0"/>
+                                                <Label Text="min" Margin="0,5,0,0" FontSize="12"/>
                                             </StackLayout>
                                         </StackLayout>
+                                        <StackLayout VerticalOptions="CenterAndExpand">
+                                            <input:CheckBox Text="{Binding Name}"
+                                                                Type="Check" Color="White" 
+                                                                BoxBackgroundColor="White" 
+                                                                TextColor="White" 
+                                                                CheckChanged="checkbox_CheckChanged" 
+                                                                BindingContext="{Binding .}"/>
+                                        </StackLayout>
                                     </StackLayout>
-                                </ViewCell>
+                                </StackLayout>
                             </DataTemplate>
-                        </ListView.ItemTemplate>
-                    </ListView>
+                        </CollectionView.ItemTemplate>
+                    </CollectionView>
                 </Frame>
             </StackLayout>
-            <Button Clicked="Button_ClickedAsync" Text="Next"></Button>
+
+            <Button Clicked="Button_ClickedAsync"
+                    Text="Next"
+                    TextColor="#FFFFFF"
+                    FontAttributes="Bold"
+                    BackgroundColor="#603D8F"
+                    CornerRadius="20"
+                    Font="Segoe UI"
+                    Margin="230,10,20,10"
+                    FontSize="16" />
 
         </StackLayout>
     </ContentPage.Content>

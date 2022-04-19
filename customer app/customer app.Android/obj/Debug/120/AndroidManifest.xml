@@ -6,11 +6,11 @@
     the contents are regenerated.
     -->
 <manifest xmlns:android="http://schemas.android.com/apk/res/android" android:versionCode="1" android:versionName="1.0" package="com.example.halohair" android:installLocation="auto">
-  <uses-sdk android:minSdkVersion="21" android:targetSdkVersion="31" />
+  <uses-sdk android:minSdkVersion="21" android:targetSdkVersion="24" />
   <uses-permission android:name="android.permission.INTERNET" />
   <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
   <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
-  <application android:theme="@style/MainTheme" android:label="Barbar_Salon" android:name="android.app.Application" android:allowBackup="true" android:icon="@mipmap/icon" android:debuggable="true" android:extractNativeLibs="true">
+  <application android:theme="@style/MainTheme" android:label="Customer_salon" android:name="android.app.Application" android:allowBackup="true" android:icon="@mipmap/icon" android:debuggable="true" android:extractNativeLibs="true">
     <uses-library android:name="org.apache.http.legacy" android:required="false" />
     <activity android:configChanges="orientation|smallestScreenSize|screenLayout|screenSize|uiMode" android:icon="@mipmap/icon" android:label="customer_app" android:theme="@style/MainTheme" android:name="crc64ad7f2d9c082bd7f3.MainActivity" android:exported="true">
       <intent-filter>

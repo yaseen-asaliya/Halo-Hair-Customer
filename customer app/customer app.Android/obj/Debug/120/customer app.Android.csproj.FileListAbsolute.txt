@@ -2265,3 +2265,4 @@ C:\Users\MT2X\Documents\GitHub\Halo-Hair---customer\customer app\customer app.An
 C:\Users\MT2X\Documents\GitHub\Halo-Hair---customer\customer app\customer app.Android\obj\Debug\120\android\src\crc64dbf290ea7e69bd26\EmptyEntryRenderer.java
 C:\Users\MT2X\Documents\GitHub\Halo-Hair---customer\customer app\customer app.Android\obj\Debug\120\android\src\crc64dbf290ea7e69bd26\NewIconViewRenderer.java
 C:\Users\MT2X\Documents\GitHub\Halo-Hair---customer\customer app\customer app.Android\obj\Debug\120\android\src\crc64dbf290ea7e69bd26\StatefulStackLayoutRenderer.java
+C:\Users\MT2X\Documents\GitHub\Halo-Hair---customer\customer app\customer app.Android\obj\Debug\120\res\drawable\profile.png

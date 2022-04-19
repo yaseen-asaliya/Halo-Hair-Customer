@@ -111,12 +111,7 @@ namespace customer_app.ViewModels
                 times.Add(timeObj);
             }
         }
-
-
-
-
-
-
+        
         public ICommand TimesCommand { get; }
         private string selectedTime { get; set; }
 
@@ -133,7 +128,7 @@ namespace customer_app.ViewModels
                 selectedTime = time.ToString();
             }
 
-
+            
         }
 
 

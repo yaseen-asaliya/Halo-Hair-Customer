@@ -26,5 +26,7 @@ namespace customer_app.Views
         }
 
         public ObservableCollection<DataSalon> SelectedList { get; }
+
+       
     }
 }

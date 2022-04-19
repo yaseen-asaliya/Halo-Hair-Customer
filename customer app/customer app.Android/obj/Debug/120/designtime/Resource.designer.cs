@@ -25112,22 +25112,25 @@ namespace customer_app.Droid
 			public const int preference_list_divider_material = 2131165385;
 			
 			// aapt resource value: 0x7F0700CA
-			public const int search = 2131165386;
+			public const int profile = 2131165386;
 			
 			// aapt resource value: 0x7F0700CB
-			public const int test_custom_background = 2131165387;
+			public const int search = 2131165387;
 			
 			// aapt resource value: 0x7F0700CC
-			public const int tooltip_frame_dark = 2131165388;
+			public const int test_custom_background = 2131165388;
 			
 			// aapt resource value: 0x7F0700CD
-			public const int tooltip_frame_light = 2131165389;
+			public const int tooltip_frame_dark = 2131165389;
 			
 			// aapt resource value: 0x7F0700CE
-			public const int user = 2131165390;
+			public const int tooltip_frame_light = 2131165390;
 			
 			// aapt resource value: 0x7F0700CF
-			public const int xamarin_logo = 2131165391;
+			public const int user = 2131165391;
+			
+			// aapt resource value: 0x7F0700D0
+			public const int xamarin_logo = 2131165392;
 			
 			static Drawable()
 			{

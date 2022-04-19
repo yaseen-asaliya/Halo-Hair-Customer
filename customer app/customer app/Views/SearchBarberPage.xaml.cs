@@ -17,19 +17,6 @@ namespace customer_app.Views
         {
             InitializeComponent();
         }
-        public async void OnItemSelected(object sender, ItemTappedEventArgs args)
-        {
-            var solan = args.Item as DataSalon;
-            if (solan != null)
-            {
-                await Navigation.PushModalAsync(new SalonInDetailsPage(solan));
-                SearchBarber.SelectedItem = null;
-            }
-        }
 
-        private async void ImageButton_Clicked(object sender, EventArgs e)
-        {
-                     
-        }
     }
 }

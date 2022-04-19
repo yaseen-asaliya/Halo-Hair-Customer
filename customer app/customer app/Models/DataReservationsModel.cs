@@ -8,8 +8,11 @@ namespace customer_app.Models
     {
         public int Price { get; set; }
         public string ListOfService { get; set; }
-        public string SalonName { get; set; }
-        public string Time { get; set; }
+        public string NameSolan { get; set; }
+        public string time { get; set; }
+        public string AccessToken_User { get; set; }
+
+        public int ID_History { get; set; }
 
     }
 }

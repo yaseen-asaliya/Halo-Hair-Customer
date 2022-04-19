@@ -17,9 +17,11 @@ namespace customer_app.Views
             InitializeComponent();
         }
 
-        private void SignUp(object sender, EventArgs e)
+
+
+        private void TapGestureRecognizer_Tapped_1(object sender, EventArgs e)
         {
-            Navigation.PushModalAsync(new RegisterPage()); 
+            Navigation.PushModalAsync(new RegisterPage());
         }
     }
 }

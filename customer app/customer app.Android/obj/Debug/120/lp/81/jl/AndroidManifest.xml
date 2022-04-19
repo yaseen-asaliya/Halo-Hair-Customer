@@ -15,10 +15,11 @@
      limitations under the License.
 -->
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.google.android.gms.safetynet" >
+    package="com.google.android.gms.measurement.sdk" >
 
-    <uses-sdk android:minSdkVersion="14" />
+    <uses-sdk android:minSdkVersion="16" />
 
-    <application />
+    <application>
+    </application>
 
 </manifest>

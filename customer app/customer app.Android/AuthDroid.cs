@@ -25,7 +25,10 @@ namespace customer_app.Droid
             return user != null;
 
         }
-
+        public async Task ResetPassword(string Email)
+        {
+            await FirebaseAuth.Instance.SendPasswordResetEmailAsync(Email);
+        }
         public bool IsSigOut()
         {
             try

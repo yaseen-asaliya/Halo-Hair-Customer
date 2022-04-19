@@ -5,7 +5,7 @@
              xmlns:cont="clr-namespace:customer_app.Views.Components"
              xmlns:viewmodel="clr-namespace:customer_app.ViewModels"
              x:Class="customer_app.Views.HistoryPage">
-    
+
     <ContentPage.BindingContext>
         <viewmodel:HistoryViewModels/>
     </ContentPage.BindingContext>
@@ -15,52 +15,54 @@
             <StackLayout HeightRequest="600">
                 <Frame Margin="20,10,20,10" CornerRadius="20" BorderColor="Purple">
                     <StackLayout>
-                        <ListView x:Name="History" ItemsSource="{Binding History}" HasUnevenRows="True" >
-                            <ListView.ItemTemplate>
-                                <DataTemplate> 
-                                    <ViewCell>
-                                        <StackLayout>
-                                            <Line Margin="0,5,0,5"/>
-                                            <StackLayout Orientation="Horizontal">
-                                                <StackLayout>
-                                                    <Frame CornerRadius="100" 
+                        <CollectionView x:Name="History" ItemsSource="{Binding FilltedHistory}"  >
+                            <CollectionView.ItemTemplate>
+                                <DataTemplate>
+                                    <StackLayout>
+                                        <Line Margin="0,5,0,5"/>
+                                        <StackLayout Orientation="Horizontal">
+                                            <StackLayout>
+                                                <Frame CornerRadius="100" 
                                                    HeightRequest="50"
                                                    WidthRequest="50"
                                                    HorizontalOptions="Center"
                                                    Padding="0" 
                                                    IsClippedToBounds="True">
-                                                        <Image Source="monkey.jpg" 
+                                                    <Image Source="monkey.jpg" 
                                                        HorizontalOptions="Center"
                                                        VerticalOptions="Center" />
-                                                    </Frame>
-                                                </StackLayout>
-                                                <StackLayout Orientation="Vertical" HorizontalOptions="StartAndExpand" >
-                                                    <Label Text="{Binding SalonName}" VerticalOptions="EndAndExpand" FontAttributes="Bold"/>
-                                                    <StackLayout Margin="10,0">
-                                                        <StackLayout Orientation="Horizontal">
-                                                            <Label Text="{Binding Price}" VerticalOptions="CenterAndExpand"/>
-                                                            <Label Text="₪"/>
-                                                        </StackLayout>
-                                                        <Label Text="{Binding Time}"/>
-                                                        <Label Text="Services : " FontAttributes="Bold"/>
-                                                        <Label Text="{Binding ListOfService}" Margin="10,0"/>                                                        
-                                                    </StackLayout>                                                    
-                                                </StackLayout>
-                                                <StackLayout VerticalOptions="EndAndExpand">
-                                                    <Button BackgroundColor="red" Text="Delete" Margin="10" Scale="0.8"/>
+                                                </Frame>
+                                            </StackLayout>
+                                            <StackLayout Orientation="Vertical" HorizontalOptions="StartAndExpand" >
+                                                <Label Text="{Binding NameSolan}" VerticalOptions="EndAndExpand" FontAttributes="Bold"/>
+                                                <StackLayout Margin="10,0">
+                                                    <StackLayout Orientation="Horizontal">
+                                                        <Label Text="{Binding Price}" VerticalOptions="CenterAndExpand"/>
+                                                        <Label Text="₪"/>
+                                                    </StackLayout>
+                                                    <Label Text="{Binding time}"/>
+                                                    <Label Text="Services : " FontAttributes="Bold"/>
+                                                    <Label Text="{Binding ListOfService}" Margin="10,0"/>
                                                 </StackLayout>
                                             </StackLayout>
+                                            <StackLayout VerticalOptions="EndAndExpand">
+                                                <Button Text="Delete" 
+                                                                Command="{Binding Path=BindingContext.DeleteCommand,Source={x:Reference History}}"
+                                                                CommandParameter="{Binding .}"
+                                                                BackgroundColor="White"
+                                                  TextColor="Red" BorderColor="White" HorizontalOptions="CenterAndExpand"
+                                                      Padding="0,0,0,0" HeightRequest="20" WidthRequest="50"/>
+                                            </StackLayout>
                                         </StackLayout>
-                                    </ViewCell>
+                                    </StackLayout>
+
                                 </DataTemplate>
-                            </ListView.ItemTemplate>
-                        </ListView>
+                            </CollectionView.ItemTemplate>
+                        </CollectionView>
                     </StackLayout>
                 </Frame>
             </StackLayout>
-            <Button Text="service" Clicked="Button_Clicked"/>
-            <Button Text="search Barber" Clicked="loadBarbers" />
-            <Button Text="search time" Clicked="LoadTime" />
+
 
         </StackLayout>
     </ContentPage.Content>

@@ -2,19 +2,63 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="customer_app.Views.SearchTimePage"
+             xmlns:viewmodels="clr-namespace:customer_app.ViewModels"
              xmlns:xc="clr-namespace:XCalendar;assembly=XCalendar" 
-             xmlns:cont="clr-namespace:customer_app.Views.Components">
+             xmlns:cont="clr-namespace:customer_app.Views.Components" xmlns:controls="clr-namespace:XamForms.Controls;assembly=XamForms.Controls.Calendar">
+    <ContentPage.BindingContext>
+        <viewmodels:SearchTimeViewModels/>
+    </ContentPage.BindingContext>
 
     <ContentPage.Content>
         <StackLayout>
             <cont:navigationComponent Titles="Search Times"/>
             <Frame CornerRadius="10" Margin="10">
-                <xc:CalendarView NavigationBackgroundColor="Purple" Margin="0"/>
+                <StackLayout>
+                    <controls:Calendar  SelectedDate="{Binding CalendarSelectedDate, Mode=TwoWay}" 
+                                        x:Name="calendar"  
+                                        HorizontalOptions="Center"
+                                        VerticalOptions="Center"
+                                        WidthRequest="371"
+                                        HeightRequest="340"
+                                        BackgroundColor="White"
+                                        BorderColor="white"
+                                        SelectedBackgroundColor="#603D8F" 
+                                        SelectedTextColor="White"
+                                        SelectedBorderColor="#603D8F" 
+                                        TitleRightArrowTextColor= "Black"
+                                        TitleLeftArrowTextColor="Black" 
+                                        TitleLabelFontFamily="" 
+                                        TitleLabelFontSize="20"/>
+                </StackLayout>
             </Frame>
 
-            <StackLayout x:Name="MyButtons" Margin="10" Orientation="Horizontal"/>
 
-            <cont:ButtonComponent NameButton="Book an appointment" Margin="20"/>
+            <CollectionView x:Name="Times" ItemsSource="{Binding times}" 
+                HeightRequest="200">
+                <CollectionView.ItemTemplate>
+                    <DataTemplate>
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="0.5*"/>
+                            </Grid.ColumnDefinitions>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="50" />
+                            </Grid.RowDefinitions>
+
+                            <Button Grid.Column="0" 
+                                    Command="{Binding Path=BindingContext.TimesCommand,Source={x:Reference Times}}"
+                                    CommandParameter="{Binding .}"
+                                    Text="{Binding time}" 
+                                    HorizontalOptions="Center"
+                                    Margin="3"
+                                    BackgroundColor="Purple"/> 
+                        </Grid>
+                    </DataTemplate>
+                </CollectionView.ItemTemplate>
+            </CollectionView>
+
+
+            <cont:ButtonComponent Margin="30" NameButton="Book an appointment" CommandParameter="{Binding appointment}"/>
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>

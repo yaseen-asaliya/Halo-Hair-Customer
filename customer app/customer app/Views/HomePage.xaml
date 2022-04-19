@@ -1,9 +1,12 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
-             xmlns:viewmodel="clr-namespace:customer_app.Views.Components"
+             xmlns:viewmodel="clr-namespace:customer_app.Views.Components" xmlns:viewmodels="clr-namespace:customer_app.ViewModels"
              Shell.NavBarIsVisible="False"
              x:Class="customer_app.Views.HomePage">
+    <ContentPage.BindingContext>
+        <viewmodels:HomePageViewModels/>
+    </ContentPage.BindingContext>
     <ContentPage.Content>
         <StackLayout>
             <StackLayout Orientation="Horizontal" Margin="0,10">
@@ -13,8 +16,8 @@
                     <Image Source="Logo.png"/>
                 </Grid>
 
-                <Label Text="Hi," FontSize="20" Margin="60,30,0,0"/>
-                <Label Text="Yaseen" FontSize="20" Margin="0,30"/>
+                <Label Text="Hi," FontSize="20" Margin="100,30,0,0"/>
+                <Label Text="{Binding NameCustomer}" FontSize="20" Margin="0,30"/>
 
                 <Grid  
                       HorizontalOptions="EndAndExpand">
@@ -25,12 +28,11 @@
                                  HeightRequest="10"/>
                 </Grid>
             </StackLayout>
-            <Label Text="Search for barbers or services" FontSize="20" Margin="10" Font="Segoe UI"/>
-            <Grid>
-                <ImageButton Source="search.png" 
-                             BackgroundColor="White"
-                             Clicked="Button_Clicked"/>
-            </Grid>
+            <Label Text="Search for barbers or services" FontSize="22" Margin="10" Font="Segoe UI"/>
+   
+            <!--<viewmodel:SearchBarComponent/>-->
+            <ImageButton Margin="50,0,50,0" Source="search.png" Clicked="Button_Clicked"/>
+           <!-- <Button Clicked="Button_Clicked" Text="app"></Button> -->
 
             <StackLayout Margin="0,50,0,0">
                 <viewmodel:AsdAndOffersComponent/>
@@ -42,6 +44,6 @@
                     <Label Text="10h" FontSize="18"/>
                 </StackLayout>
             </Frame>
-        </StackLayout> 
+        </StackLayout>
     </ContentPage.Content>
 </ContentPage> 

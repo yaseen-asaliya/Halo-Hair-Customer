@@ -118,7 +118,7 @@
             },
             "Syncfusion.Xamarin.SfListView": {
               "target": "Package",
-              "version": "[20.1.0.47, )"
+              "version": "[20.1.0.48, )"
             },
             "XamForms.Controls.Calendar": {
               "target": "Package",
@@ -131,6 +131,10 @@
             "Xamarin.Forms": {
               "target": "Package",
               "version": "[5.0.0.2401, )"
+            },
+            "Xamarin.Forms.InputKit": {
+              "target": "Package",
+              "version": "[3.7.2, )"
             }
           },
           "imports": [

@@ -32,9 +32,9 @@ namespace customer_app.ViewModels
 
         }
 
-        private async void AddUser(string name, long phone, string ulr,string location)
+        private async void AddUser(string name, long phone, string ulr, string location)
         {
-            await firebase.AddNewUser(name, phone, ulr,location);
+            await firebase.AddNewUser(name, phone, ulr, location);
         }
 
 
@@ -44,17 +44,23 @@ namespace customer_app.ViewModels
             try
             {
                 string ulr = await auth.SignUpWithEmailAndPassword(email, password);
-                Console.WriteLine(ulr);
 
                 if (null != ulr)
                 {
-                    AddUser(name, phone, ulr,location);
+                    AddUser(name, phone, ulr, location);
+                    await Application.Current.MainPage.DisplayAlert("Successful", "Register User", "ok");
+
                 }
 
+                else if (ulr == null)
+                {
+                    await Application.Current.MainPage.DisplayAlert("Failed", "Email already exists", "ok");
+                }
             }
             catch (Exception ex)
             {
-                Console.WriteLine("The Exceptions : " + ex);
+                await Application.Current.MainPage.DisplayAlert("Failed", "Register User Try agin " + ex.Message, "ok");
+
             }
         }
 

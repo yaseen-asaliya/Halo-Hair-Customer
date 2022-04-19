@@ -2142,11 +2142,6 @@ C:\Users\abood\Desktop\Customer\customer app\customer app.Android\obj\Debug\120\
 C:\Users\abood\Desktop\Customer\customer app\customer app.Android\obj\Debug\120\android\src\mono\com\google\firebase\FirebaseApp_BackgroundStateChangeListenerImplementor.java
 C:\Users\abood\Desktop\Customer\customer app\customer app.Android\obj\Debug\120\android\src\mono\com\google\firebase\installations\internal\FidListenerImplementor.java
 C:\Users\abood\Desktop\Customer\customer app\customer app.Android\obj\Debug\120\android\src\com\example\halohair\R.java
-C:\Users\MT2X\Documents\GitHub\Halo-Hair---customer\customer app\customer app.Android\bin\Debug\com.example.halohair.apk
-C:\Users\MT2X\Documents\GitHub\Halo-Hair---customer\customer app\customer app.Android\bin\Debug\com.example.halohair.aab
-C:\Users\MT2X\Documents\GitHub\Halo-Hair---customer\customer app\customer app.Android\bin\Debug\com.example.halohair-Signed.aab
-C:\Users\MT2X\Documents\GitHub\Halo-Hair---customer\customer app\customer app.Android\bin\Debug\com.example.halohair-Signed.apk
-C:\Users\MT2X\Documents\GitHub\Halo-Hair---customer\customer app\customer app.Android\bin\Debug\com.example.halohair-Signed.apk.idsig
 C:\Users\MT2X\Documents\GitHub\Halo-Hair---customer\customer app\customer app.Android\obj\Debug\120\googsvcsjson\values\goog_svcs_json.xml
 C:\Users\MT2X\Documents\GitHub\Halo-Hair---customer\customer app\customer app.Android\obj\Debug\120\0C2810DE9D2DB165-files.cache
 C:\Users\MT2X\Documents\GitHub\Halo-Hair---customer\customer app\customer app.Android\obj\Debug\120\lp\74\jl\files.cache
@@ -2162,9 +2157,6 @@ C:\Users\MT2X\Documents\GitHub\Halo-Hair---customer\customer app\customer app.An
 C:\Users\MT2X\Documents\GitHub\Halo-Hair---customer\customer app\customer app.Android\obj\Debug\120\lp\124\jl\files.cache
 C:\Users\MT2X\Documents\GitHub\Halo-Hair---customer\customer app\customer app.Android\obj\Debug\120\lp\125\jl\files.cache
 C:\Users\MT2X\Documents\GitHub\Halo-Hair---customer\customer app\customer app.Android\obj\Debug\120\lp\131\jl\files.cache
-C:\Users\MT2X\Documents\GitHub\Halo-Hair---customer\customer app\customer app.Android\obj\Debug\120\android\bin\com.example.halohair.apk
-C:\Users\MT2X\Documents\GitHub\Halo-Hair---customer\customer app\customer app.Android\obj\Debug\120\android\bin\com.example.halohair.aab
-C:\Users\MT2X\Documents\GitHub\Halo-Hair---customer\customer app\customer app.Android\obj\Debug\120\android\bin\com.example.halohair.apks
 C:\Users\MT2X\Documents\GitHub\Halo-Hair---customer\customer app\customer app.Android\obj\Debug\120\android\assets\Microsoft.Bcl.AsyncInterfaces.dll
 C:\Users\MT2X\Documents\GitHub\Halo-Hair---customer\customer app\customer app.Android\obj\Debug\120\android\assets\System.Buffers.dll
 C:\Users\MT2X\Documents\GitHub\Halo-Hair---customer\customer app\customer app.Android\obj\Debug\120\android\assets\System.Memory.dll
@@ -2266,3 +2258,12 @@ C:\Users\MT2X\Documents\GitHub\Halo-Hair---customer\customer app\customer app.An
 C:\Users\MT2X\Documents\GitHub\Halo-Hair---customer\customer app\customer app.Android\obj\Debug\120\android\src\crc64dbf290ea7e69bd26\NewIconViewRenderer.java
 C:\Users\MT2X\Documents\GitHub\Halo-Hair---customer\customer app\customer app.Android\obj\Debug\120\android\src\crc64dbf290ea7e69bd26\StatefulStackLayoutRenderer.java
 C:\Users\MT2X\Documents\GitHub\Halo-Hair---customer\customer app\customer app.Android\obj\Debug\120\res\drawable\profile.png
+C:\Users\MT2X\Documents\GitHub\Halo-Hair---customer\customer app\customer app.Android\bin\Debug\com.halohair.apk
+C:\Users\MT2X\Documents\GitHub\Halo-Hair---customer\customer app\customer app.Android\bin\Debug\com.halohair.aab
+C:\Users\MT2X\Documents\GitHub\Halo-Hair---customer\customer app\customer app.Android\bin\Debug\com.halohair-Signed.aab
+C:\Users\MT2X\Documents\GitHub\Halo-Hair---customer\customer app\customer app.Android\bin\Debug\com.halohair-Signed.apk
+C:\Users\MT2X\Documents\GitHub\Halo-Hair---customer\customer app\customer app.Android\bin\Debug\com.halohair-Signed.apk.idsig
+C:\Users\MT2X\Documents\GitHub\Halo-Hair---customer\customer app\customer app.Android\obj\Debug\120\android\bin\com.halohair.apk
+C:\Users\MT2X\Documents\GitHub\Halo-Hair---customer\customer app\customer app.Android\obj\Debug\120\android\bin\com.halohair.aab
+C:\Users\MT2X\Documents\GitHub\Halo-Hair---customer\customer app\customer app.Android\obj\Debug\120\android\bin\com.halohair.apks
+C:\Users\MT2X\Documents\GitHub\Halo-Hair---customer\customer app\customer app.Android\obj\Debug\120\android\src\com\halohair\R.java

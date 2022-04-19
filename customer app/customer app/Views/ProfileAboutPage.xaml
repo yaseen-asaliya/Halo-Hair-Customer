@@ -3,6 +3,7 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
              xmlns:viewmodels="clr-namespace:customer_app.ViewModels"
              xmlns:comp="clr-namespace:customer_app.Views.Components"
+             Shell.NavBarIsVisible="False"
              x:Class="customer_app.Views.ProfileAboutPage">
     <ContentPage.BindingContext>
         <viewmodels:ProfileAboutViewModels/>
@@ -39,8 +40,8 @@
                                      HorizontalOptions="CenterAndExpand" IsVisible="False" />
                         </StackLayout>
                     </StackLayout>
-                    <StackLayout x:Name="aboutview" Orientation="Vertical" Padding="0,40,0,0" IsVisible="True" HeightRequest="300" >
-                        <ListView x:Name="MyServices" HasUnevenRows="True" ItemsSource="{Binding Myprofile}">
+                    <StackLayout x:Name="aboutview" Orientation="Vertical" Padding="0,40,0,0" IsVisible="True" HeightRequest="350" >
+                        <ListView x:Name="MyServices" HasUnevenRows="True"   ItemsSource="{Binding Myprofile}">
                             <ListView.ItemTemplate>
                                 <DataTemplate>
                                     <ViewCell>
@@ -49,18 +50,20 @@
                                                 <Frame>
                                                     <StackLayout Orientation="Horizontal">
                                                         <StackLayout>
-                                                            <Label Text="Name :"/>
+                                                            <Label Text="Customer Name :"/>
                                                             <Label Text= "{Binding PersonName}"/>
                                                         </StackLayout>
                                                         <StackLayout Orientation="Vertical" VerticalOptions="CenterAndExpand" HorizontalOptions="EndAndExpand">
-                                                            <Button Text="EDIT" Command="{Binding}" BackgroundColor="White"
-                                                                    TextColor="Black" BorderColor="White" HorizontalOptions="CenterAndExpand"
-                                                                    Padding="0,0,0,0" HeightRequest="20" WidthRequest="50"/>
+                                                            <Button Text="EDIT" Command="{Binding .}" BackgroundColor="White"
+                                        TextColor="Black" BorderColor="White" HorizontalOptions="CenterAndExpand"
+                                        Padding="0,0,0,0" HeightRequest="20" WidthRequest="50"/>
                                                             <BoxView Color="#603D8F" HeightRequest="3" WidthRequest="40" 
-                                                                     HorizontalOptions="CenterAndExpand" />
+                                         HorizontalOptions="CenterAndExpand" />
                                                         </StackLayout>
                                                     </StackLayout>
                                                 </Frame>
+
+
                                                 <Frame>
                                                     <StackLayout Orientation="Horizontal">
                                                         <StackLayout>
@@ -68,14 +71,15 @@
                                                             <Label Text= "{Binding Phone}"/>
                                                         </StackLayout>
                                                         <StackLayout Orientation="Vertical" VerticalOptions="CenterAndExpand" HorizontalOptions="EndAndExpand">
-                                                            <Button Text="EDIT" Command="{Binding}" BackgroundColor="White"
-                                                                    TextColor="Black" BorderColor="White" HorizontalOptions="CenterAndExpand"
-                                                                    Padding="0,0,0,0" HeightRequest="20" WidthRequest="50"/>
+                                                            <Button Text="EDIT" Command="{Binding .}" BackgroundColor="White"
+                                        TextColor="Black" BorderColor="White" HorizontalOptions="CenterAndExpand"
+                                        Padding="0,0,0,0" HeightRequest="20" WidthRequest="50"/>
                                                             <BoxView Color="#603D8F" HeightRequest="3" WidthRequest="40" 
-                                                                     HorizontalOptions="CenterAndExpand" />
+                                         HorizontalOptions="CenterAndExpand" />
                                                         </StackLayout>
                                                     </StackLayout>
                                                 </Frame>
+
                                                 <Frame>
                                                     <StackLayout Orientation="Horizontal">
                                                         <StackLayout>
@@ -84,34 +88,21 @@
                                                         </StackLayout>
                                                         <StackLayout Orientation="Vertical" VerticalOptions="CenterAndExpand" HorizontalOptions="EndAndExpand">
                                                             <Button Text="EDIT" Command="{Binding}" BackgroundColor="White"
-                                                                    TextColor="Black" BorderColor="White" HorizontalOptions="CenterAndExpand"
-                                                                    Padding="0,0,0,0" HeightRequest="20" WidthRequest="50"/>
+                                        TextColor="Black" BorderColor="White" HorizontalOptions="CenterAndExpand"
+                                        Padding="0,0,0,0" HeightRequest="20" WidthRequest="50"/>
                                                             <BoxView Color="#603D8F" HeightRequest="3" WidthRequest="40" 
-                                                                     HorizontalOptions="CenterAndExpand" />
+                                         HorizontalOptions="CenterAndExpand" />
                                                         </StackLayout>
                                                     </StackLayout>
                                                 </Frame>
-                                                <Frame>
-                                                    <StackLayout Orientation="Horizontal">
-                                                        <StackLayout>
-                                                            <Label Text="Password :"/>
-                                                            <Label Text= "{Binding Password}"/>
-                                                        </StackLayout>
-                                                        <StackLayout Orientation="Vertical" VerticalOptions="CenterAndExpand" HorizontalOptions="EndAndExpand">
-                                                            <Button Text="EDIT" Command="{Binding}" BackgroundColor="White"
-                                                                    TextColor="Black" BorderColor="White" HorizontalOptions="CenterAndExpand"
-                                                                    Padding="0,0,0,0" HeightRequest="20" WidthRequest="50"/>
-                                                            <BoxView Color="#603D8F" HeightRequest="3" WidthRequest="40" 
-                                                                     HorizontalOptions="CenterAndExpand" />
-                                                        </StackLayout>
-                                                    </StackLayout>
-                                                </Frame>
+
                                             </StackLayout>
                                         </ScrollView>
                                     </ViewCell>
                                 </DataTemplate>
                             </ListView.ItemTemplate>
                         </ListView>
+
                     </StackLayout>
                     <StackLayout x:Name="Settingsview" Orientation="Vertical" Padding="0,40,0,0" IsVisible="false" HeightRequest="350">
                         <StackLayout Orientation="Vertical" >

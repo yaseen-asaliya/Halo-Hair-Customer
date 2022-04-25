@@ -74,42 +74,84 @@ namespace customer_app.ViewModels
         public ICommand appointment { get; }
 
         public ObservableCollection<AppointmentmModel> times { get; set; }
-
-        public void SearchTime()
+        struct time
         {
-            times = new ObservableCollection<AppointmentmModel>();
-
-            int start = starttime;
-            int end = endtime;
-            AppointmentmModel temp = new AppointmentmModel();
-            for (double i = start; i <= end; i += 0.5)
+            public int hour;
+            public int minute;
+        }
+        struct booked
+        {
+            public string appointment;//12:39 am
+            public bool isBooked; //true
+        }
+        time getTimeSplitedAsInt(string time)
+        {
+            time temp = new time();
+            string[] tempTime = time.Split(':');
+            temp.hour = Int32.Parse(tempTime[0]);
+            temp.minute = Int32.Parse(tempTime[1]);
+            return temp;
+        }
+        string getTimeAsString(int time)
+        {
+            int hours = time / 60;
+            int minutes = time % 60;
+            string Time = "";
+            if (hours > 12)
             {
-                if (i - (int)i == 0.5)
+                if (minutes < 10)
                 {
-                    if (i > 12)
-                    {
-                        temp.time = ((i - 0.5) - 12).ToString() + ":30 PM";
-                    }
-                    else
-                    {
-                        temp.time = (i - 0.5).ToString() + ":30 AM";
-                    }
+                    Time = (hours - 12) + ":0" + minutes + " PM";
+
                 }
                 else
                 {
-                    if (i > 12)
-                    {
-                        temp.time = (i - 12).ToString() + ":00 PM";
-                    }
-                    else
-                    {
-                        temp.time = i.ToString() + ":00 AM";
-                    }
+                    Time = (hours - 12) + ":" + minutes + " PM";
                 }
-                AppointmentmModel timeObj = new AppointmentmModel();
-                timeObj.time = temp.time.ToString();
-                times.Add(timeObj);
             }
+            else
+            {
+                if (minutes < 10)
+                {
+                    Time = hours + ":0" + minutes + " AM";
+                }
+                else
+                {
+                    Time = hours + ":" + minutes + " AM";
+                }
+            }
+            return Time;
+
+        }
+        public void SearchTime()
+        {
+            times = new ObservableCollection<AppointmentmModel>();
+            AppointmentmModel temp = new AppointmentmModel();
+
+            //  time startTime = getTimeSplitedAsInt(starttime);
+            //  time endTime = getTimeSplitedAsInt(endtime);
+            time startTime = getTimeSplitedAsInt("10:35");
+            time endTime = getTimeSplitedAsInt("15:34");
+            int start = (startTime.hour * 60) + startTime.minute;
+            int end = (endTime.hour * 60) + endTime.minute;
+            List<booked> ListOfTimes = new List<booked>();
+
+            for (int i = start; i < end; i += 30)
+            {
+                booked tempTime = new booked();
+                tempTime.appointment = getTimeAsString(i);
+                tempTime.isBooked = false;
+                ListOfTimes.Add(tempTime);
+
+                for(int ii = 0; ii < ListOfTimes.Count; ii++)
+                {
+                    Console.WriteLine(ListOfTimes[ii].appointment + "status : "+ ListOfTimes[ii].isBooked);
+                }
+               /* AppointmentmModel timeObj = new AppointmentmModel();
+                timeObj.time = temp.time.ToString();
+                times.Add(timeObj);*/
+            }
+
         }
         
         public ICommand TimesCommand { get; }

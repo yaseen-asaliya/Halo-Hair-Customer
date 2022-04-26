@@ -19,6 +19,7 @@ namespace customer_app.ViewModels
         public ObservableCollection<DataSalon> Salon { get; set; }
 
         public ICommand ShowBarbarCommand { get; }
+        public ICommand BackPage { get; }
 
         public SearchBarberViewModels()
         {
@@ -26,7 +27,12 @@ namespace customer_app.ViewModels
             Salon = new ObservableCollection<DataSalon>();
             Salon = firebase.GetDataSalon();
             ShowBarbarCommand = new Command(onShowServices);
+            BackPage = new Command(Back_Page);
 
+        }
+        private async void Back_Page(object obj)
+        {
+            await Application.Current.MainPage.Navigation.PopModalAsync();
         }
         private async void onShowServices(object obj)
         {
@@ -37,7 +43,7 @@ namespace customer_app.ViewModels
         }
 
 
-        public ObservableCollection<DataSalon> SearchedSalon { get => Salon; set { Salon = value; OnPropertyChanged("SearchedCars"); } }
+
 
 
     }

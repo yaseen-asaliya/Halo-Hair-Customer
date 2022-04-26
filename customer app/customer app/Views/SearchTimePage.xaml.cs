@@ -17,7 +17,7 @@ namespace customer_app.Views
     public partial class SearchTimePage : ContentPage
     {
 
-        public SearchTimePage(ObservableCollection<DataSalon> selectedList, string accesstoken_barbar, string NameSolan, int start, int end)
+        public SearchTimePage(ObservableCollection<DataSalon> selectedList, string accesstoken_barbar, string NameSolan, string start, string end)
         {
             InitializeComponent();
             SelectedList = selectedList;
@@ -27,6 +27,6 @@ namespace customer_app.Views
 
         public ObservableCollection<DataSalon> SelectedList { get; }
 
-       
+
     }
 }

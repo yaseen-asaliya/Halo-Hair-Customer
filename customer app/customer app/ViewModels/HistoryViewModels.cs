@@ -61,6 +61,8 @@ namespace customer_app.ViewModels
         }
 
         public ICommand DeleteCommand { get; }
+        public ICommand DeleteAppointmentCommand { get; }
+        public ICommand BackPage { get; }
         public HistoryViewModels()
         {
             AccessToken();
@@ -71,9 +73,13 @@ namespace customer_app.ViewModels
 
             History.CollectionChanged += serviceschanged;
             DeleteCommand = new Command(onDeleteTapped);
-
+            DeleteAppointmentCommand = new Command(onDeleteAppointment);
+            BackPage = new Command(Back_Page);
         }
-
+        private async void Back_Page(object obj)
+        {
+            await Application.Current.MainPage.Navigation.PopModalAsync();
+        }
         private void serviceschanged(object sender, NotifyCollectionChangedEventArgs e)
         {
             if (e.Action == NotifyCollectionChangedAction.Add)
@@ -104,10 +110,15 @@ namespace customer_app.ViewModels
             await firebase.DeleteHistory(HistroyModel);
 
 
+        }
+
+        private async void onDeleteAppointment(object obj)
+        {
+            DataReservationsModel AppointmentDelete = (DataReservationsModel)obj;
+            //   await firebase.onDeleteAppointment(AppointmentDelete.ID_Reservations);
 
 
         }
-
 
     }
 }

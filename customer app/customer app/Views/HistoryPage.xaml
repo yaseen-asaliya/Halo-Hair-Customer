@@ -11,7 +11,9 @@
     </ContentPage.BindingContext>
     <ContentPage.Content>
         <StackLayout>
-            <cont:navigationComponent Titles="History"/>
+            <cont:navigationComponent Titles="History" CommandParameter="{Binding BackPage}"/>
+
+
             <StackLayout HeightRequest="600">
                 <Frame Margin="20,10,20,10" CornerRadius="20" BorderColor="Purple">
                     <StackLayout>

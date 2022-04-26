@@ -63,6 +63,7 @@ namespace customer_app.ViewModels
                 Console.WriteLine(ex.Message);
             }
         }
+        public ICommand BackPage { get; }
 
         public ProfileAboutViewModels()
         {
@@ -73,8 +74,11 @@ namespace customer_app.ViewModels
             Profile = firebase.ProfilePage();
             Profile.CollectionChanged += serviceschanged;
             LogOut = new Command(PerformLogOut);
-
-
+            BackPage = new Command(Back_Page);
+        }
+        private async void Back_Page(object obj)
+        {
+            await Application.Current.MainPage.Navigation.PopModalAsync();
         }
         public string location { get; set; }
         private void serviceschanged(object sender, NotifyCollectionChangedEventArgs e)

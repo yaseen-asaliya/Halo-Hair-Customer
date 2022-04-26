@@ -11,10 +11,11 @@
 
     <ContentPage.Content>
         <StackLayout>
-            <cont:navigationComponent Titles="Search Times"/>
+            <cont:navigationComponent Titles="Search Times" CommandParameter="{Binding BackPage}"/>
             <Frame CornerRadius="10" Margin="10">
                 <StackLayout>
-                    <controls:Calendar  SelectedDate="{Binding CalendarSelectedDate, Mode=TwoWay}" 
+
+                    <!-- <controls:Calendar  SelectedDate="{Binding CalendarSelectedDate}" 
                                         x:Name="calendar"  
                                         HorizontalOptions="Center"
                                         VerticalOptions="Center"
@@ -28,7 +29,22 @@
                                         TitleRightArrowTextColor= "Black"
                                         TitleLeftArrowTextColor="Black" 
                                         TitleLabelFontFamily="" 
+                                        IsEnabled="False"
+                                     
                                         TitleLabelFontSize="20"/>
+                    -->
+                    <xc:CalendarView    WidthRequest="371"
+                                        HeightRequest="340"
+                                        BackgroundColor="White"
+                                        NavigationBackgroundColor="#603D8F"
+                                        DayNameTextColor="#603D8F"
+                                        
+                                       
+                                       
+                                        >
+
+                    </xc:CalendarView>
+
                 </StackLayout>
             </Frame>
 
@@ -51,7 +67,7 @@
                                     Text="{Binding time}" 
                                     HorizontalOptions="Center"
                                     Margin="3"
-                                    BackgroundColor="Purple"/> 
+                                    BackgroundColor="#603D8F"/>
                         </Grid>
                     </DataTemplate>
                 </CollectionView.ItemTemplate>

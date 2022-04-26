@@ -31,6 +31,8 @@ namespace customer_app.ViewModels
             }
         }
         private string accesstoken_barbar { get; set; }
+        public ICommand BackPage { get; }
+
         public SearchServicesViewModels(DataSalon data)
         {
             accesstoken_barbar = data.AccessToken_Barbar;
@@ -40,10 +42,14 @@ namespace customer_app.ViewModels
             Services = new ObservableCollection<DataSalon>();
             Services = firebase.getServices();
             Services.CollectionChanged += filltedservices;
-
+            // CheckBox = new Command(checkbox_CheckChanged);
+            BackPage = new Command(Back_Page);
 
         }
-
+        private async void Back_Page(object obj)
+        {
+            await Application.Current.MainPage.Navigation.PopModalAsync();
+        }
 
 
 
@@ -62,7 +68,26 @@ namespace customer_app.ViewModels
         }
 
 
-        public ICommand NextPage { get; }
+        private int count = 0;
+        public ICommand CheckBox { get; }
+
+        private void checkbox_CheckChanged(object sender)
+
+        {
+
+            var checkbox = (Plugin.InputKit.Shared.Controls.CheckBox)sender;
+
+
+            var ob = checkbox.BindingContext as DataSalon;
+
+            if (ob != null)
+            {
+                count += ob.Prices;
+                // AddOrUpdatetheResult(ob, checkbox);
+
+            }
+
+        }
 
         private void filltedservices(object sender, NotifyCollectionChangedEventArgs e)
         {

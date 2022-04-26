@@ -9,7 +9,7 @@
     </ContentPage.BindingContext>
     <ContentPage.Content>
         <StackLayout>
-            <cont:navigationComponent Titles="Search Barbers"/>
+            <cont:navigationComponent Titles="Search Barbers" CommandParameter="{Binding BackPage}"/>
             <StackLayout HorizontalOptions="Center">
 
                 <Frame CornerRadius="100" 

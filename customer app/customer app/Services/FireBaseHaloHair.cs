@@ -21,6 +21,10 @@ namespace customer_app.Services
             _firebaseClient = new FirebaseClient("https://halo-hair-676ed-default-rtdb.firebaseio.com");
             accessToken();
         }
+        public ObservableCollection<OfferModel> GetAllOfferImgs()
+        {
+            return _firebaseClient.Child("Offer").AsObservable<OfferModel>().AsObservableCollection();
+        }
         public ObservableCollection<DataSalon> getServices()
         {
             var servicesData = _firebaseClient.Child("Services").AsObservable<DataSalon>().AsObservableCollection();
@@ -79,16 +83,15 @@ namespace customer_app.Services
 
             return dataReservation;
         }
-        public async Task AddNewUser(string name, long phone, string ulr, string location)
+        public async Task AddNewUser(string name, long phone, string url, string location)
         {
             try
             {
-                Console.WriteLine(ulr.ToString());
                 AuthenticationModel addUser = new AuthenticationModel();
                 {
                     addUser.PersonName = name;
                     addUser.Phone = phone;
-                    addUser.AccessToken_User = ulr;
+                    addUser.AccessToken_User = url;
                     addUser.location = location;
 
                 }

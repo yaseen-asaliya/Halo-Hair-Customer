@@ -404,3 +404,5 @@ ASALocalRun/
 # Local History for Visual Studio
 .localhistory/
 *.pdb
+.vs/customer app/v17/.suo
+customer app/customer app.Android/obj/Debug/120/customer app.Android.csproj.AssemblyReference.cache

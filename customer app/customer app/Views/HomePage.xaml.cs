@@ -17,8 +17,6 @@ namespace customer_app.Views
         {
             InitializeComponent();
         }
-
-
         private void loadBarbers(object sender, EventArgs e)
         {
             Navigation.PushModalAsync(new SearchBarberPage());

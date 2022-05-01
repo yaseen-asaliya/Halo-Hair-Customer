@@ -143,17 +143,8 @@
                                 </StackLayout>
                             </Frame>
                         </StackLayout>
-                        <Button Margin="20"
-                                HeightRequest="46"
-                                Text="Log Out"
-                                TextColor="#FFFFFF"
-                                FontAttributes="Bold"
-                                BackgroundColor="#603D8F"
-                                CornerRadius="20"
-                                Font="Segoe UI"
-                                
-                                Command="{Binding LogOut}"
-                                FontSize="16"/>
+                        <comp:ButtonComponent NameButton="Log out" CommandParameter="{Binding LogOut}" Padding="20"/>
+                        
                     </StackLayout>
                 </StackLayout>
             </StackLayout>

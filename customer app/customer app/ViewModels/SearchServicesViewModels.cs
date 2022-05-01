@@ -14,12 +14,13 @@ namespace customer_app.ViewModels
 {
     public class SearchServicesViewModels : BaseViewModel
     {
-        FireBaseHaloHair firebase;
-
-
+        FireBaseHaloHair _firebase;
+        private ObservableCollection<DataSalon> _filltedServices;
+        private int _count = 0;
         public ObservableCollection<DataSalon> services { get; set; }
-
-
+        private string _barbarAccesstoken { get; set; }
+        public ICommand BackPage { get; }
+        public ICommand CheckBox { get; }
         public ObservableCollection<DataSalon> Services
         {
             get { return services; }
@@ -27,86 +28,58 @@ namespace customer_app.ViewModels
             {
                 services = value;
                 OnPropertyChanged();
-
             }
         }
-        private string accesstoken_barbar { get; set; }
-        public ICommand BackPage { get; }
-
-        public SearchServicesViewModels(DataSalon data)
-        {
-            accesstoken_barbar = data.AccessToken_Barbar;
-            Console.WriteLine("The Access tokenBarabar " + accesstoken_barbar);
-            firebase = new FireBaseHaloHair();
-            FilltedServices = new ObservableCollection<DataSalon>();
-            Services = new ObservableCollection<DataSalon>();
-            Services = firebase.getServices();
-            Services.CollectionChanged += filltedservices;
-            // CheckBox = new Command(checkbox_CheckChanged);
-            BackPage = new Command(Back_Page);
-
-        }
-        private async void Back_Page(object obj)
-        {
-            await Application.Current.MainPage.Navigation.PopModalAsync();
-        }
-
-
-
-        private ObservableCollection<DataSalon> filltedServices;
         public ObservableCollection<DataSalon> FilltedServices
         {
             get
             {
-                return filltedServices;
+                return _filltedServices;
             }
             set
             {
-                filltedServices = value;
+                _filltedServices = value;
                 OnPropertyChanged();
             }
         }
-
-
-        private int count = 0;
-        public ICommand CheckBox { get; }
-
-        private void checkbox_CheckChanged(object sender)
-
+        
+        public SearchServicesViewModels(DataSalon data)
         {
-
+            _barbarAccesstoken = data.AccessToken_Barbar;
+            Console.WriteLine("The Access tokenBarabar " + _barbarAccesstoken);
+            _firebase = new FireBaseHaloHair();
+            FilltedServices = new ObservableCollection<DataSalon>();
+            Services = new ObservableCollection<DataSalon>();
+            Services = _firebase.getServices();
+            Services.CollectionChanged += filltedServices;
+            // CheckBox = new Command(checkbox_CheckChanged);
+            BackPage = new Command(backPage);
+        }
+        private async void backPage(object obj)
+        {
+            await Application.Current.MainPage.Navigation.PopModalAsync();
+        } 
+        private void checkboxCheckChanged(object sender)
+        {
             var checkbox = (Plugin.InputKit.Shared.Controls.CheckBox)sender;
-
-
             var ob = checkbox.BindingContext as DataSalon;
-
             if (ob != null)
             {
-                count += ob.Prices;
+                _count += ob.Prices;
                 // AddOrUpdatetheResult(ob, checkbox);
-
             }
-
         }
-
-        private void filltedservices(object sender, NotifyCollectionChangedEventArgs e)
+        private void filltedServices(object sender, NotifyCollectionChangedEventArgs e)
         {
             if (e.Action == NotifyCollectionChangedAction.Add)
             {
                 DataSalon filltedsrevices = e.NewItems[0] as DataSalon;
                 Console.WriteLine(e.NewItems[0].GetType());
-                if (filltedsrevices.AccessToken_Barbar == accesstoken_barbar)
+                if (filltedsrevices.AccessToken_Barbar == _barbarAccesstoken)
                 {
-
                     FilltedServices.Add(filltedsrevices);
                 }
             }
-
         }
-
-
-
-
-
     }
 }

@@ -1,8 +1,6 @@
 ﻿using Firebase.Database;
 using System;
-using System.Collections.Generic;
 using System.Collections.ObjectModel;
-using System.Text;
 using customer_app.Models;
 using System.Threading.Tasks;
 using Firebase.Database.Query;
@@ -14,35 +12,30 @@ namespace customer_app.Services
 {
     public class FireBaseHaloHair
     {
-        FirebaseClient firebaseClient;
+        FirebaseClient _firebaseClient;
+        Random rnd;
+        private string PersonName { get; set; }
+        private string userAccessToken { get; set; }
         public FireBaseHaloHair()
         {
-            firebaseClient = new FirebaseClient("https://halo-hair-676ed-default-rtdb.firebaseio.com");
-            AccessToken();
+            _firebaseClient = new FirebaseClient("https://halo-hair-676ed-default-rtdb.firebaseio.com");
+            accessToken();
         }
         public ObservableCollection<DataSalon> getServices()
         {
-            var servicesData = firebaseClient.Child("Services").AsObservable<DataSalon>().AsObservableCollection();
-
+            var servicesData = _firebaseClient.Child("Services").AsObservable<DataSalon>().AsObservableCollection();
             return servicesData;
         }
         public ObservableCollection<DataSalon> GetDataSalon()
         {
-            var dataSalons = firebaseClient.Child("ScheduleTime").AsObservable<DataSalon>().AsObservableCollection();
-
+            var dataSalons = _firebaseClient.Child("ScheduleTime").AsObservable<DataSalon>().AsObservableCollection();
             return dataSalons;
         }
         public ObservableCollection<TimeModel> GetDTimeSalon()
         {
-            var TimeSalons = firebaseClient.Child("TIME").AsObservable<TimeModel>().AsObservableCollection();
-
-
+            var TimeSalons = _firebaseClient.Child("TIME").AsObservable<TimeModel>().AsObservableCollection();
             return TimeSalons;
-        }
-
-        private string PersonName { get; set; }
-        Random rnd;
-
+        }       
         public async Task AddTime(string calendarSelectedDate, string liststring, string selectedTime, string accesstoken_barbar, string nameSoaln, bool isAvabile, int id)
         {
             rnd = new Random();
@@ -55,25 +48,24 @@ namespace customer_app.Services
                 scheduleTimeModel.PersonName = PersonName;
                 scheduleTimeModel.NameSolan = nameSoaln;
                 scheduleTimeModel.AccessToken_Barbar = accesstoken_barbar;
-                scheduleTimeModel.AccessToken_User = AccessToken_User;
+                scheduleTimeModel.AccessToken_User = userAccessToken;
                 scheduleTimeModel.ID_History = ID_;
                 scheduleTimeModel.ID_Reservations = ID_;
                 scheduleTimeModel.isAvabile = isAvabile;
                 scheduleTimeModel.id = id;
             }
 
-            await firebaseClient.Child("ReservationsRequest").PostAsync(scheduleTimeModel);
-            await firebaseClient.Child("History").PostAsync(scheduleTimeModel);
+            await _firebaseClient.Child("ReservationsRequest").PostAsync(scheduleTimeModel);
+            await _firebaseClient.Child("History").PostAsync(scheduleTimeModel);
 
         }
-        private string AccessToken_User { get; set; }
-        private async Task AccessToken()
+        private async Task accessToken()
         {
             try
             {
                 var oauthToken = await SecureStorage.GetAsync("oauth_token");
                 var oname = await SecureStorage.GetAsync("NameUser");
-                AccessToken_User = oauthToken;
+                userAccessToken = oauthToken;
                 PersonName = oname;
             }
             catch (Exception ex)
@@ -81,10 +73,9 @@ namespace customer_app.Services
                 Console.WriteLine(ex.Message);
             }
         }
-
         public ObservableCollection<DataReservationsModel> GetDataReservation()
         {
-            var dataReservation = firebaseClient.Child("History").AsObservable<DataReservationsModel>().AsObservableCollection();
+            var dataReservation = _firebaseClient.Child("History").AsObservable<DataReservationsModel>().AsObservableCollection();
 
             return dataReservation;
         }
@@ -101,7 +92,7 @@ namespace customer_app.Services
                     addUser.location = location;
 
                 }
-                await firebaseClient.Child("Users_Customer").PostAsync(addUser);
+                await _firebaseClient.Child("Users_Customer").PostAsync(addUser);
                 await Application.Current.MainPage.DisplayAlert("Successful", "Register User", "ok");
             }
             catch (Exception ex)
@@ -112,45 +103,41 @@ namespace customer_app.Services
 
 
         }
-
-        public async Task onDeleteAppointment(int Id_Appointmentm)
+        public async Task OnDeleteAppointment(int Id_Appointmentm)
         {
-            var todelete = (await firebaseClient.Child("ReservationsRequest").OnceAsync<DataReservationsModel>())
+            var todelete = (await _firebaseClient.Child("ReservationsRequest").OnceAsync<DataReservationsModel>())
                                 .FirstOrDefault(item => item.Object.ID_Reservations == Id_Appointmentm);
             try
             {
-                await firebaseClient.Child("ReservationsRequest").Child(todelete.Key).DeleteAsync();
+                await _firebaseClient.Child("ReservationsRequest").Child(todelete.Key).DeleteAsync();
             }
             catch (Exception ex)
             {
                 await Application.Current.MainPage.DisplayAlert("Failed", "Sorry, the barber has accepted the invitation. Please commit to the reservation ", "ok");
             }
         }
-
         public ObservableCollection<AuthenticationModel> GetAuthentications()
         {
-            var dataprofile = firebaseClient.Child("Authentication").AsObservable<AuthenticationModel>().AsObservableCollection();
+            var dataprofile = _firebaseClient.Child("Authentication").AsObservable<AuthenticationModel>().AsObservableCollection();
 
             return dataprofile;
         }
-
         public async Task DeleteHistory(DataReservationsModel control)
         {
-            var todelete = (await firebaseClient.Child("History").OnceAsync<DataReservationsModel>())
+            var todelete = (await _firebaseClient.Child("History").OnceAsync<DataReservationsModel>())
                     .FirstOrDefault(item => item.Object.ID_History == control.ID_History);
-            await firebaseClient.Child("History").Child(todelete.Key).DeleteAsync();
+            await _firebaseClient.Child("History").Child(todelete.Key).DeleteAsync();
         }
-
         public ObservableCollection<ProfilePageModel> ProfilePage()
         {
-            var Users_Customer = firebaseClient.Child("Users_Customer").AsObservable<ProfilePageModel>().AsObservableCollection();
+            var Users_Customer = _firebaseClient.Child("Users_Customer").AsObservable<ProfilePageModel>().AsObservableCollection();
 
 
             return Users_Customer;
         }
         public async Task UpdatePerson(int Id, string Accesstoken)
         {
-            var toUpdatePerson = (await firebaseClient
+            var toUpdatePerson = (await _firebaseClient
               .Child("TIME").Child("Time")
               .OnceAsync<TimeModel>()).Where(a => a.Object.AccessToken_Barbar == Accesstoken).FirstOrDefault();
             TimeModel myTime = new TimeModel();
@@ -159,11 +146,10 @@ namespace customer_app.Services
                 myTime.Time.Add(("4.52", true));
 
             }
-            await firebaseClient
+            await _firebaseClient
               .Child("TIME").Child("Time")
               .Child(toUpdatePerson.Key)
               .PutAsync(myTime);
         }
-
     }
 }

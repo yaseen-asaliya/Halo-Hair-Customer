@@ -1,11 +1,7 @@
 ﻿using customer_app.Models;
 using customer_app.Services;
-using customer_app.Views;
 using System;
-using System.Collections.Generic;
 using System.Collections.ObjectModel;
-using System.Linq;
-using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Input;
 using Xamarin.Forms;
@@ -15,10 +11,9 @@ namespace customer_app.ViewModels
     public class SearchTimeViewModels : BaseViewModel
     {
         FireBaseHaloHair Firebase;
-        private ObservableCollection<DataSalon> selectedList;
-
-        private ObservableCollection<string> listservices { get; set; }
-        public ObservableCollection<AppointmentmModel> times { get; set; }
+        private ObservableCollection<DataSalon> _selectedList;
+        private ObservableCollection<string> _listServices { get; set; }
+        public ObservableCollection<AppointmentmModel> Times { get; set; }
         public SearchTimeViewModels()
         {
         }
@@ -26,45 +21,59 @@ namespace customer_app.ViewModels
         private string nameSoaln { get; set; }
         private string accesstoken { get; set; }
         private AppointmentmModel timeObj { get; set; }
+        private bool isAvabile { get; set; }
+        private int id { get; set; }
+        public string CalendarSelectedDate { get; set; }
+        public ICommand DateSelectedCommand { get; }
+        public ICommand appointment { get; }
+        public ICommand TimesCommand { get; }
+        private string selectedTime { get; set; }
         public ICommand BackPage { get; }
+        private ObservableCollection<TimeModel> _filterTimeModel { get; set; }
+        private ObservableCollection<TimeModel> _filtertime;
+        public ObservableCollection<TimeModel> FillterTime
+        {
+            get
+            {
+                return _filtertime;
+            }
+            set
+            {
+                _filtertime = value;
+                OnPropertyChanged();
 
-        public SearchTimeViewModels(ObservableCollection<DataSalon> selectedList, string accesstoken_barbar, string NamSoaln, string start, string end)
+            }
+
+        }
+        
+        public SearchTimeViewModels(ObservableCollection<DataSalon> selectedList, string BarbarAccesstoken, string NamSoaln, string start, string end)
         {
             Firebase = new FireBaseHaloHair();
             FillterTime = new ObservableCollection<TimeModel>();
-            filtertimemodel = new ObservableCollection<TimeModel>();
-            filtertimemodel = Firebase.GetDTimeSalon();
-            filtertimemodel.CollectionChanged += Favorite_CollectionChanged;
-
-
-            this.selectedList = selectedList;
+            _filterTimeModel = new ObservableCollection<TimeModel>();
+            _filterTimeModel = Firebase.GetDTimeSalon();
+            _filterTimeModel.CollectionChanged += favoriteCollectionChanged;
+            this._selectedList = selectedList;
             foreach (DataSalon item in selectedList)
             {
                 liststring += item.Service_Name.ToString() + Environment.NewLine;
-
             }
             nameSoaln = NamSoaln;
-            accesstoken = accesstoken_barbar;
+            accesstoken = BarbarAccesstoken;
 
-            listservices = new ObservableCollection<string>();
+            _listServices = new ObservableCollection<string>();
 
             foreach (DataSalon item in selectedList)
             {
-                listservices.Add(item.Service_Name);
+                _listServices.Add(item.Service_Name);
 
             }
-            times = new ObservableCollection<AppointmentmModel>();
-
-
-
-
-            appointment = new Command(async () => await AddTime(CalendarSelectedDate, liststring, selectedTime, accesstoken_barbar, nameSoaln, isAvabile, id));
+            Times = new ObservableCollection<AppointmentmModel>();
+            appointment = new Command(async () => await AddTime(CalendarSelectedDate, liststring, selectedTime, BarbarAccesstoken, nameSoaln, isAvabile, id));
             TimesCommand = new Command(onTime);
-
-            BackPage = new Command(Back_Page);
-
+            BackPage = new Command(backPage);
         }
-        private async void Back_Page(object obj)
+        private async void backPage(object obj)
         {
             await Application.Current.MainPage.Navigation.PopModalAsync();
         }
@@ -88,18 +97,15 @@ namespace customer_app.ViewModels
                         if (!isavabile)
                         {
                             timeObj.time = text;
-                            times.Add(timeObj);
+                            Times.Add(timeObj);
                             x = x + 1;
                         }
-
-
                     }
                 }
                 x = 0;
             }
 
         }
-
         private async Task AddTime(string calendarSelectedDate, string liststring, string selectedTime, string accesstoken_barbar, string nameSoaln, bool isAvabile, int id)
         {
             string Today = DateTime.Now.Date.ToString("d");
@@ -114,46 +120,8 @@ namespace customer_app.ViewModels
             else
                 await Application.Current.MainPage.DisplayAlert("Failed", "Please fill in all the data", "ok");
 
-        }
-
-        public string CalendarSelectedDate { get; set; }
-
-        public ICommand DateSelectedCommand { get; }
-
-        public ICommand appointment { get; }
-
-
-
-
-
-        public ICommand TimesCommand { get; }
-        private string selectedTime { get; set; }
-
-
-
-
-
-        private ObservableCollection<TimeModel> filtertimemodel { get; set; }
-        private ObservableCollection<TimeModel> filtertime;
-        public ObservableCollection<TimeModel> FillterTime
-        {
-            get
-            {
-                return filtertime;
-            }
-            set
-            {
-                filtertime = value;
-                OnPropertyChanged();
-
-            }
-
-        }
-
-
-
-
-        private void Favorite_CollectionChanged(object sender, System.Collections.Specialized.NotifyCollectionChangedEventArgs e)
+        }        
+        private void favoriteCollectionChanged(object sender, System.Collections.Specialized.NotifyCollectionChangedEventArgs e)
         {
             if (e.Action == System.Collections.Specialized.NotifyCollectionChangedAction.Add)
             {
@@ -169,12 +137,7 @@ namespace customer_app.ViewModels
                 FillterTime.Remove((TimeModel)e.OldItems[0]);
                 OnPropertyChanged();
             }
-
         }
-
-
-        private bool isAvabile { get; set; }
-        private int id { get; set; }
         private async void onTime(object obj)
         {
             AppointmentmModel appointmentmModel = (AppointmentmModel)obj;
@@ -192,12 +155,8 @@ namespace customer_app.ViewModels
                     isAvabile = true;
                     id = appointmentmModel.id;
                 }
-
             }
-
         }
     }
-
-
 }
 

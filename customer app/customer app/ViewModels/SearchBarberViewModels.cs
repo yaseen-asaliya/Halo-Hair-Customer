@@ -14,23 +14,21 @@ namespace customer_app.ViewModels
 {
     public class SearchBarberViewModels : BaseViewModel
     {
-        FireBaseHaloHair firebase;
+        FireBaseHaloHair _firebase;
 
         public ObservableCollection<DataSalon> Salon { get; set; }
-
         public ICommand ShowBarbarCommand { get; }
         public ICommand BackPage { get; }
 
         public SearchBarberViewModels()
         {
-            firebase = new FireBaseHaloHair();
+            _firebase = new FireBaseHaloHair();
             Salon = new ObservableCollection<DataSalon>();
-            Salon = firebase.GetDataSalon();
+            Salon = _firebase.GetDataSalon();
             ShowBarbarCommand = new Command(onShowServices);
-            BackPage = new Command(Back_Page);
-
+            BackPage = new Command(backPage);
         }
-        private async void Back_Page(object obj)
+        private async void backPage(object obj)
         {
             await Application.Current.MainPage.Navigation.PopModalAsync();
         }
@@ -38,13 +36,6 @@ namespace customer_app.ViewModels
         {
             DataSalon serviceModel = (DataSalon)obj;
             await Application.Current.MainPage.Navigation.PushModalAsync(new SearchServicesPage(serviceModel));
-
-
         }
-
-
-
-
-
     }
 }

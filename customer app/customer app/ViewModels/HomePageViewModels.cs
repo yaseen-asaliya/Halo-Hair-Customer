@@ -1,6 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Text;
 using System.Threading.Tasks;
 using Xamarin.Essentials;
 
@@ -9,26 +7,20 @@ namespace customer_app.ViewModels
     public class HomePageViewModels
     {
         public string NameCustomer { get; set; }
-
         public HomePageViewModels()
         {
-            GetName();
-
+            getName();
         }
-        private async Task GetName()
+        private async Task getName()
         {
             try
             {
-                var name = await SecureStorage.GetAsync("NameUser");
-                NameCustomer = name;
-
-
+                NameCustomer = await SecureStorage.GetAsync("NameUser");
             }
             catch (Exception ex)
             {
                 Console.WriteLine(ex.Message);
             }
         }
-
     }
 }

@@ -17,15 +17,14 @@ namespace customer_app.Views
     public partial class SearchTimePage : ContentPage
     {
 
-        public SearchTimePage(ObservableCollection<DataSalon> selectedList, string accesstoken_barbar, string NameSolan, string start, string end)
+        public SearchTimePage(ObservableCollection<DataSalon> selectedList, string BarbarAccesstoken, string NameSolan, string start, string end)
         {
             InitializeComponent();
-            SelectedList = selectedList;
-            SearchTimeViewModels searchTimeViewModels = new SearchTimeViewModels(SelectedList, accesstoken_barbar, NameSolan, start, end);
+            selectedList = selectedList;
+            SearchTimeViewModels searchTimeViewModels = new SearchTimeViewModels(selectedList, BarbarAccesstoken, NameSolan, start, end);
             BindingContext = searchTimeViewModels;
         }
 
-        public ObservableCollection<DataSalon> SelectedList { get; }
 
 
     }

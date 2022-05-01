@@ -9,37 +9,29 @@ namespace customer_app.ViewModels
 {
     public class ResetPasswordNewPasswordViewModels
     {
+        private string _email;
         public ICommand BackPage { get; }
-
-        public ResetPasswordNewPasswordViewModels()
-        {
-            SendNewPassword = new Command(OnResetPassword);
-            BackPage = new Command(Back_Page);
-        }
-        private async void Back_Page(object obj)
-        {
-            await Application.Current.MainPage.Navigation.PopModalAsync();
-        }
+        public ICommand SendNewPassword { get; }
         public string Email
         {
-            get { return email; }
-            set { email = value; }
+            get { return _email; }
+            set { _email = value; }
         }
-        private string email;
-        public ICommand SendNewPassword { get; }
-
-
-        private async void OnResetPassword()
+        public ResetPasswordNewPasswordViewModels()
+        {
+            SendNewPassword = new Command(onResetPassword);
+            BackPage = new Command(backPage);
+        }
+        private async void backPage(object obj)
+        {
+            await Application.Current.MainPage.Navigation.PopModalAsync();
+        }     
+        private async void onResetPassword()
         {
             var auth = DependencyService.Resolve<IAuth>();
-            auth.ResetPassword(email);
-
-
+            auth.ResetPassword(_email);
             await Application.Current.MainPage.DisplayAlert("Reset Password", "please check your email ", "ok");
             await Application.Current.MainPage.Navigation.PushModalAsync(new LoginPage());
-
-
-
         }
     }
 }

@@ -31,9 +31,6 @@ namespace customer_app.Views.Components
                 SetValue(Placeholders, value);
             }
         }
-
-
-
         public static readonly BindableProperty TextProperty = BindableProperty.Create(nameof(Text), typeof(string), typeof(EntryComponents), default(string), BindingMode.TwoWay);
         public string Text
         {

@@ -406,3 +406,13 @@ ASALocalRun/
 *.pdb
 .vs/customer app/v17/.suo
 customer app/customer app.Android/obj/Debug/120/customer app.Android.csproj.AssemblyReference.cache
+*.cache
+customer app/customer app/obj/project.nuget.cache
+customer app/customer app/obj/Debug/netstandard2.0/customer app.assets.cache
+customer app/customer app.iOS/obj/project.nuget.cache
+customer app/customer app.iOS/obj/iPhone/Debug/DesignTimeResolveAssemblyReferencesInput.cache
+customer app/customer app.iOS/obj/iPhone/Debug/customer app.iOS.csproj.AssemblyReference.cache
+customer app/customer app.Android/obj/project.nuget.cache
+customer app/customer app.Android/obj/Debug/120/customer app.Android.csproj.AssemblyReference.cache
+customer app/customer app.Android/obj/customer app.Android.csproj.nuget.dgspec.json
+*.cache

@@ -12,8 +12,6 @@
     <ContentPage.Content>
         <StackLayout>
 
-           
-
             <StackLayout>
                 <StackLayout>
                     <Image Source="Logo.png" VerticalOptions="Center" HorizontalOptions="Center"

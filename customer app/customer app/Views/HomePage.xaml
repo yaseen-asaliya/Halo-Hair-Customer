@@ -38,11 +38,13 @@
                                  HeightRequest="10"/>
                 </Grid>
             </Grid>
-            
-         
+
+
             <Label Text="Search for barbers or services" FontSize="Medium" Margin="10" Font="Segoe UI"/>
 
-            <ImageButton Margin="50,0,50,0" Source="search.png" Clicked="Button_Clicked"/>
+            <StackLayout>
+                <ImageButton Margin="50,0,50,0" Source="search.png" Clicked="Button_Clicked" CornerRadius="15"/>
+            </StackLayout>
 
             <!--<StackLayout Margin="0,50,0,0">
                 <viewmodel:AsdAndOffersComponent/>

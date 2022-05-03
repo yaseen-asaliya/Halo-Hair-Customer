@@ -3,6 +3,7 @@
   <PropertyGroup>
     <SelectedDevice>Samsung SM-G9550</SelectedDevice>
     <ActiveDebugProfile>Samsung SM-G9550</ActiveDebugProfile>
-    <DefaultDevice>test</DefaultDevice>
+    <DefaultDevice>pixel_2_pie_9_0_-_api_28</DefaultDevice>
+    <SelectedPlatformGroup>PhysicalDevice</SelectedPlatformGroup>
   </PropertyGroup>
 </Project>

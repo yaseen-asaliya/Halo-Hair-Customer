@@ -94,3 +94,39 @@ C:\Users\abood\Desktop\Customer\customer app\customer app\obj\Debug\netstandard2
 C:\Users\abood\Desktop\Customer\customer app\customer app\obj\Debug\netstandard2.0\customer app.dll
 C:\Users\abood\Desktop\Customer\customer app\customer app\obj\Debug\netstandard2.0\ref\customer app.dll
 C:\Users\abood\Desktop\Customer\customer app\customer app\obj\Debug\netstandard2.0\customer app.pdb
+D:\project21\Halo-Hair---customer\customer app\customer app\obj\Debug\netstandard2.0\customer app.csproj.AssemblyReference.cache
+D:\project21\Halo-Hair---customer\customer app\customer app\obj\Debug\netstandard2.0\customer app.GeneratedMSBuildEditorConfig.editorconfig
+D:\project21\Halo-Hair---customer\customer app\customer app\obj\Debug\netstandard2.0\App.xaml.g.cs
+D:\project21\Halo-Hair---customer\customer app\customer app\obj\Debug\netstandard2.0\AppShell.xaml.g.cs
+D:\project21\Halo-Hair---customer\customer app\customer app\obj\Debug\netstandard2.0\Views\Components\AsdAndOffersComponent.xaml.g.cs
+D:\project21\Halo-Hair---customer\customer app\customer app\obj\Debug\netstandard2.0\Views\Components\BarbersList.xaml.g.cs
+D:\project21\Halo-Hair---customer\customer app\customer app\obj\Debug\netstandard2.0\Views\Components\ButtonComponent.xaml.g.cs
+D:\project21\Halo-Hair---customer\customer app\customer app\obj\Debug\netstandard2.0\Views\Components\navigationComponent.xaml.g.cs
+D:\project21\Halo-Hair---customer\customer app\customer app\obj\Debug\netstandard2.0\Views\Components\SearchBarComponent.xaml.g.cs
+D:\project21\Halo-Hair---customer\customer app\customer app\obj\Debug\netstandard2.0\Views\Components\ServicesList.xaml.g.cs
+D:\project21\Halo-Hair---customer\customer app\customer app\obj\Debug\netstandard2.0\Views\HistoryPage.xaml.g.cs
+D:\project21\Halo-Hair---customer\customer app\customer app\obj\Debug\netstandard2.0\Views\HomePage.xaml.g.cs
+D:\project21\Halo-Hair---customer\customer app\customer app\obj\Debug\netstandard2.0\Views\LoginPage.xaml.g.cs
+D:\project21\Halo-Hair---customer\customer app\customer app\obj\Debug\netstandard2.0\Views\ProfileAboutPage.xaml.g.cs
+D:\project21\Halo-Hair---customer\customer app\customer app\obj\Debug\netstandard2.0\Views\ProfileSettingsPage.xaml.g.cs
+D:\project21\Halo-Hair---customer\customer app\customer app\obj\Debug\netstandard2.0\Views\RegisterPage.xaml.g.cs
+D:\project21\Halo-Hair---customer\customer app\customer app\obj\Debug\netstandard2.0\Views\ResetPasswordCodePage.xaml.g.cs
+D:\project21\Halo-Hair---customer\customer app\customer app\obj\Debug\netstandard2.0\Views\ResetPasswordEmailPage.xaml.g.cs
+D:\project21\Halo-Hair---customer\customer app\customer app\obj\Debug\netstandard2.0\Views\ResetPasswordNewPasswordPage.xaml.g.cs
+D:\project21\Halo-Hair---customer\customer app\customer app\obj\Debug\netstandard2.0\Views\SalonInDetailsPage.xaml.g.cs
+D:\project21\Halo-Hair---customer\customer app\customer app\obj\Debug\netstandard2.0\Views\SearchBarberPage.xaml.g.cs
+D:\project21\Halo-Hair---customer\customer app\customer app\obj\Debug\netstandard2.0\Views\SearchServicesPage.xaml.g.cs
+D:\project21\Halo-Hair---customer\customer app\customer app\obj\Debug\netstandard2.0\Views\SearchTimePage.xaml.g.cs
+D:\project21\Halo-Hair---customer\customer app\customer app\obj\Debug\netstandard2.0\customer app.AssemblyInfoInputs.cache
+D:\project21\Halo-Hair---customer\customer app\customer app\obj\Debug\netstandard2.0\customer app.AssemblyInfo.cs
+D:\project21\Halo-Hair---customer\customer app\customer app\obj\Debug\netstandard2.0\customer app.csproj.CoreCompileInputs.cache
+D:\project21\Halo-Hair---customer\customer app\customer app\obj\Debug\netstandard2.0\customer app.dll
+D:\project21\Halo-Hair---customer\customer app\customer app\obj\Debug\netstandard2.0\refint\customer app.dll
+D:\project21\Halo-Hair---customer\customer app\customer app\obj\Debug\netstandard2.0\customer app.pdb
+D:\project21\Halo-Hair---customer\customer app\customer app\bin\Debug\netstandard2.0\customer app.deps.json
+D:\project21\Halo-Hair---customer\customer app\customer app\bin\Debug\netstandard2.0\customer app.dll
+D:\project21\Halo-Hair---customer\customer app\customer app\bin\Debug\netstandard2.0\customer app.pdb
+D:\project21\Halo-Hair---customer\customer app\customer app\obj\Debug\netstandard2.0\XamlC.stamp
+D:\project21\Halo-Hair---customer\customer app\customer app\obj\Debug\netstandard2.0\ref\customer app.dll
+D:\project21\Halo-Hair---customer\customer app\customer app\obj\Debug\netstandard2.0\Views\Components\EntryComponents.xaml.g.cs
+D:\project21\Halo-Hair---customer\customer app\customer app\obj\Debug\netstandard2.0\Views\Components\EntryComponentPassword.xaml.g.cs

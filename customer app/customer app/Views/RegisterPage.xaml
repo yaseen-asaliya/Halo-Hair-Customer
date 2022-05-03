@@ -36,7 +36,6 @@
                 </StackLayout>
                 <controls:ButtonComponent NameButton="Sign Up" CommandParameter="{Binding SigUpCommad}" Padding="20"/>
             </StackLayout>
-        
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>

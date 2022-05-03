@@ -15,6 +15,7 @@ namespace customer_app.Views
         public ResetPasswordNewPasswordPage()
         {
             InitializeComponent();
+
         }
     }
 }

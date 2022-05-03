@@ -25,7 +25,6 @@ namespace customer_app.Views.Components
             {
                 return (string)GetValue(Placeholders);
             }
-
             set
             {
                 SetValue(Placeholders, value);

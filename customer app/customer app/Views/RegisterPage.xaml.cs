@@ -15,7 +15,6 @@ namespace customer_app.Views
         public RegisterPage()
         {
             InitializeComponent();
-
         }
     }
 }

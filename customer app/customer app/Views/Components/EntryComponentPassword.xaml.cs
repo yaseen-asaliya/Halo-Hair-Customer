@@ -10,7 +10,6 @@ namespace customer_app.Views.Components
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class EntryComponentPassword : ContentView
     {
-
         public EntryComponentPassword()
         {
             InitializeComponent();

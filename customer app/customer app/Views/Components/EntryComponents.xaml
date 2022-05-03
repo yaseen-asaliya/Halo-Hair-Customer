@@ -10,7 +10,5 @@
                      PlaceholderColor="#0E0909" FontFamily="Segoe UI" FontSize="16"/>
             </Frame>
         </StackLayout>
-
-      
     </ContentView.Content>
 </ContentView>

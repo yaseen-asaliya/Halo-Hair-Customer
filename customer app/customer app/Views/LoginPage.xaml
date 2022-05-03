@@ -55,7 +55,7 @@
                                         <Span Text="Sign Up"
                                       TextColor="#603D8F" >
                                             <Span.GestureRecognizers>
-                                                <TapGestureRecognizer Tapped="TapGestureRecognizer_Tapped_1"/>
+                                                <TapGestureRecognizer Command="{Binding RegisterPage}"/>
                                             </Span.GestureRecognizers>
                                         </Span>
                                     </FormattedString>

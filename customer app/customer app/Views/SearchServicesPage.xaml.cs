@@ -16,7 +16,6 @@ namespace customer_app.Views
     public partial class SearchServicesPage : ContentPage
     {
         private string accesstoken_barbar { get; set; }
-
         private string NameSolan { get; set; }
         private string start { get; set; }
         private string end { get; set; }
@@ -38,14 +37,10 @@ namespace customer_app.Views
         private int count = 0;
 
         private void checkbox_CheckChanged(object sender, EventArgs e)
-
         {
 
             var checkbox = (Plugin.InputKit.Shared.Controls.CheckBox)sender;
-
-
             var ob = checkbox.BindingContext as DataSalon;
-
             if (ob != null)
             {
                 count += ob.Prices;

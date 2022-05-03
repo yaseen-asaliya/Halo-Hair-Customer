@@ -6,8 +6,10 @@ using System.Collections.ObjectModel;
 using System.Collections.Specialized;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Input;
 using Xamarin.Essentials;
-
+using Xamarin.Forms;
+using customer_app.Views;
 namespace customer_app.ViewModels
 {
     public class HomePageViewModels : BaseViewModel
@@ -18,6 +20,7 @@ namespace customer_app.ViewModels
         public ObservableCollection<OfferModel> OfferImages { get; set; }
         public ObservableCollection<OfferModel> Offer { get; set; }
         public ObservableCollection<OfferModel> myOffers { get; set; }
+        public ICommand SearchBarberPage { get; }
         public HomePageViewModels()
         {
             GetName();
@@ -27,7 +30,11 @@ namespace customer_app.ViewModels
             myOffers = new ObservableCollection<OfferModel>();
             myOffers = firebase.GetAllOfferImgs();
             myOffers.CollectionChanged += filltedservices;
-
+            SearchBarberPage = new Command(onSearchBarberPage);
+        }
+        private async void onSearchBarberPage()
+        {
+            await Application.Current.MainPage.Navigation.PushModalAsync(new SearchBarberPage());
         }
 
         private void filltedservices(object sender, NotifyCollectionChangedEventArgs e)

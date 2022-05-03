@@ -16,7 +16,6 @@ namespace customer_app.Views
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class SearchTimePage : ContentPage
     {
-
         public SearchTimePage(ObservableCollection<DataSalon> selectedList, string BarbarAccesstoken, string NameSolan, string start, string end)
         {
             InitializeComponent();
@@ -24,8 +23,5 @@ namespace customer_app.Views
             SearchTimeViewModels searchTimeViewModels = new SearchTimeViewModels(selectedList, BarbarAccesstoken, NameSolan, start, end);
             BindingContext = searchTimeViewModels;
         }
-
-
-
     }
 }

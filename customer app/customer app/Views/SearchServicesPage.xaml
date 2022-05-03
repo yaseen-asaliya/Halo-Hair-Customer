@@ -10,7 +10,19 @@
     <ContentPage.Content>
         <StackLayout>
             <cont:navigationComponent Titles="Search Services" CommandParameter="{Binding BackPage}"/>
-            <SearchBar TextChanged="SearchBar_TextChanged" ></SearchBar>
+            <Frame Padding="0"
+                   Margin="20"
+                   HasShadow="True" 
+                   BorderColor="Black" 
+                   CornerRadius="15" 
+                   HeightRequest="46" 
+                   HorizontalOptions="Center"
+                   WidthRequest="340">
+                <SearchBar BackgroundColor="#E9E8E8"  
+                           Placeholder="Type here to search"
+                           TextChanged="SearchBar_TextChanged"
+                           TextTransform="Lowercase"/>
+            </Frame>
             <!--<cont:SearchBarComponent Margin="10"/> -->
 
             <StackLayout HeightRequest="500">
@@ -40,10 +52,7 @@
                                                 <Label Text="{Binding Prices}" VerticalOptions="CenterAndExpand" Margin="10,5,0,0"/>
                                                 <Label Text="₪" Margin="0,5,0,0" FontSize="12"/>
                                             </StackLayout>
-                                            <StackLayout Orientation="Horizontal">
-                                                <Label Text="{Binding Time_Needed}" VerticalOptions="EndAndExpand" Margin="10,5,0,0"/>
-                                                <Label Text="min" Margin="0,5,0,0" FontSize="12"/>
-                                            </StackLayout>
+                                            
                                         </StackLayout>
                                         <StackLayout VerticalOptions="CenterAndExpand">
                                             <!--CheckChanged="checkbox_CheckChanged" -->

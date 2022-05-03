@@ -49,18 +49,24 @@
             </Frame>
 
 
-            <CollectionView x:Name="Times" ItemsSource="{Binding times}" 
-                HeightRequest="200">
+            <CollectionView x:Name="Times" 
+                            Margin="20"
+                            ItemsSource="{Binding times}"
+                            HeightRequest="100">
+                <CollectionView.ItemsLayout>
+                    <GridItemsLayout Orientation="Horizontal"/>
+                </CollectionView.ItemsLayout>
                 <CollectionView.ItemTemplate>
+                    
                     <DataTemplate>
                         <Grid>
                             <Grid.ColumnDefinitions>
-                                <ColumnDefinition Width="0.5*"/>
+                                <ColumnDefinition Width="*"/>
                             </Grid.ColumnDefinitions>
                             <Grid.RowDefinitions>
                                 <RowDefinition Height="50" />
                             </Grid.RowDefinitions>
-
+                            <Label IsVisible="false" Text="{Binding id}"></Label>
                             <Button Grid.Column="0" 
                                     Command="{Binding Path=BindingContext.TimesCommand,Source={x:Reference Times}}"
                                     CommandParameter="{Binding .}"
@@ -73,8 +79,10 @@
                 </CollectionView.ItemTemplate>
             </CollectionView>
 
+            
 
-            <cont:ButtonComponent Margin="30" NameButton="Book an appointment" CommandParameter="{Binding appointment}"/>
+
+            <cont:ButtonComponent Margin="30,0,30,0" NameButton="Book an appointment" CommandParameter="{Binding appointment}"/>
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>

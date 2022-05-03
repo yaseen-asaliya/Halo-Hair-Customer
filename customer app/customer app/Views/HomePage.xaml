@@ -1,7 +1,8 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
-             xmlns:viewmodel="clr-namespace:customer_app.Views.Components" xmlns:viewmodels="clr-namespace:customer_app.ViewModels"
+             xmlns:viewmodel="clr-namespace:customer_app.Views.Components"              
+             xmlns:viewmodels="clr-namespace:customer_app.ViewModels"
              Shell.NavBarIsVisible="False"
              x:Class="customer_app.Views.HomePage">
     <ContentPage.BindingContext>
@@ -27,6 +28,7 @@
                 </Grid>
 
                 <Label Grid.Column="1" Text="Hi," FontSize="20" Margin="0,30,0,0" HorizontalOptions="EndAndExpand"/>
+                
                 <Label Grid.Column="2" Text="{Binding NameCustomer}" FontSize="20" Margin="0,30" />
                 
                 <Grid Grid.Column="3"
@@ -42,30 +44,33 @@
          
             <Label Text="Search for barbers or services" FontSize="Medium" Margin="10" Font="Segoe UI"/>
 
-            <ImageButton Margin="50,0,50,0" Source="search.png" Clicked="Button_Clicked"/>
+            <ImageButton Margin="50,0,50,0" Source="search.png" Command="{Binding SearchBarberPage}"/>
 
-            <!--<StackLayout Margin="0,50,0,0">
-                <viewmodel:AsdAndOffersComponent/>
-            </StackLayout>-->
+            
             <Frame HeightRequest="170" 
                    BorderColor="Purple" 
                    Margin="20,60,20,40"
                    CornerRadius="30">
-
-                <CollectionView x:Name="SearchBarber"  ItemsSource="{Binding Offer}" >
+                <CollectionView ItemsSource="{Binding Offer}" 
+                                HeightRequest="300"
+                                ItemSizingStrategy="MeasureAllItems" Margin="10,0,10,0"                                    
+                                ItemsUpdatingScrollMode="KeepLastItemInView">
+                    <CollectionView.ItemsLayout>
+                        <GridItemsLayout Orientation="Horizontal"/>
+                    </CollectionView.ItemsLayout>
                     <CollectionView.ItemTemplate>
                         <DataTemplate>
-
-                            <Image Source="{Binding ImageUrl}"  
-                               HorizontalOptions="Center" 
-                               HeightRequest="200"
-                               BackgroundColor="Purple"/>
+                            <StackLayout Padding="2">                                
+                                    <Image Source="{Binding ImageUrl}" 
+                                           HorizontalOptions="Center"
+                                           HeightRequest="200"
+                                           BackgroundColor="Purple"/>                                
+                            </StackLayout>
                         </DataTemplate>
-
                     </CollectionView.ItemTemplate>
                 </CollectionView>
             </Frame>
-                       
+            
 
             <Frame Margin="20,30,20,0" CornerRadius="20" HasShadow="True" BorderColor="MediumPurple">
                 <StackLayout Orientation="Horizontal" HorizontalOptions="Center">

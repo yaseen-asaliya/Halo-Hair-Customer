@@ -39,11 +39,11 @@ namespace customer_app.Services
         {
             var TimeSalons = _firebaseClient.Child("TIME").AsObservable<TimeModel>().AsObservableCollection();
             return TimeSalons;
-        }       
-        public async Task AddTime(string calendarSelectedDate, string liststring, string selectedTime, string accesstoken_barbar, string nameSoaln, bool isAvabile, int id)
+        }
+        public async Task AddTime(string calendarSelectedDate, string liststring, string selectedTime, string accesstokenbarbar, string nameSoaln, bool isAvabile, int id)
         {
             rnd = new Random();
-            int ID_ = rnd.Next(1, 256300000);
+            int ID = rnd.Next(1, 256300000);
             AppointmentmModel scheduleTimeModel = new AppointmentmModel();
             {
                 scheduleTimeModel.DateSelected = calendarSelectedDate;
@@ -51,13 +51,13 @@ namespace customer_app.Services
                 scheduleTimeModel.time = selectedTime;
                 scheduleTimeModel.PersonName = PersonName;
                 scheduleTimeModel.NameSolan = nameSoaln;
-                scheduleTimeModel.AccessToken_Barbar = accesstoken_barbar;
+                scheduleTimeModel.AccessToken_Barbar = accesstokenbarbar;
                 scheduleTimeModel.AccessToken_User = userAccessToken;
-                scheduleTimeModel.ID_History = ID_;
-                scheduleTimeModel.ID_Reservations = ID_;
-                scheduleTimeModel.isAvabile = isAvabile;
+                scheduleTimeModel.ID_History = ID;
+                scheduleTimeModel.ID_Reservations = ID;
                 scheduleTimeModel.id = id;
             }
+            await UpdatePerson(id, selectedTime, accesstokenbarbar);
 
             await _firebaseClient.Child("ReservationsRequest").PostAsync(scheduleTimeModel);
             await _firebaseClient.Child("History").PostAsync(scheduleTimeModel);
@@ -138,21 +138,31 @@ namespace customer_app.Services
 
             return Users_Customer;
         }
-        public async Task UpdatePerson(int Id, string Accesstoken)
+        public async Task UpdatePerson(int Id, string selectedTime, string Accesstoken)
         {
-            var toUpdatePerson = (await _firebaseClient
-              .Child("TIME").Child("Time")
-              .OnceAsync<TimeModel>()).Where(a => a.Object.AccessToken_Barbar == Accesstoken).FirstOrDefault();
-            TimeModel myTime = new TimeModel();
-            {
-                myTime.AccessToken_Barbar = Accesstoken;
-                myTime.Time.Add(("4.52", true));
 
+            TimeModel timeModel = new TimeModel();
+            {
+                timeModel.Item1 = selectedTime;
+                timeModel.Item2 = true;
             }
-            await _firebaseClient
-              .Child("TIME").Child("Time")
-              .Child(toUpdatePerson.Key)
-              .PutAsync(myTime);
+
+
+            var todelete = (await _firebaseClient.Child("TIME").OnceAsync<TimeModel>())
+                   .FirstOrDefault(item => item.Object.Time[Id].Item1 == selectedTime && item.Object.AccessToken_Barbar == Accesstoken);
+            try
+            {
+                await _firebaseClient
+                     .Child($"TIME")
+                     .Child(todelete.Key)
+                     .Child($"Time/{Id}")
+                     .PutAsync(timeModel);
+            }
+
+            catch (Exception ex)
+            {
+                await Application.Current.MainPage.DisplayAlert("Failed", ex.Message, "ok");
+            }
         }
     }
 }

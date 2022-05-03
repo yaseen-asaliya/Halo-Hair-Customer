@@ -34,12 +34,17 @@ namespace customer_app.ViewModels
                 PropertyChanged(this, new PropertyChangedEventArgs("Password"));
             }
         }
-
+        public ICommand RegisterPage { get; }
         public LoginViewModels()
         {
             auth = DependencyService.Get<IAuth>();
             SubmitCommand = new Command(async () => await SignIn(_email, _password));
             ResetPasswordCommad = new Command(onForgetPassword);
+            RegisterPage = new Command(onRegisterPage);
+        }
+        private async void onRegisterPage()
+        {
+            await Application.Current.MainPage.Navigation.PushModalAsync(new RegisterPage());
         }
         private async void onForgetPassword()
         {

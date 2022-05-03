@@ -20,6 +20,7 @@ namespace customer_app.ViewModels
         private static string _accessToken { get; set; }
         public ICommand BackPage { get; }
         public ICommand LogOut { get; }
+        public ICommand ProfileAboutPage { get; }
         public ObservableCollection<ProfilePageModel> Profile
         {
             get { return _profile; }
@@ -52,6 +53,11 @@ namespace customer_app.ViewModels
             Profile.CollectionChanged += serviceschanged;
             LogOut = new Command(PerformLogOut);
             BackPage = new Command(backPage);
+            ProfileAboutPage = new Command(onProfileAboutPage);
+        }
+        private async void onProfileAboutPage()
+        {
+            await Application.Current.MainPage.Navigation.PushModalAsync(new ProfileAboutPage());
         }
         private async Task accessToken()
         {

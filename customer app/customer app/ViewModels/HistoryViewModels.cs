@@ -62,7 +62,6 @@ namespace customer_app.ViewModels
 
             History.CollectionChanged += servicesChanged;
             DeleteCommand = new Command(onDeleteTapped);
-            DeleteAppointmentCommand = new Command(onDeleteAppointment);
             BackPage = new Command(backPage);
         }
         private async void backPage(object obj)
@@ -90,15 +89,14 @@ namespace customer_app.ViewModels
         private async void onDeleteTapped(object obj)
         {
             DataReservationsModel HistroyModel = (DataReservationsModel)obj;
-            await _firebase.DeleteHistory(HistroyModel);
-        }
-        private async void onDeleteAppointment(object obj)
-        {
-            DataReservationsModel AppointmentDelete = (DataReservationsModel)obj;
-            //   await firebase.onDeleteAppointment(AppointmentDelete.ID_Reservations);
-
+            var res = await App.Current.MainPage.DisplayAlert("Are you sure that want to delete?", $"Appointment will delete only from history, call barber to cancel ", "Yes", "Cancel");
+            if (res)
+            {
+                await _firebase.DeleteHistory(HistroyModel);
+            }
 
         }
+        
 
     }
 }

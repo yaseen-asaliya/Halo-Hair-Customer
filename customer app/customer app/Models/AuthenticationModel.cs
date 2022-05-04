@@ -11,6 +11,5 @@ namespace customer_app.Models
         public string AccessToken_User { get; set; }
         public string PersonName { get; set; }
         public long Phone { get; set; }
-        public string location { get; set; }
     }
 }

@@ -57,11 +57,13 @@ namespace customer_app.Droid
 
                 return token.ToString();
             }
-            catch (FirebaseAuthInvalidUserException e)
+            catch (Exception ex)
             {
-                e.PrintStackTrace();
-                return string.Empty;
+                await App.Current.MainPage.DisplayAlert("Failled", ex.Message, "OK");
+
+
             }
+            return null;
         }
 
         public async Task<string> SignUpWithEmailAndPassword(string email, string password)
@@ -72,16 +74,19 @@ namespace customer_app.Droid
             {
 
                 var auth = await FirebaseAuth.Instance.CreateUserWithEmailAndPasswordAsync(email, password);
+
                 var token = auth.User.Uid;
 
                 return token.ToString();
 
+
             }
             catch (Exception ex)
             {
-                Console.WriteLine(ex.Message);
+                await App.Current.MainPage.DisplayAlert("Failled", ex.Message, "OK");
                 return null;
             }
         }
+
     }
 }

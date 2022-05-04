@@ -83,20 +83,12 @@ namespace customer_app.Services
 
             return dataReservation;
         }
-        public async Task AddNewUser(string name, long phone, string url, string location)
+        public async Task AddNewUser(AuthenticationModel addUser)
         {
             try
             {
-                AuthenticationModel addUser = new AuthenticationModel();
-                {
-                    addUser.PersonName = name;
-                    addUser.Phone = phone;
-                    addUser.AccessToken_User = url;
-                    addUser.location = location;
-
-                }
+                
                 await _firebaseClient.Child("Users_Customer").PostAsync(addUser);
-                await Application.Current.MainPage.DisplayAlert("Successful", "Register User", "ok");
             }
             catch (Exception ex)
             {

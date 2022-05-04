@@ -16,10 +16,9 @@ namespace customer_app.Views
     public partial class SearchServicesPage : ContentPage
     {
         private string accesstoken_barbar { get; set; }
-
         private string NameSolan { get; set; }
-        private int start { get; set; }
-        private int end { get; set; }
+        private string start { get; set; }
+        private string end { get; set; }
         public SearchServicesPage(DataSalon data)
         {
             InitializeComponent();
@@ -30,27 +29,45 @@ namespace customer_app.Views
             NameSolan = data.NameSalon;
             start = data.StartTime;
             end = data.EndTime;
+            BindingContext = new SearchServicesViewModels(data);
 
         }
         private ObservableCollection<DataSalon> selectedList;
 
+        private int count = 0;
 
         private void checkbox_CheckChanged(object sender, EventArgs e)
-
         {
 
             var checkbox = (Plugin.InputKit.Shared.Controls.CheckBox)sender;
-
-
             var ob = checkbox.BindingContext as DataSalon;
-
             if (ob != null)
             {
-
+                count += ob.Prices;
                 AddOrUpdatetheResult(ob, checkbox);
 
             }
 
+        }
+
+        public static readonly BindableProperty CommandProperty = BindableProperty.Create(nameof(Command),
+        typeof(ICommand),
+          typeof(SearchServicesPage),
+         default(ICommand));
+        public static readonly BindableProperty CommandParameterProperty = BindableProperty.Create(nameof(CommandParameter),
+      typeof(object),
+      typeof(SearchServicesPage),
+      default);
+        public ICommand Command
+        {
+            get => (ICommand)GetValue(CommandProperty);
+            set => SetValue(CommandProperty, value);
+        }
+
+        public object CommandParameter
+        {
+            get => GetValue(CommandParameterProperty);
+            set => SetValue(CommandParameterProperty, value);
         }
 
         private async Task AddOrUpdatetheResult(DataSalon ob, Plugin.InputKit.Shared.Controls.CheckBox checkbox)
@@ -68,7 +85,17 @@ namespace customer_app.Views
             }
         }
 
+        private void SearchBar_TextChanged(object sender, Xamarin.Forms.TextChangedEventArgs e)
+        {
+            var _container = BindingContext as SearchServicesViewModels;
+            SearchServices.BatchBegin();
+            if (string.IsNullOrWhiteSpace(e.NewTextValue))
+                SearchServices.ItemsSource = _container.FilltedServices;
+            else
+                SearchServices.ItemsSource = _container.FilltedServices.Where(i => i.Service_Name.Contains(e.NewTextValue));
 
+
+        }
         private void Button_ClickedAsync(object sender, EventArgs e)
         {
 
@@ -76,10 +103,7 @@ namespace customer_app.Views
 
         }
 
-        private void Button_Clicked(object sender, EventArgs e)
-        {
 
-        }
     }
 
 }

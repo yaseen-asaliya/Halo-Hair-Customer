@@ -1,10 +1,8 @@
 ﻿using customer_app.Models;
 using customer_app.Services;
 using System;
-using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Collections.Specialized;
-using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Input;
 using Xamarin.Essentials;
@@ -14,100 +12,91 @@ namespace customer_app.ViewModels
 {
     public class HistoryViewModels : BaseViewModel
     {
-        FireBaseHaloHair firebase;
-        public ObservableCollection<DataReservationsModel> history { get; set; }
-
-
-        public ObservableCollection<DataReservationsModel> History
-        {
-            get { return history; }
-            set
-            {
-                history = value;
-                OnPropertyChanged();
-
-            }
-        }
-
-
-
-        private ObservableCollection<DataReservationsModel> filltedhistory;
+        private FireBaseHaloHair _firebase;
+        private ObservableCollection<DataReservationsModel> _history { get; set; }
+        private ObservableCollection<DataReservationsModel> _filltedHistory;
+        public ICommand DeleteCommand { get; }
+        public ICommand DeleteAppointmentCommand { get; }
+        public ICommand BackPage { get; }
+        private static string _accessToken { get; set; }
         public ObservableCollection<DataReservationsModel> FilltedHistory
         {
             get
             {
-                return filltedhistory;
+                return _filltedHistory;
             }
             set
             {
-                filltedhistory = value;
+                _filltedHistory = value;
                 OnPropertyChanged();
             }
         }
-
-        private static string accessToken { get; set; }
-
-        private async Task AccessToken()
+        public ObservableCollection<DataReservationsModel> History
+        {
+            get { return _history; }
+            set
+            {
+                _history = value;
+                OnPropertyChanged();
+            }
+        }
+        private async Task accessToken()
         {
             try
             {
                 var oauthToken = await SecureStorage.GetAsync("oauth_token");
-                accessToken = oauthToken;
+                _accessToken = oauthToken;
             }
             catch (Exception ex)
             {
                 Console.WriteLine(ex.Message);
             }
         }
-
-        public ICommand DeleteCommand { get; }
         public HistoryViewModels()
         {
-            AccessToken();
-            firebase = new FireBaseHaloHair();
+            accessToken();
+            _firebase = new FireBaseHaloHair();
             History = new ObservableCollection<DataReservationsModel>();
-            History = firebase.GetDataReservation();
+            History = _firebase.GetDataReservation();
             FilltedHistory = new ObservableCollection<DataReservationsModel>();
 
-            History.CollectionChanged += serviceschanged;
+            History.CollectionChanged += servicesChanged;
             DeleteCommand = new Command(onDeleteTapped);
-
+            BackPage = new Command(backPage);
         }
-
-        private void serviceschanged(object sender, NotifyCollectionChangedEventArgs e)
+        private async void backPage(object obj)
+        {
+            await Application.Current.MainPage.Navigation.PopModalAsync();
+        }
+        private void servicesChanged(object sender, NotifyCollectionChangedEventArgs e)
         {
             if (e.Action == NotifyCollectionChangedAction.Add)
             {
                 DataReservationsModel services = e.NewItems[0] as DataReservationsModel;
                 Console.WriteLine(e.NewItems[0]);
                 Console.WriteLine(e.NewItems[0].GetType());
-                if (services.AccessToken_User == accessToken)
+                if (services.AccessToken_User == _accessToken)
                 {
-
                     FilltedHistory.Add(services);
                 }
             }
             else if (e.Action == NotifyCollectionChangedAction.Remove)
             {
                 DataReservationsModel services = e.OldItems[0] as DataReservationsModel;
-
-
                 FilltedHistory.Remove(services);
-
             }
         }
-
-
         private async void onDeleteTapped(object obj)
         {
             DataReservationsModel HistroyModel = (DataReservationsModel)obj;
-            await firebase.DeleteHistory(HistroyModel);
-
-
-
+            var res = await App.Current.MainPage.DisplayAlert("Are you sure that want to delete?", $"Appointment will delete only from history, call barber to cancel ", "Yes", "Cancel");
+            if (res)
+            {
+                await _firebase.DeleteHistory(HistroyModel);
+            }
 
         }
-
+        
 
     }
 }

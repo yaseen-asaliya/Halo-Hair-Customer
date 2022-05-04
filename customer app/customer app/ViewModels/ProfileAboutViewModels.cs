@@ -2,10 +2,8 @@
 using customer_app.Services;
 using customer_app.Views;
 using System;
-using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Collections.Specialized;
-using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Input;
 using Xamarin.Essentials;
@@ -15,68 +13,68 @@ namespace customer_app.ViewModels
 {
     public class ProfileAboutViewModels : BaseViewModel
     {
-        FireBaseHaloHair firebase;
-
-
-        private ObservableCollection<ProfilePageModel> profile;
-
+        FireBaseHaloHair _firebase;
+        private ObservableCollection<ProfilePageModel> _profile;
+        private ObservableCollection<ProfilePageModel> _myProfile;
+        public string Location { get; set; }
+        private static string _accessToken { get; set; }
+        public ICommand BackPage { get; }
+        public ICommand LogOut { get; }
+        public ICommand ProfileAboutPage { get; }
         public ObservableCollection<ProfilePageModel> Profile
         {
-            get { return profile; }
+            get { return _profile; }
             set
             {
-                profile = value;
+                _profile = value;
                 OnPropertyChanged();
-
             }
         }
-
-
-
-        private ObservableCollection<ProfilePageModel> myprofile;
         public ObservableCollection<ProfilePageModel> Myprofile
         {
             get
             {
-                return myprofile;
+                return _myProfile;
             }
             set
             {
-                myprofile = value;
+                _myProfile = value;
                 OnPropertyChanged();
-            }
-        }
-
-
-
-        private static string accessToken { get; set; }
-
-        private async Task AccessToken()
-        {
-            try
-            {
-                var oauthToken = await SecureStorage.GetAsync("oauth_token");
-                accessToken = oauthToken;
-            }
-            catch (Exception ex)
-            {
-                Console.WriteLine(ex.Message);
             }
         }
 
         public ProfileAboutViewModels()
         {
-            AccessToken();
-            firebase = new FireBaseHaloHair();
+            accessToken();
+            _firebase = new FireBaseHaloHair();
             Myprofile = new ObservableCollection<ProfilePageModel>();
             Profile = new ObservableCollection<ProfilePageModel>();
-            Profile = firebase.ProfilePage();
+            Profile = _firebase.ProfilePage();
             Profile.CollectionChanged += serviceschanged;
             LogOut = new Command(PerformLogOut);
-
-
+            BackPage = new Command(backPage);
+            ProfileAboutPage = new Command(onProfileAboutPage);
         }
-        public string location { get; set; }
+        private async void onProfileAboutPage()
+        {
+            await Application.Current.MainPage.Navigation.PushModalAsync(new ProfileAboutPage());
+        }
+        private async Task accessToken()
+        {
+            try
+            {
+                var oauthToken = await SecureStorage.GetAsync("oauth_token");
+                _accessToken = oauthToken;
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+            }
+        }        
+        private async void backPage(object obj)
+        {
+            await Application.Current.MainPage.Navigation.PopModalAsync();
+        }
         private void serviceschanged(object sender, NotifyCollectionChangedEventArgs e)
         {
             if (e.Action == NotifyCollectionChangedAction.Add)
@@ -84,35 +82,20 @@ namespace customer_app.ViewModels
                 ProfilePageModel profilePageModel = e.NewItems[0] as ProfilePageModel;
                 Console.WriteLine(e.NewItems[0]);
                 Console.WriteLine(e.NewItems[0].GetType());
-                if (profilePageModel.AccessToken_User == accessToken)
+                if (profilePageModel.AccessToken_User == _accessToken)
                 {
-
                     Myprofile.Add(profilePageModel);
                     SecureStorage.SetAsync("NameUser", profilePageModel.PersonName.ToString());
-
-
                 }
             }
-
         }
-
-
-
-        public ICommand LogOut { get; }
-
-
         private async void PerformLogOut()
         {
             var auth = DependencyService.Resolve<IAuth>();
             auth.IsSigOut();
-
             //await Xamarin.Forms.Shell.Current.GoToAsync("//LoginPage");
             await Application.Current.MainPage.DisplayAlert("Logout", "you are logout", "ok");
-
             await Application.Current.MainPage.Navigation.PushModalAsync(new LoginPage());
-
-
-
         }
     }
 }

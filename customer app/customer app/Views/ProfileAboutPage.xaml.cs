@@ -32,9 +32,5 @@ namespace customer_app.Views
             aboutview.IsVisible = false;
             BoxAbout.IsVisible = false;
         }
-        private void Button_Clicked(object sender, EventArgs e)
-        {
-            Navigation.PushModalAsync(new ProfileSettingsPage());
-        }
     }
 }

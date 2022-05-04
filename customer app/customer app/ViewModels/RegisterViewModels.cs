@@ -1,58 +1,45 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Input;
 using Xamarin.Forms;
-using customer_app.Models;
 using customer_app.Services;
 
 namespace customer_app.ViewModels
 {
     public class RegisterViewModels
     {
-        public string email { get; set; }
-        public string password { get; set; }
-        public string name { get; set; }
-        public long phone { get; set; }
-        public string location { get; set; }
-
-        public ICommand SigUpCommad { get; }
-
-
+        FireBaseHaloHair _firebase;
         IAuth auth;
-
-        FireBaseHaloHair firebase;
+        public string Email { get; set; }
+        public string Password { get; set; }
+        public string Name { get; set; }
+        public long Phone { get; set; }
+        public string Location { get; set; }
+        public ICommand SigUpCommad { get; }
 
         public RegisterViewModels()
         {
             auth = DependencyService.Get<IAuth>();
-            firebase = new FireBaseHaloHair();
-            SigUpCommad = new Command(async () => await SignUp(email, password));
-
+            _firebase = new FireBaseHaloHair();
+            SigUpCommad = new Command(async () => await signUp(Email, Password));
         }
-
-        private async void AddUser(string name, long phone, string ulr, string location)
+        private async void addUser(string name, long phone, string url, string location)
         {
-            await firebase.AddNewUser(name, phone, ulr, location);
+            await _firebase.AddNewUser(name, phone, url, location);
         }
-
-
-        private async Task SignUp(string email, string password)
+        private async Task signUp(string email, string password)
         {
-
             try
             {
-                string ulr = await auth.SignUpWithEmailAndPassword(email, password);
+                string url = await auth.SignUpWithEmailAndPassword(email, password);
 
-                if (null != ulr)
+                if (null != url)
                 {
-                    AddUser(name, phone, ulr, location);
+                    addUser(Name, Phone, url, Location);
                     await Application.Current.MainPage.DisplayAlert("Successful", "Register User", "ok");
-
                 }
 
-                else if (ulr == null)
+                else if (url == null)
                 {
                     await Application.Current.MainPage.DisplayAlert("Failed", "Email already exists", "ok");
                 }
@@ -63,8 +50,5 @@ namespace customer_app.ViewModels
 
             }
         }
-
     }
-
-
 }

@@ -11,10 +11,11 @@
 
     <ContentPage.Content>
         <StackLayout>
-            <cont:navigationComponent Titles="Search Times"/>
+            <cont:navigationComponent Titles="Search Times" CommandParameter="{Binding BackPage}"/>
             <Frame CornerRadius="10" Margin="10">
                 <StackLayout>
-                    <controls:Calendar  SelectedDate="{Binding CalendarSelectedDate, Mode=TwoWay}" 
+
+                    <!-- <controls:Calendar  SelectedDate="{Binding CalendarSelectedDate}" 
                                         x:Name="calendar"  
                                         HorizontalOptions="Center"
                                         VerticalOptions="Center"
@@ -28,37 +29,60 @@
                                         TitleRightArrowTextColor= "Black"
                                         TitleLeftArrowTextColor="Black" 
                                         TitleLabelFontFamily="" 
+                                        IsEnabled="False"
+                                     
                                         TitleLabelFontSize="20"/>
+                    -->
+                    <xc:CalendarView    WidthRequest="371"
+                                        HeightRequest="340"
+                                        BackgroundColor="White"
+                                        NavigationBackgroundColor="#603D8F"
+                                        DayNameTextColor="#603D8F"
+                                        
+                                       
+                                       
+                                        >
+
+                    </xc:CalendarView>
+
                 </StackLayout>
             </Frame>
 
 
-            <CollectionView x:Name="Times" ItemsSource="{Binding times}" 
-                HeightRequest="200">
+            <CollectionView x:Name="Times" 
+                            Margin="20"
+                            ItemsSource="{Binding times}"
+                            HeightRequest="100">
+                <CollectionView.ItemsLayout>
+                    <GridItemsLayout Orientation="Horizontal"/>
+                </CollectionView.ItemsLayout>
                 <CollectionView.ItemTemplate>
+                    
                     <DataTemplate>
                         <Grid>
                             <Grid.ColumnDefinitions>
-                                <ColumnDefinition Width="0.5*"/>
+                                <ColumnDefinition Width="*"/>
                             </Grid.ColumnDefinitions>
                             <Grid.RowDefinitions>
                                 <RowDefinition Height="50" />
                             </Grid.RowDefinitions>
-
+                            <Label IsVisible="false" Text="{Binding id}"></Label>
                             <Button Grid.Column="0" 
                                     Command="{Binding Path=BindingContext.TimesCommand,Source={x:Reference Times}}"
                                     CommandParameter="{Binding .}"
                                     Text="{Binding time}" 
                                     HorizontalOptions="Center"
                                     Margin="3"
-                                    BackgroundColor="Purple"/> 
+                                    BackgroundColor="#603D8F"/>
                         </Grid>
                     </DataTemplate>
                 </CollectionView.ItemTemplate>
             </CollectionView>
 
+            
 
-            <cont:ButtonComponent Margin="30" NameButton="Book an appointment" CommandParameter="{Binding appointment}"/>
+
+            <cont:ButtonComponent Margin="30,0,30,0" NameButton="Book an appointment" CommandParameter="{Binding appointment}"/>
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>

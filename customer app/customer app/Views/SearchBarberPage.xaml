@@ -10,8 +10,23 @@
     </ContentPage.BindingContext>
     <ContentPage.Content>
         <StackLayout>
-            <cont:navigationComponent Titles="Search Barbers"/>
-            <cont:SearchBarComponent Margin="10"/> 
+            <cont:navigationComponent Titles="Search Barbers" CommandParameter="{Binding BackPage}"/>
+            
+            <Frame Padding="0"
+                   Margin="20"
+                   HasShadow="True" 
+                   BorderColor="Black" 
+                   CornerRadius="15" 
+                   HeightRequest="46" 
+                   HorizontalOptions="Center"
+                   WidthRequest="340">
+                <SearchBar BackgroundColor="#E9E8E8"  
+                           Placeholder="Type here to search"
+                           TextChanged="SearchBar_TextChanged"
+                           TextTransform="Lowercase"/>
+            </Frame>
+            <!--<cont:SearchBarComponent Margin="10"/> -->
+            
             <StackLayout HeightRequest="500">
                 <Frame Margin="20,10,20,10" CornerRadius="20" BorderColor="Purple">
                     <StackLayout>
@@ -39,25 +54,25 @@
                                                 <StackLayout Orientation="Horizontal">
                                                     <Label Text="Open : "/>
                                                     <Label Text="{Binding StartTime}" VerticalOptions="StartAndExpand"/>
-                                                    <Label Text="AM"/>
                                                     <Label Text="-" FontSize="15"/>
                                                     <Label Text="{Binding EndTime}" VerticalOptions="EndAndExpand"/>
-                                                    <Label Text="PM"/>
-                                                    <Label Text="{Binding AccessToken_Barbar}"  IsVisible="false" />
-
                                                 </StackLayout>
+                                                <Label Text="{Binding AccessToken_Barbar}" IsVisible="false" />
+
                                             </StackLayout>
                                             <StackLayout VerticalOptions="CenterAndExpand">
-
-                                                <Button Text="Show Barbar" 
-                                                                Command="{Binding Path=BindingContext.ShowBarbarCommand,Source={x:Reference SearchBarber}}"
-                                                                CommandParameter="{Binding .}"
-                                                                BackgroundColor="White"
-                                                  TextColor="Black" BorderColor="White" HorizontalOptions="CenterAndExpand"
-                                                      Padding="0,0,0,0" HeightRequest="20" WidthRequest="50"/>
+                                                <Button Text="Services" 
+                                                        Command="{Binding Path=BindingContext.ShowBarbarCommand,Source={x:Reference SearchBarber}}"
+                                                        CommandParameter="{Binding .}"
+                                                        BackgroundColor="White"
+                                                        TextColor="Black" 
+                                                        BorderColor="White" 
+                                                        HorizontalOptions="CenterAndExpand"
+                                                        Padding="0,0,0,0" 
+                                                        HeightRequest="20" 
+                                                        WidthRequest="70"/>
                                             </StackLayout>
                                         </StackLayout>
-
                                     </StackLayout>
                                 </DataTemplate>
                             </CollectionView.ItemTemplate>

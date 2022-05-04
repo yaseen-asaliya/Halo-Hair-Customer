@@ -3,17 +3,31 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:viewmodels="clr-namespace:customer_app.ViewModels"
              Shell.NavBarIsVisible="False"
-             xmlns:cont="clr-namespace:customer_app.Views.Components" xmlns:input="clr-namespace:Plugin.InputKit.Shared.Controls;assembly=Plugin.InputKit"
+             xmlns:cont="clr-namespace:customer_app.Views.Components" 
+             xmlns:input="clr-namespace:Plugin.InputKit.Shared.Controls;assembly=Plugin.InputKit" 
              x:Class="customer_app.Views.SearchServicesPage">
 
     <ContentPage.Content>
         <StackLayout>
-            <cont:navigationComponent Titles="Search Services"/>
-            <cont:SearchBarComponent Margin="10"/>
+            <cont:navigationComponent Titles="Search Services" CommandParameter="{Binding BackPage}"/>
+            <Frame Padding="0"
+                   Margin="20"
+                   HasShadow="True" 
+                   BorderColor="Black" 
+                   CornerRadius="15" 
+                   HeightRequest="46" 
+                   HorizontalOptions="Center"
+                   WidthRequest="340">
+                <SearchBar BackgroundColor="#E9E8E8"  
+                           Placeholder="Type here to search"
+                           TextChanged="SearchBar_TextChanged"
+                           TextTransform="Lowercase"/>
+            </Frame>
+            <!--<cont:SearchBarComponent Margin="10"/> -->
 
             <StackLayout HeightRequest="500">
                 <Frame Margin="20,0,20,10" CornerRadius="20" BorderColor="Purple">
-                    <CollectionView ItemsSource="{Binding FilltedServices}"  >
+                    <CollectionView ItemsSource="{Binding FilltedServices}" x:Name="SearchServices"  >
                         <CollectionView.ItemTemplate>
                             <DataTemplate>
                                 <StackLayout>
@@ -38,17 +52,17 @@
                                                 <Label Text="{Binding Prices}" VerticalOptions="CenterAndExpand" Margin="10,5,0,0"/>
                                                 <Label Text="₪" Margin="0,5,0,0" FontSize="12"/>
                                             </StackLayout>
-                                            <StackLayout Orientation="Horizontal">
-                                                <Label Text="{Binding Time_Needed}" VerticalOptions="EndAndExpand" Margin="10,5,0,0"/>
-                                                <Label Text="min" Margin="0,5,0,0" FontSize="12"/>
-                                            </StackLayout>
+                                            
                                         </StackLayout>
                                         <StackLayout VerticalOptions="CenterAndExpand">
+                                            <!--CheckChanged="checkbox_CheckChanged" -->
+
                                             <input:CheckBox Text="{Binding Name}"
+                                                                 CommandParameter="{TemplateBinding CheckBox}"
                                                                 Type="Check" Color="White" 
                                                                 BoxBackgroundColor="White" 
                                                                 TextColor="White" 
-                                                                CheckChanged="checkbox_CheckChanged" 
+                                                                 CheckChanged="checkbox_CheckChanged"
                                                                 BindingContext="{Binding .}"/>
                                         </StackLayout>
                                     </StackLayout>

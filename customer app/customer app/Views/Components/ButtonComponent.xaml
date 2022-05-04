@@ -4,8 +4,8 @@
              x:Class="customer_app.Views.Components.ButtonComponent">
     <ContentView.ControlTemplate>
         <ControlTemplate>
-            <StackLayout WidthRequest="207"
-                         HeightRequest="46">
+            <StackLayout WidthRequest="80"
+                         HeightRequest="40">
                 <Button  
                          Text= "{TemplateBinding NameButton}"
                          TextColor="#FFFFFF"

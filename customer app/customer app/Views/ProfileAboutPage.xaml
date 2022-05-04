@@ -117,19 +117,7 @@
                                     </Frame>
                                 </StackLayout>
                             </Frame>
-                            <Frame Padding="12">
-                                <StackLayout Orientation="Horizontal" >
-                                    <StackLayout>
-                                        <Label Text="Location" FontSize="Medium"/>
-                                        <Label Text="{Binding location}" FontSize="Small"/>
-                                    </StackLayout>
-                                    <StackLayout Orientation="Vertical" HorizontalOptions="EndAndExpand" VerticalOptions="CenterAndExpand">
-                                        <Button Text="EDIT" Command="{Binding .}"  BackgroundColor="White"
-                                                TextColor="Black" HeightRequest="20" WidthRequest="50"/>
-                                        <BoxView WidthRequest="35" Color="#603D8F" HeightRequest="3"/>
-                                    </StackLayout>
-                                </StackLayout>
-                            </Frame>
+
                             <Frame Padding="12">
                                 <StackLayout Orientation="Horizontal" >
                                     <Label Text="Notification" FontSize="Medium"/>
@@ -143,8 +131,8 @@
                                 </StackLayout>
                             </Frame>
                         </StackLayout>
-                        <comp:ButtonComponent NameButton="Log out" CommandParameter="{Binding LogOut}" Padding="20"/>
-                        
+                        <comp:ButtonComponent NameButton="Log out" CommandParameter="{Binding LogOut}" Padding="20" Margin="100,40,100,0"/>
+
                     </StackLayout>
                 </StackLayout>
             </StackLayout>

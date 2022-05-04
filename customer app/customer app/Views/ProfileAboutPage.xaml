@@ -41,7 +41,7 @@
                         </StackLayout>
                     </StackLayout>
                     <StackLayout x:Name="aboutview" Orientation="Vertical" Padding="0,40,0,0" IsVisible="True" HeightRequest="350" >
-                        <ListView x:Name="MyServices" HasUnevenRows="True"   ItemsSource="{Binding Myprofile}">
+                        <ListView x:Name="Myprofile" HasUnevenRows="True"   ItemsSource="{Binding Myprofile}">
                             <ListView.ItemTemplate>
                                 <DataTemplate>
                                     <ViewCell>

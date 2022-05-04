@@ -44,7 +44,7 @@
                             </Label.FormattedText>
                         </Label>
                     </StackLayout>
-                    <controls:ButtonComponent NameButton="Sign in" CommandParameter="{Binding SubmitCommand}" Padding="20"/>
+                    <controls:ButtonComponent NameButton="Sign in" CommandParameter="{Binding SubmitCommand}" Padding="20" Margin="100,0,100,0"/>
 
                     <StackLayout Orientation="Vertical" HorizontalOptions="Center">
                         <StackLayout Orientation="Horizontal">

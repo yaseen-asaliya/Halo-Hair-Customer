@@ -10,7 +10,7 @@
     </ContentPage.BindingContext>
     <ContentPage.Content>
         <StackLayout>
-            <comp:navigationComponent Titles="Profile" CommandParameter="{Binding BackPage}"/>
+            <comp:navigationComponent Titles="Profile" isVisible="false" CommandParameter="{Binding BackPage}"/>
             <StackLayout>
                 <StackLayout Margin="0,50,0,0" >
                     <Frame CornerRadius="100" 
@@ -117,19 +117,7 @@
                                     </Frame>
                                 </StackLayout>
                             </Frame>
-                            <Frame Padding="12">
-                                <StackLayout Orientation="Horizontal" >
-                                    <StackLayout>
-                                        <Label Text="Location" FontSize="Medium"/>
-                                        <Label Text="{Binding location}" FontSize="Small"/>
-                                    </StackLayout>
-                                    <StackLayout Orientation="Vertical" HorizontalOptions="EndAndExpand" VerticalOptions="CenterAndExpand">
-                                        <Button Text="EDIT" Command="{Binding .}"  BackgroundColor="White"
-                                                TextColor="Black" HeightRequest="20" WidthRequest="50"/>
-                                        <BoxView WidthRequest="35" Color="#603D8F" HeightRequest="3"/>
-                                    </StackLayout>
-                                </StackLayout>
-                            </Frame>
+
                             <Frame Padding="12">
                                 <StackLayout Orientation="Horizontal" >
                                     <Label Text="Notification" FontSize="Medium"/>
@@ -143,8 +131,8 @@
                                 </StackLayout>
                             </Frame>
                         </StackLayout>
-                        <comp:ButtonComponent NameButton="Log out" CommandParameter="{Binding LogOut}" Padding="20"/>
-                        
+                        <comp:ButtonComponent NameButton="Log out" CommandParameter="{Binding LogOut}" Padding="20" Margin="50,40,50,0"/>
+
                     </StackLayout>
                 </StackLayout>
             </StackLayout>

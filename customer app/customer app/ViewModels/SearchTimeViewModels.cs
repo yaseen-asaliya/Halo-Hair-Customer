@@ -19,6 +19,7 @@ namespace customer_app.ViewModels
 
         private ObservableCollection<string> listservices { get; set; }
         public ObservableCollection<AppointmentmModel> times { get; set; }
+        public ICommand BackPage { get; set; }
         public SearchTimeViewModels()
         {
             
@@ -61,6 +62,11 @@ namespace customer_app.ViewModels
 
             appointment = new Command(async () => await AddTime(CalendarSelectedDate, liststring, selectedTime, accesstoken_barbar, nameSoaln, isAvabile, ID));
             TimesCommand = new Command(onTime);
+            BackPage = new Command(backPage);
+        }
+        private async void backPage(object obj)
+        {
+            await Application.Current.MainPage.Navigation.PopModalAsync();
         }
 
         private void print(ObservableCollection<TimeModel> fillterTime)

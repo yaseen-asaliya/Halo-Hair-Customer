@@ -12,6 +12,7 @@ namespace customer_app.Models
         public string time { get; set; }
         public string AccessToken_User { get; set; }
         public int ID_Reservations { get; set; }
+        public string DateSelected { get; set; }
 
         public int ID_History { get; set; }
 

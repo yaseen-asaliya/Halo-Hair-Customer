@@ -48,40 +48,37 @@ namespace customer_app.ViewModels
         }
         private async void onForgetPassword()
         {
+            // await Xamarin.Forms.Shell.Current.GoToAsync("//NewPasswordPage");
             await Application.Current.MainPage.Navigation.PushModalAsync(new ResetPasswordNewPasswordPage());
         }
-        async Task SignIn(string _email, string _password)
+        async Task SignIn(string email, string password)
         {
-
-            if (_email != null && _password != null)
+            if (email != null && password != null)
             {
-
-                string token = await auth.LoginWithEmailAndPassword(_email, _password);
-
-                if (token != string.Empty)
+                string token = await auth.LoginWithEmailAndPassword(email, password);
+                try
                 {
-
-                    try
+                    if (token != string.Empty)
                     {
-                        await SecureStorage.SetAsync("oauth_token", token);
-                        App.Current.MainPage = new AppShell();
-
+                        try
+                        {
+                            await SecureStorage.SetAsync("oauth_token", token);
+                            App.Current.MainPage = new AppShell();
+                        }
+                        catch (Exception ex)
+                        {
+                            Console.WriteLine(ex.Message);
+                        }
                     }
-                    catch (Exception ex)
-                    {
-                        Console.WriteLine(ex.Message);
-                    }
-
-
+                }
+                catch (Exception ex)
+                {
+                    await Application.Current.MainPage.DisplayAlert("Failed", ex.Message, "ok");
                 }
             }
             else
-            {
-                await Application.Current.MainPage.DisplayAlert("Failed", "Email And Password is Empty", "ok");
-
-            }
+                await Application.Current.MainPage.DisplayAlert("Failed", "Password and Email is Empty", "ok");
         }
-
-        }
+    }
 }
 

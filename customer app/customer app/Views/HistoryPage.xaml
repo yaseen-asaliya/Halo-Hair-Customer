@@ -17,7 +17,7 @@
                 <Frame Margin="20,10,20,10" CornerRadius="20" BorderColor="Purple">
                     <StackLayout>
                         <CollectionView x:Name="History" ItemsSource="{Binding FilltedHistory}">
-
+ 
                             <CollectionView.ItemTemplate>
                                 <DataTemplate>
                                     <StackLayout>

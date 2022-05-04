@@ -36,7 +36,7 @@
                 </StackLayout>
                 <Label Margin="20,0,0,0" Text="Confirm Password" />
                 <StackLayout>
-                    <controls:EntryComponentPassword Text="{Binding Password}"/>
+                    <controls:EntryComponentPassword Text="{Binding ConfirmPassword}"/>
                 </StackLayout>
 
                 <controls:ButtonComponent NameButton="Sign Up" CommandParameter="{Binding SigUpCommad}" Padding="20" Margin="100,0,100,0"/>

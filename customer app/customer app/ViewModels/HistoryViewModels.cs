@@ -73,8 +73,7 @@ namespace customer_app.ViewModels
             if (e.Action == NotifyCollectionChangedAction.Add)
             {
                 DataReservationsModel services = e.NewItems[0] as DataReservationsModel;
-                Console.WriteLine(e.NewItems[0]);
-                Console.WriteLine(e.NewItems[0].GetType());
+
                 if (services.AccessToken_User == _accessToken)
                 {
                     FilltedHistory.Add(services);
@@ -96,7 +95,7 @@ namespace customer_app.ViewModels
             }
 
         }
-        
+
 
     }
 }

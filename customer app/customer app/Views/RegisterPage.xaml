@@ -39,7 +39,7 @@
                     <controls:EntryComponentPassword Text="{Binding Password}"/>
                 </StackLayout>
 
-                <controls:ButtonComponent NameButton="Sign Up" CommandParameter="{Binding SigUpCommad}" Padding="20"/>
+                <controls:ButtonComponent NameButton="Sign Up" CommandParameter="{Binding SigUpCommad}" Padding="20" Margin="100,0,100,0"/>
 
             </StackLayout>
 

@@ -38,12 +38,8 @@ C:\Users\MT2X\Documents\GitHub\Halo-Hair---customer\customer app\customer app\ob
 C:\Users\MT2X\Documents\GitHub\Halo-Hair---customer\customer app\customer app\obj\Debug\netstandard2.0\Views\HomePage.xaml.g.cs
 C:\Users\MT2X\Documents\GitHub\Halo-Hair---customer\customer app\customer app\obj\Debug\netstandard2.0\Views\LoginPage.xaml.g.cs
 C:\Users\MT2X\Documents\GitHub\Halo-Hair---customer\customer app\customer app\obj\Debug\netstandard2.0\Views\ProfileAboutPage.xaml.g.cs
-C:\Users\MT2X\Documents\GitHub\Halo-Hair---customer\customer app\customer app\obj\Debug\netstandard2.0\Views\ProfileSettingsPage.xaml.g.cs
 C:\Users\MT2X\Documents\GitHub\Halo-Hair---customer\customer app\customer app\obj\Debug\netstandard2.0\Views\RegisterPage.xaml.g.cs
-C:\Users\MT2X\Documents\GitHub\Halo-Hair---customer\customer app\customer app\obj\Debug\netstandard2.0\Views\ResetPasswordCodePage.xaml.g.cs
-C:\Users\MT2X\Documents\GitHub\Halo-Hair---customer\customer app\customer app\obj\Debug\netstandard2.0\Views\ResetPasswordEmailPage.xaml.g.cs
 C:\Users\MT2X\Documents\GitHub\Halo-Hair---customer\customer app\customer app\obj\Debug\netstandard2.0\Views\ResetPasswordNewPasswordPage.xaml.g.cs
-C:\Users\MT2X\Documents\GitHub\Halo-Hair---customer\customer app\customer app\obj\Debug\netstandard2.0\Views\SalonInDetailsPage.xaml.g.cs
 C:\Users\MT2X\Documents\GitHub\Halo-Hair---customer\customer app\customer app\obj\Debug\netstandard2.0\Views\SearchBarberPage.xaml.g.cs
 C:\Users\MT2X\Documents\GitHub\Halo-Hair---customer\customer app\customer app\obj\Debug\netstandard2.0\Views\SearchServicesPage.xaml.g.cs
 C:\Users\MT2X\Documents\GitHub\Halo-Hair---customer\customer app\customer app\obj\Debug\netstandard2.0\Views\SearchTimePage.xaml.g.cs
@@ -94,3 +90,5 @@ C:\Users\abood\Desktop\Customer\customer app\customer app\obj\Debug\netstandard2
 C:\Users\abood\Desktop\Customer\customer app\customer app\obj\Debug\netstandard2.0\customer app.dll
 C:\Users\abood\Desktop\Customer\customer app\customer app\obj\Debug\netstandard2.0\ref\customer app.dll
 C:\Users\abood\Desktop\Customer\customer app\customer app\obj\Debug\netstandard2.0\customer app.pdb
+C:\Users\MT2X\Documents\GitHub\Halo-Hair---customer\customer app\customer app\obj\Debug\netstandard2.0\Views\Components\EntryComponentPassword.xaml.g.cs
+C:\Users\MT2X\Documents\GitHub\Halo-Hair---customer\customer app\customer app\obj\Debug\netstandard2.0\Views\Components\EntryComponents.xaml.g.cs

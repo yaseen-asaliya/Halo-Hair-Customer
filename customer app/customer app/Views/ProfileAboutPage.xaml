@@ -10,7 +10,7 @@
     </ContentPage.BindingContext>
     <ContentPage.Content>
         <StackLayout>
-            <comp:navigationComponent Titles="Profile" CommandParameter="{Binding BackPage}"/>
+            <comp:navigationComponent Titles="Profile" isVisible="false" CommandParameter="{Binding BackPage}"/>
             <StackLayout>
                 <StackLayout Margin="0,50,0,0" >
                     <Frame CornerRadius="100" 

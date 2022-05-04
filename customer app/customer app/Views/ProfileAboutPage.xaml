@@ -131,7 +131,7 @@
                                 </StackLayout>
                             </Frame>
                         </StackLayout>
-                        <comp:ButtonComponent NameButton="Log out" CommandParameter="{Binding LogOut}" Padding="20" Margin="100,40,100,0"/>
+                        <comp:ButtonComponent NameButton="Log out" CommandParameter="{Binding LogOut}" Padding="20" Margin="50,40,50,0"/>
 
                     </StackLayout>
                 </StackLayout>

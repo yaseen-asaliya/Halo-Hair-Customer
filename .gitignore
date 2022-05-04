@@ -406,3 +406,196 @@ ASALocalRun/
 *.pdb
 .vs/customer app/v17/.suo
 customer app/customer app.Android/obj/Debug/120/customer app.Android.csproj.AssemblyReference.cache
+customer app/customer app.Android/bin/Debug/customer app.Android.dll
+customer app/customer app.Android/bin/Debug/customer app.Android.pdb
+customer app/customer app.Android/bin/Debug/customer app.dll
+customer app/customer app.Android/bin/Debug/customer app.pdb
+customer app/customer app.Android/obj/Debug/120/_TelemetryProps
+customer app/customer app.Android/obj/Debug/120/adb.props
+customer app/customer app.Android/obj/Debug/120/android/AndroidManifest.xml
+customer app/customer app.Android/obj/Debug/120/android/assets/customer app.Android.dll
+customer app/customer app.Android/obj/Debug/120/android/assets/customer app.Android.pdb
+customer app/customer app.Android/obj/Debug/120/android/assets/customer app.dll
+customer app/customer app.Android/obj/Debug/120/android/assets/customer app.pdb
+customer app/customer app.Android/obj/Debug/120/android/assets/machine.config
+customer app/customer app.Android/obj/Debug/120/android/bin/classes.dex
+customer app/customer app.Android/obj/Debug/120/android/bin/classes.zip
+customer app/customer app.Android/obj/Debug/120/android/bin/classes/androidx/appcompat/R$drawable.class
+customer app/customer app.Android/obj/Debug/120/android/bin/classes/androidx/appcompat/resources/R$drawable.class
+customer app/customer app.Android/obj/Debug/120/android/bin/classes/androidx/browser/R$drawable.class
+customer app/customer app.Android/obj/Debug/120/android/bin/classes/androidx/constraintlayout/widget/R$drawable.class
+customer app/customer app.Android/obj/Debug/120/android/bin/classes/androidx/coordinatorlayout/R$drawable.class
+customer app/customer app.Android/obj/Debug/120/android/bin/classes/androidx/core/R$drawable.class
+customer app/customer app.Android/obj/Debug/120/android/bin/classes/androidx/drawerlayout/R$drawable.class
+customer app/customer app.Android/obj/Debug/120/android/bin/classes/androidx/fragment/R$drawable.class
+customer app/customer app.Android/obj/Debug/120/android/bin/classes/androidx/navigation/common/R$drawable.class
+customer app/customer app.Android/obj/Debug/120/android/bin/classes/androidx/navigation/R$drawable.class
+customer app/customer app.Android/obj/Debug/120/android/bin/classes/androidx/navigation/ui/R$drawable.class
+customer app/customer app.Android/obj/Debug/120/android/bin/classes/androidx/preference/R$drawable.class
+customer app/customer app.Android/obj/Debug/120/android/bin/classes/androidx/recyclerview/R$drawable.class
+customer app/customer app.Android/obj/Debug/120/android/bin/classes/androidx/swiperefreshlayout/R$drawable.class
+customer app/customer app.Android/obj/Debug/120/android/bin/classes/androidx/transition/R$drawable.class
+customer app/customer app.Android/obj/Debug/120/android/bin/classes/androidx/viewpager2/R$drawable.class
+customer app/customer app.Android/obj/Debug/120/android/bin/classes/com/example/halohair/R$anim.class
+customer app/customer app.Android/obj/Debug/120/android/bin/classes/com/example/halohair/R$animator.class
+customer app/customer app.Android/obj/Debug/120/android/bin/classes/com/example/halohair/R$attr.class
+customer app/customer app.Android/obj/Debug/120/android/bin/classes/com/example/halohair/R$bool.class
+customer app/customer app.Android/obj/Debug/120/android/bin/classes/com/example/halohair/R$color.class
+customer app/customer app.Android/obj/Debug/120/android/bin/classes/com/example/halohair/R$dimen.class
+customer app/customer app.Android/obj/Debug/120/android/bin/classes/com/example/halohair/R$drawable.class
+customer app/customer app.Android/obj/Debug/120/android/bin/classes/com/example/halohair/R$id.class
+customer app/customer app.Android/obj/Debug/120/android/bin/classes/com/example/halohair/R$integer.class
+customer app/customer app.Android/obj/Debug/120/android/bin/classes/com/example/halohair/R$interpolator.class
+customer app/customer app.Android/obj/Debug/120/android/bin/classes/com/example/halohair/R$layout.class
+customer app/customer app.Android/obj/Debug/120/android/bin/classes/com/example/halohair/R$mipmap.class
+customer app/customer app.Android/obj/Debug/120/android/bin/classes/com/example/halohair/R$plurals.class
+customer app/customer app.Android/obj/Debug/120/android/bin/classes/com/example/halohair/R$string.class
+customer app/customer app.Android/obj/Debug/120/android/bin/classes/com/example/halohair/R$style.class
+customer app/customer app.Android/obj/Debug/120/android/bin/classes/com/example/halohair/R$styleable.class
+customer app/customer app.Android/obj/Debug/120/android/bin/classes/com/example/halohair/R$xml.class
+customer app/customer app.Android/obj/Debug/120/android/bin/classes/com/example/halohair/R.class
+customer app/customer app.Android/obj/Debug/120/android/bin/classes/com/google/android/gms/base/R$drawable.class
+customer app/customer app.Android/obj/Debug/120/android/bin/classes/com/google/android/material/R$drawable.class
+customer app/customer app.Android/obj/Debug/120/android/bin/packaged_resources
+customer app/customer app.Android/obj/Debug/120/android/compressed_assemblies.x86.o
+customer app/customer app.Android/obj/Debug/120/android/compressed_assemblies.x86_64.o
+customer app/customer app.Android/obj/Debug/120/android/environment.arm64-v8a.o
+customer app/customer app.Android/obj/Debug/120/android/environment.arm64-v8a.s
+customer app/customer app.Android/obj/Debug/120/android/environment.armeabi-v7a.o
+customer app/customer app.Android/obj/Debug/120/android/environment.armeabi-v7a.s
+customer app/customer app.Android/obj/Debug/120/android/environment.x86.o
+customer app/customer app.Android/obj/Debug/120/android/environment.x86.s
+customer app/customer app.Android/obj/Debug/120/android/environment.x86_64.o
+customer app/customer app.Android/obj/Debug/120/android/environment.x86_64.s
+customer app/customer app.Android/obj/Debug/120/android/manifest/AndroidManifest.xml
+customer app/customer app.Android/obj/Debug/120/android/src/androidx/appcompat/R.java
+customer app/customer app.Android/obj/Debug/120/android/src/androidx/appcompat/resources/R.java
+customer app/customer app.Android/obj/Debug/120/android/src/androidx/browser/R.java
+customer app/customer app.Android/obj/Debug/120/android/src/androidx/constraintlayout/widget/R.java
+customer app/customer app.Android/obj/Debug/120/android/src/androidx/coordinatorlayout/R.java
+customer app/customer app.Android/obj/Debug/120/android/src/androidx/core/R.java
+customer app/customer app.Android/obj/Debug/120/android/src/androidx/drawerlayout/R.java
+customer app/customer app.Android/obj/Debug/120/android/src/androidx/fragment/R.java
+customer app/customer app.Android/obj/Debug/120/android/src/androidx/navigation/common/R.java
+customer app/customer app.Android/obj/Debug/120/android/src/androidx/navigation/R.java
+customer app/customer app.Android/obj/Debug/120/android/src/androidx/navigation/ui/R.java
+customer app/customer app.Android/obj/Debug/120/android/src/androidx/preference/R.java
+customer app/customer app.Android/obj/Debug/120/android/src/androidx/recyclerview/R.java
+customer app/customer app.Android/obj/Debug/120/android/src/androidx/swiperefreshlayout/R.java
+customer app/customer app.Android/obj/Debug/120/android/src/androidx/transition/R.java
+customer app/customer app.Android/obj/Debug/120/android/src/androidx/viewpager2/R.java
+customer app/customer app.Android/obj/Debug/120/android/src/com/example/halohair/R.java
+customer app/customer app.Android/obj/Debug/120/android/src/com/google/android/gms/base/R.java
+customer app/customer app.Android/obj/Debug/120/android/src/com/google/android/material/R.java
+customer app/customer app.Android/obj/Debug/120/android/src/mono/android/app/ApplicationRegistration.java
+customer app/customer app.Android/obj/Debug/120/android/src/mono/MonoRuntimeProvider.java
+customer app/customer app.Android/obj/Debug/120/android/typemaps.x86.o
+customer app/customer app.Android/obj/Debug/120/android/typemaps.x86_64.o
+customer app/customer app.Android/obj/Debug/120/AndroidManifest.xml
+customer app/customer app.Android/obj/Debug/120/app_shared_libraries/arm64-v8a/libxamarin-app.so
+customer app/customer app.Android/obj/Debug/120/app_shared_libraries/armeabi-v7a/libxamarin-app.so
+customer app/customer app.Android/obj/Debug/120/app_shared_libraries/x86/libxamarin-app.so
+customer app/customer app.Android/obj/Debug/120/app_shared_libraries/x86_64/libxamarin-app.so
+customer app/customer app.Android/obj/Debug/120/build.props
+customer app/customer app.Android/obj/Debug/120/buildid.txt
+customer app/customer app.Android/obj/Debug/120/customer app.Android.csproj.AssemblyReference.cache
+customer app/customer app.Android/obj/Debug/120/customer app.Android.csproj.FileListAbsolute.txt
+customer app/customer app.Android/obj/Debug/120/customer app.Android.dll
+customer app/customer app.Android/obj/Debug/120/customer app.Android.pdb
+customer app/customer app.Android/obj/Debug/120/designtime/Resource.designer.cs
+customer app/customer app.Android/obj/Debug/120/devices.cache
+customer app/customer app.Android/obj/Debug/120/lp/111/jl/R.txt
+customer app/customer app.Android/obj/Debug/120/lp/112/jl/AndroidManifest.xml
+customer app/customer app.Android/obj/Debug/120/lp/112/jl/R.txt
+customer app/customer app.Android/obj/Debug/120/lp/113/jl/AndroidManifest.xml
+customer app/customer app.Android/obj/Debug/120/lp/114/jl/AndroidManifest.xml
+customer app/customer app.Android/obj/Debug/120/lp/114/jl/public.txt
+customer app/customer app.Android/obj/Debug/120/lp/114/jl/R.txt
+customer app/customer app.Android/obj/Debug/120/lp/114/jl/res/values/values.xml
+customer app/customer app.Android/obj/Debug/120/lp/115/jl/AndroidManifest.xml
+customer app/customer app.Android/obj/Debug/120/lp/115/jl/META-INF/com/android/build/gradle/aar-metadata.properties
+customer app/customer app.Android/obj/Debug/120/lp/115/jl/R.txt
+customer app/customer app.Android/obj/Debug/120/lp/115/jl/res/values/values.xml
+customer app/customer app.Android/obj/Debug/120/lp/116/jl/AndroidManifest.xml
+customer app/customer app.Android/obj/Debug/120/lp/116/jl/META-INF/com/android/build/gradle/aar-metadata.properties
+customer app/customer app.Android/obj/Debug/120/lp/116/jl/R.txt
+customer app/customer app.Android/obj/Debug/120/lp/116/jl/res/values/values.xml
+customer app/customer app.Android/obj/Debug/120/lp/117/jl/AndroidManifest.xml
+customer app/customer app.Android/obj/Debug/120/lp/117/jl/R.txt
+customer app/customer app.Android/obj/Debug/120/lp/117/jl/res/values/values.xml
+customer app/customer app.Android/obj/Debug/120/lp/118/jl/AndroidManifest.xml
+customer app/customer app.Android/obj/Debug/120/lp/118/jl/R.txt
+customer app/customer app.Android/obj/Debug/120/lp/118/jl/res/values-v23/values-v23.xml
+customer app/customer app.Android/obj/Debug/120/lp/118/jl/res/values/values.xml
+customer app/customer app.Android/obj/Debug/120/lp/119/jl/AndroidManifest.xml
+customer app/customer app.Android/obj/Debug/120/lp/119/jl/R.txt
+customer app/customer app.Android/obj/Debug/120/lp/119/jl/res/values/values.xml
+customer app/customer app.Android/obj/Debug/120/lp/120/jl/AndroidManifest.xml
+customer app/customer app.Android/obj/Debug/120/lp/120/jl/R.txt
+customer app/customer app.Android/obj/Debug/120/lp/121/jl/AndroidManifest.xml
+customer app/customer app.Android/obj/Debug/120/lp/121/jl/R.txt
+customer app/customer app.Android/obj/Debug/120/lp/122/jl/AndroidManifest.xml
+customer app/customer app.Android/obj/Debug/120/lp/122/jl/R.txt
+customer app/customer app.Android/obj/Debug/120/lp/122/jl/res/values/values.xml
+customer app/customer app.Android/obj/Debug/120/lp/123/jl/AndroidManifest.xml
+customer app/customer app.Android/obj/Debug/120/lp/123/jl/R.txt
+customer app/customer app.Android/obj/Debug/120/lp/123/jl/res/values/values.xml
+customer app/customer app.Android/obj/Debug/120/lp/124/jl/AndroidManifest.xml
+customer app/customer app.Android/obj/Debug/120/lp/124/jl/R.txt
+customer app/customer app.Android/obj/Debug/120/lp/124/jl/res/values/values.xml
+customer app/customer app.Android/obj/Debug/120/lp/125/jl/AndroidManifest.xml
+customer app/customer app.Android/obj/Debug/120/lp/125/jl/proguard.txt
+customer app/customer app.Android/obj/Debug/120/lp/125/jl/R.txt
+customer app/customer app.Android/obj/Debug/120/lp/125/jl/res/values/values.xml
+customer app/customer app.Android/obj/Debug/120/lp/126/jl/AndroidManifest.xml
+customer app/customer app.Android/obj/Debug/120/lp/126/jl/META-INF/com/android/build/gradle/aar-metadata.properties
+customer app/customer app.Android/obj/Debug/120/lp/126/jl/R.txt
+customer app/customer app.Android/obj/Debug/120/lp/127/jl/AndroidManifest.xml
+customer app/customer app.Android/obj/Debug/120/lp/128/jl/AndroidManifest.xml
+customer app/customer app.Android/obj/Debug/120/lp/128/jl/R.txt
+customer app/customer app.Android/obj/Debug/120/lp/129/jl/AndroidManifest.xml
+customer app/customer app.Android/obj/Debug/120/lp/129/jl/R.txt
+customer app/customer app.Android/obj/Debug/120/lp/130/jl/AndroidManifest.xml
+customer app/customer app.Android/obj/Debug/120/lp/130/jl/R.txt
+customer app/customer app.Android/obj/Debug/120/lp/131/jl/AndroidManifest.xml
+customer app/customer app.Android/obj/Debug/120/lp/131/jl/R.txt
+customer app/customer app.Android/obj/Debug/120/lp/131/jl/res/values/values.xml
+customer app/customer app.Android/obj/Debug/120/lp/132/jl/R.txt
+customer app/customer app.Android/obj/Debug/120/lp/132/jl/third_party_licenses.txt
+customer app/customer app.Android/obj/Debug/120/lp/133/jl/third_party_licenses.txt
+customer app/customer app.Android/obj/Debug/120/lp/134/jl/third_party_licenses.txt
+customer app/customer app.Android/obj/Debug/120/lp/135/jl/R.txt
+customer app/customer app.Android/obj/Debug/120/lp/135/jl/third_party_licenses.txt
+customer app/customer app.Android/obj/Debug/120/lp/136/jl/third_party_licenses.txt
+customer app/customer app.Android/obj/Debug/120/lp/137/jl/proguard.txt
+customer app/customer app.Android/obj/Debug/120/lp/137/jl/third_party_licenses.txt
+customer app/customer app.Android/obj/Debug/120/lp/138/jl/third_party_licenses.txt
+customer app/customer app.Android/obj/Debug/120/lp/139/jl/third_party_licenses.txt
+customer app/customer app.Android/obj/Debug/120/lp/140/jl/proguard.txt
+customer app/customer app.Android/obj/Debug/120/lp/140/jl/third_party_licenses.txt
+customer app/customer app.Android/obj/Debug/120/lp/141/jl/third_party_licenses.txt
+customer app/customer app.Android/obj/Debug/120/lp/142/jl/third_party_licenses.txt
+customer app/customer app.Android/obj/Debug/120/lp/143/jl/R.txt
+customer app/customer app.Android/obj/Debug/120/lp/143/jl/third_party_licenses.json
+customer app/customer app.Android/obj/Debug/120/lp/144/jl/proguard.txt
+customer app/customer app.Android/obj/Debug/120/lp/144/jl/third_party_licenses.json
+customer app/customer app.Android/obj/Debug/120/lp/145/jl/R.txt
+customer app/customer app.Android/obj/Debug/120/lp/145/jl/third_party_licenses.json
+customer app/customer app.Android/obj/Debug/120/lp/146/jl/R.txt
+customer app/customer app.Android/obj/Debug/120/lp/146/jl/third_party_licenses.json
+customer app/customer app.Android/obj/Debug/120/lp/147/jl/proguard.txt
+customer app/customer app.Android/obj/Debug/120/lp/147/jl/third_party_licenses.txt
+customer app/customer app.Android/obj/Debug/120/lp/148/jl/third_party_licenses.txt
+customer app/customer app.Android/obj/Debug/120/lp/152/jl/proguard.txt
+customer app/customer app.Android/obj/Debug/120/lp/152/jl/third_party_licenses.txt
+customer app/customer app.Android/obj/Debug/120/R.txt
+customer app/customer app.Android/obj/Debug/120/res/values/styles.xml
+customer app/customer app/bin/Debug/netstandard2.0/customer app.dll
+customer app/customer app/bin/Debug/netstandard2.0/customer app.pdb
+customer app/customer app/bin/Debug/netstandard2.0/ref/customer app.dll
+customer app/customer app/obj/Debug/netstandard2.0/customer app.csproj.AssemblyReference.cache
+customer app/customer app/obj/Debug/netstandard2.0/customer app.csproj.CoreCompileInputs.cache
+customer app/customer app/obj/Debug/netstandard2.0/customer app.csproj.FileListAbsolute.txt
+customer app/customer app/obj/Debug/netstandard2.0/customer app.dll
+customer app/customer app/obj/Debug/netstandard2.0/customer app.pdb
+customer app/customer app/obj/Debug/netstandard2.0/ref/customer app.dll

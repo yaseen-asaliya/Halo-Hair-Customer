@@ -3,6 +3,8 @@ using System.Threading.Tasks;
 using System.Windows.Input;
 using Xamarin.Forms;
 using customer_app.Services;
+using customer_app.Models;
+using customer_app.Views;
 
 namespace customer_app.ViewModels
 {
@@ -14,7 +16,7 @@ namespace customer_app.ViewModels
         public string Password { get; set; }
         public string Name { get; set; }
         public long Phone { get; set; }
-        public string Location { get; set; }
+        public string ConfirmPassword { get; set; }
         public ICommand SigUpCommad { get; }
 
         public RegisterViewModels()
@@ -23,32 +25,39 @@ namespace customer_app.ViewModels
             _firebase = new FireBaseHaloHair();
             SigUpCommad = new Command(async () => await signUp(Email, Password));
         }
-        private async void addUser(string name, long phone, string url, string location)
+        private async void addUser(string AccessToken_User)
         {
-            await _firebase.AddNewUser(name, phone, url, location);
+            AuthenticationModel addUser = new AuthenticationModel();
+            {
+                addUser.PersonName = Name;
+                addUser.Phone = Phone;
+                addUser.AccessToken_User = AccessToken_User;
+
+
+            }
+            await _firebase.AddNewUser(addUser);
         }
+
+
         private async Task signUp(string email, string password)
         {
-            try
+
+            if (Password == ConfirmPassword)
             {
-                string url = await auth.SignUpWithEmailAndPassword(email, password);
-
-                if (null != url)
+                string acccessToken = await auth.SignUpWithEmailAndPassword(email, password);
+                if (null != acccessToken)
                 {
-                    addUser(Name, Phone, url, Location);
+                    addUser(acccessToken);
                     await Application.Current.MainPage.DisplayAlert("Successful", "Register User", "ok");
-                }
-
-                else if (url == null)
-                {
-                    await Application.Current.MainPage.DisplayAlert("Failed", "Email already exists", "ok");
+                    await Application.Current.MainPage.Navigation.PushModalAsync(new LoginPage());
                 }
             }
-            catch (Exception ex)
+            else
             {
-                await Application.Current.MainPage.DisplayAlert("Failed", "Register User Try agin " + ex.Message, "ok");
-
+                await Application.Current.MainPage.DisplayAlert("Failed", "Confirm password is incorrect", "ok");
             }
         }
+
+
     }
 }

@@ -23,8 +23,49 @@ namespace customer_app.ViewModels
         public ICommand ProfileAboutPage { get; }
         public ICommand EditPhoneCommand { get; }
         public ICommand EditNameCommand { get; }
-
-
+        public ICommand Aboutbutton { get; }
+        public ICommand Settingsbutton { get; }
+        public ICommand TapLanguage { get; }
+        public string Action { get; set; }
+        private string language;
+        public string Language
+        {
+            get
+            {
+                return language;
+            }
+            set
+            {
+                language = value;
+                OnPropertyChanged();
+            }
+        }
+        private bool isVisibleAbout;
+        public bool IsVisibleAbout
+        {
+            get
+            {
+                return isVisibleAbout;
+            }
+            set
+            {
+                isVisibleAbout = value;
+                OnPropertyChanged();
+            }
+        }
+        private bool isVisibleSettings;
+        public bool IsVisibleSettings
+        {
+            get
+            {
+                return isVisibleSettings;
+            }
+            set
+            {
+                isVisibleSettings = value;
+                OnPropertyChanged();
+            }
+        }
         public ObservableCollection<ProfilePageModel> Profile
         {
             get { return _profile; }
@@ -74,6 +115,34 @@ namespace customer_app.ViewModels
             EditNameCommand = new Command(onEditNameCommand);
             EditPhoneCommand = new Command(onEditPhoneCommand);
             LogOut = new Command(PerformLogOut);
+            Aboutbutton = new Command(About_button);
+            Settingsbutton = new Command(Settings_button);
+            TapLanguage = new Command(Tap_Language);
+            Language = "English";
+            IsVisibleAbout = true;
+            IsVisibleSettings = false;
+        }
+
+        private void Settings_button(object obj)
+        {
+            IsVisibleAbout = false;
+            IsVisibleSettings = true;
+        }
+
+        private void About_button(object obj)
+        {
+            IsVisibleSettings = false;
+            IsVisibleAbout = true;
+        }
+
+        private async void Tap_Language(object obj)
+        {
+            Action = await Application.Current.MainPage.DisplayActionSheet("Select Language", "Cancel", null, "English", "Arabic");
+            if (Action == "Cancel")
+            {
+                return;
+            }
+            Language = Action;
         }
 
         private async void onEditNameCommand(object obj)

@@ -15,12 +15,16 @@ namespace customer_app.ViewModels
     {
         FireBaseHaloHair _firebase;
         private ObservableCollection<ProfilePageModel> _profile;
-        private ObservableCollection<ProfilePageModel> _myProfile;
+
         public string Location { get; set; }
         private static string _accessToken { get; set; }
         public ICommand BackPage { get; }
         public ICommand LogOut { get; }
         public ICommand ProfileAboutPage { get; }
+        public ICommand EditPhoneCommand { get; }
+        public ICommand EditNameCommand { get; }
+
+
         public ObservableCollection<ProfilePageModel> Profile
         {
             get { return _profile; }
@@ -30,6 +34,7 @@ namespace customer_app.ViewModels
                 OnPropertyChanged();
             }
         }
+        private ObservableCollection<ProfilePageModel> _myProfile;
         public ObservableCollection<ProfilePageModel> Myprofile
         {
             get
@@ -42,24 +47,7 @@ namespace customer_app.ViewModels
                 OnPropertyChanged();
             }
         }
-
-        public ProfileAboutViewModels()
-        {
-            accessToken();
-            _firebase = new FireBaseHaloHair();
-            Myprofile = new ObservableCollection<ProfilePageModel>();
-            Profile = new ObservableCollection<ProfilePageModel>();
-            Profile = _firebase.ProfilePage();
-            Profile.CollectionChanged += serviceschanged;
-            LogOut = new Command(PerformLogOut);
-            BackPage = new Command(backPage);
-            ProfileAboutPage = new Command(onProfileAboutPage);
-        }
-        private async void onProfileAboutPage()
-        {
-            await Application.Current.MainPage.Navigation.PushModalAsync(new ProfileAboutPage());
-        }
-        private async Task accessToken()
+        private async Task AccessToken()
         {
             try
             {
@@ -70,7 +58,53 @@ namespace customer_app.ViewModels
             {
                 Console.WriteLine(ex.Message);
             }
-        }        
+        }
+
+        public ProfileAboutViewModels()
+        {
+            AccessToken();
+            _firebase = new FireBaseHaloHair();
+            Myprofile = new ObservableCollection<ProfilePageModel>();
+            Profile = new ObservableCollection<ProfilePageModel>();
+            Profile = _firebase.ProfilePage();
+            Profile.CollectionChanged += serviceschanged;
+            LogOut = new Command(PerformLogOut);
+            BackPage = new Command(backPage);
+            ProfileAboutPage = new Command(onProfileAboutPage);
+            EditNameCommand = new Command(onEditNameCommand);
+            EditPhoneCommand = new Command(onEditPhoneCommand);
+            LogOut = new Command(PerformLogOut);
+        }
+
+        private async void onEditNameCommand(object obj)
+        {
+
+
+
+            string result = await App.Current.MainPage.DisplayPromptAsync("Edit Name", "New Name");
+            if (result != null)
+            {
+                Myprofile[0].PersonName = result;
+                await _firebase.UpdatePerson(Myprofile[0]);
+
+            }
+        }
+
+        private async void onEditPhoneCommand(object sender)
+        {
+            string result = await App.Current.MainPage.DisplayPromptAsync("Edit Phone", "New Phone");
+            if (result != null)
+            {
+                Myprofile[0].Phone = result;
+                await _firebase.UpdatePerson(Myprofile[0]);
+            }
+            }
+
+        private async void onProfileAboutPage()
+        {
+            await Application.Current.MainPage.Navigation.PushModalAsync(new ProfileAboutPage());
+        }
+
         private async void backPage(object obj)
         {
             await Application.Current.MainPage.Navigation.PopModalAsync();
@@ -84,6 +118,7 @@ namespace customer_app.ViewModels
                 Console.WriteLine(e.NewItems[0].GetType());
                 if (profilePageModel.AccessToken_User == _accessToken)
                 {
+                    Myprofile.Remove(profilePageModel);
                     Myprofile.Add(profilePageModel);
                     SecureStorage.SetAsync("NameUser", profilePageModel.PersonName.ToString());
                 }
@@ -97,5 +132,10 @@ namespace customer_app.ViewModels
             await Application.Current.MainPage.DisplayAlert("Logout", "you are logout", "ok");
             await Application.Current.MainPage.Navigation.PushModalAsync(new LoginPage());
         }
+        private string PersonName { get; set; }
+        //    private string NameSalon { get; set; }
+        private string Phone { get; set; }
+        private string location { get; set; }
+
     }
 }

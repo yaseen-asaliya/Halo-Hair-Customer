@@ -21,6 +21,7 @@ namespace customer_app.Services
             _firebaseClient = new FirebaseClient("https://halo-hair-676ed-default-rtdb.firebaseio.com");
             accessToken();
         }
+
         public ObservableCollection<OfferModel> GetAllOfferImgs()
         {
             return _firebaseClient.Child("Offer").AsObservable<OfferModel>().AsObservableCollection();
@@ -57,7 +58,7 @@ namespace customer_app.Services
                 scheduleTimeModel.ID_Reservations = ID;
                 scheduleTimeModel.id = id;
             }
-            await UpdatePerson(id, selectedTime, accesstokenbarbar);
+            //   await UpdatePerson(id, selectedTime, accesstokenbarbar);
 
             await _firebaseClient.Child("ReservationsRequest").PostAsync(scheduleTimeModel);
             await _firebaseClient.Child("History").PostAsync(scheduleTimeModel);
@@ -85,16 +86,15 @@ namespace customer_app.Services
         }
         public async Task AddNewUser(AuthenticationModel addUser)
         {
-            try
-            {
 
-                await _firebaseClient.Child("Users_Customer").PostAsync(addUser);
-            }
-            catch (Exception ex)
-            {
-                await Application.Current.MainPage.DisplayAlert("Failed", "Register User Try agin " + ex.Message, "ok");
+            addUser.AccessToken_User = userAccessToken;
+            await _firebaseClient.Child("Users").PostAsync(addUser);
 
-            }
+         //   addUser.PersonName = Name;
+                //    addUser.Phone = phone;
+                  //  addUser.AccessToken_User = url;
+                   // addUser.location = location;
+
 
 
         }
@@ -130,30 +130,22 @@ namespace customer_app.Services
 
             return Users_Customer;
         }
-        public async Task UpdatePerson(int Id, string selectedTime, string Accesstoken)
+        public async Task UpdatePerson(ProfilePageModel profilePageModel)
         {
 
-            TimeModel timeModel = new TimeModel();
-            {
-                timeModel.Item1 = selectedTime;
-                timeModel.Item2 = true;
-            }
-
-
-            var todelete = (await _firebaseClient.Child("TIME").OnceAsync<TimeModel>())
-                   .FirstOrDefault(item => item.Object.Time[Id].Item1 == selectedTime && item.Object.AccessToken_Barbar == Accesstoken);
+            var todelete = (await _firebaseClient.Child("Users_Customer").OnceAsync<ProfilePageModel>())
+                   .FirstOrDefault(item => item.Object.AccessToken_User == userAccessToken);
             try
             {
                 await _firebaseClient
-                     .Child($"TIME")
+                     .Child($"Users_Customer")
                      .Child(todelete.Key)
-                     .Child($"Time/{Id}")
-                     .PutAsync(timeModel);
+                     .PutAsync(profilePageModel);
             }
 
             catch (Exception ex)
             {
-                await Application.Current.MainPage.DisplayAlert("Failed", ex.Message, "ok");
+                await Xamarin.Forms.Shell.Current.DisplayAlert("Failed", ex.Message, "ok");
             }
         }
     }

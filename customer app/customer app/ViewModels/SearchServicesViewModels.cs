@@ -14,12 +14,12 @@ namespace customer_app.ViewModels
 {
     public class SearchServicesViewModels : BaseViewModel
     {
-        FireBaseHaloHair _firebase;
+        private FireBaseHaloHair _firebase;
         private ObservableCollection<DataSalon> _filltedServices;
-        private int _count = 0;
+        int count = 0;
         public ObservableCollection<DataSalon> services { get; set; }
-        private string _barbarAccesstoken { get; set; }
-        public ICommand BackPage { get; }
+        private string _barberAccesstoken { get; set; }
+        public ICommand BackButton { get; }
         public ICommand CheckBox { get; }
         public ObservableCollection<DataSalon> Services
         {
@@ -42,40 +42,36 @@ namespace customer_app.ViewModels
                 OnPropertyChanged();
             }
         }
-        
         public SearchServicesViewModels(DataSalon data)
         {
-            _barbarAccesstoken = data.AccessToken_Barbar;
-            Console.WriteLine("The Access tokenBarabar " + _barbarAccesstoken);
+            _barberAccesstoken = data.BarberAccessToken;
             _firebase = new FireBaseHaloHair();
             FilltedServices = new ObservableCollection<DataSalon>();
             Services = new ObservableCollection<DataSalon>();
             Services = _firebase.getServices();
-            Services.CollectionChanged += filltedServices;
-            // CheckBox = new Command(checkbox_CheckChanged);
-            BackPage = new Command(backPage);
+            Services.CollectionChanged += FillerServices;
+            BackButton = new Command(BackPage);
         }
-        private async void backPage(object obj)
+        private async void BackPage(object obj)
         {
             await Application.Current.MainPage.Navigation.PopModalAsync();
         } 
-        private void checkboxCheckChanged(object sender)
+        private void CheckboxCheckChanged(object sender)
         {
             var checkbox = (Plugin.InputKit.Shared.Controls.CheckBox)sender;
             var ob = checkbox.BindingContext as DataSalon;
             if (ob != null)
             {
-                _count += ob.Prices;
-                // AddOrUpdatetheResult(ob, checkbox);
+                count += ob.Price;
             }
         }
-        private void filltedServices(object sender, NotifyCollectionChangedEventArgs e)
+        private void FillerServices(object sender, NotifyCollectionChangedEventArgs e)
         {
             if (e.Action == NotifyCollectionChangedAction.Add)
             {
                 DataSalon filltedsrevices = e.NewItems[0] as DataSalon;
                 Console.WriteLine(e.NewItems[0].GetType());
-                if (filltedsrevices.AccessToken_Barbar == _barbarAccesstoken)
+                if (filltedsrevices.BarberAccessToken == _barberAccesstoken)
                 {
                     FilltedServices.Add(filltedsrevices);
                 }

@@ -17,7 +17,7 @@ namespace customer_app.ViewModels
         private ObservableCollection<DataReservationsModel> _filltedHistory;
         public ICommand DeleteCommand { get; }
         public ICommand DeleteAppointmentCommand { get; }
-        public ICommand BackPage { get; }
+        public ICommand BackButton { get; }
         private static string _accessToken { get; set; }
         public ObservableCollection<DataReservationsModel> FilltedHistory
         {
@@ -40,7 +40,7 @@ namespace customer_app.ViewModels
                 OnPropertyChanged();
             }
         }
-        private async Task accessToken()
+        private async void accessToken()
         {
             try
             {
@@ -60,21 +60,21 @@ namespace customer_app.ViewModels
             History = _firebase.GetDataReservation();
             FilltedHistory = new ObservableCollection<DataReservationsModel>();
 
-            History.CollectionChanged += servicesChanged;
-            DeleteCommand = new Command(onDeleteTapped);
-            BackPage = new Command(backPage);
+            History.CollectionChanged += ServicesChanged;
+            DeleteCommand = new Command(OnDeleteTapped);
+            BackButton = new Command(BackPage);
         }
-        private async void backPage(object obj)
+        private async void BackPage(object obj)
         {
             await Application.Current.MainPage.Navigation.PopModalAsync();
         }
-        private void servicesChanged(object sender, NotifyCollectionChangedEventArgs e)
+        private void ServicesChanged(object sender, NotifyCollectionChangedEventArgs e)
         {
             if (e.Action == NotifyCollectionChangedAction.Add)
             {
                 DataReservationsModel services = e.NewItems[0] as DataReservationsModel;
 
-                if (services.AccessToken_User == _accessToken)
+                if (services.CustomerAccessToken == _accessToken)
                 {
                     FilltedHistory.Add(services);
                 }
@@ -85,7 +85,7 @@ namespace customer_app.ViewModels
                 FilltedHistory.Remove(services);
             }
         }
-        private async void onDeleteTapped(object obj)
+        private async void OnDeleteTapped(object obj)
         {
             DataReservationsModel HistroyModel = (DataReservationsModel)obj;
             var res = await App.Current.MainPage.DisplayAlert("Are you sure that want to delete?", $"Appointment will delete only from history, call barber to cancel ", "Yes", "Cancel");
@@ -95,7 +95,6 @@ namespace customer_app.ViewModels
             }
 
         }
-
 
     }
 }

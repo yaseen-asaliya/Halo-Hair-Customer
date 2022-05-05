@@ -8,8 +8,8 @@ namespace customer_app.Models
     {
         public string Email { get; set; }
         public string Password { get; set; }
-        public string AccessToken_User { get; set; }
-        public string PersonName { get; set; }
+        public string CustomerAccessToken { get; set; }
+        public string CustomerName { get; set; }
         public long Phone { get; set; }
     }
 }

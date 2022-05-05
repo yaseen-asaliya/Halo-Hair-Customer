@@ -8,7 +8,7 @@ using Xamarin.Forms;
 
 namespace customer_app.ViewModels
 {
-    public class LoginViewModels
+    public class LoginViewModels :BaseViewModel
     {
         public event PropertyChangedEventHandler PropertyChanged = delegate { };
         private string _email;
@@ -16,6 +16,7 @@ namespace customer_app.ViewModels
         IAuth auth;
         public Command SubmitCommand { get; }
         public ICommand ResetPasswordCommad { get; }
+        public ICommand RegisterPage { get; }
         public string Email
         {
             get { return _email; }
@@ -34,25 +35,25 @@ namespace customer_app.ViewModels
                 PropertyChanged(this, new PropertyChangedEventArgs("Password"));
             }
         }
-        public ICommand RegisterPage { get; }
         public LoginViewModels()
         {
             auth = DependencyService.Get<IAuth>();
             SubmitCommand = new Command(async () => await SignIn(_email, _password));
-            ResetPasswordCommad = new Command(onForgetPassword);
-            RegisterPage = new Command(onRegisterPage);
+            ResetPasswordCommad = new Command(OnForgetPassword);
+            RegisterPage = new Command(OnRegisterPage);
         }
-        private async void onRegisterPage()
+        private async void OnRegisterPage()
         {
             await Application.Current.MainPage.Navigation.PushModalAsync(new RegisterPage());
         }
-        private async void onForgetPassword()
+        private async void OnForgetPassword()
         {
             await Application.Current.MainPage.Navigation.PushModalAsync(new ResetPasswordNewPasswordPage());
         }
         async Task SignIn(string _email, string _password)
         {
 
+            IsBusy = true;
             if (_email != null && _password != null)
             {
 
@@ -63,7 +64,9 @@ namespace customer_app.ViewModels
 
                     try
                     {
+
                         await SecureStorage.SetAsync("oauth_token", token);
+                        IsBusy = false;
                         App.Current.MainPage = new AppShell();
 
                     }
@@ -71,16 +74,17 @@ namespace customer_app.ViewModels
                     {
                         Console.WriteLine(ex.Message);
                     }
-
-
                 }
+                IsBusy = false;
             }
             else
             {
                 await Application.Current.MainPage.DisplayAlert("Failed", "Email And Password is Empty", "ok");
+                IsBusy = false;
 
             }
-        }
+        }     
+        
 
     }
 }

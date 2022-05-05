@@ -8,17 +8,15 @@ namespace customer_app.Models
     {
 
         public string Location { get; set; }
-        public bool isChecked { get; set; }
-
+        public bool IsChecked { get; set; }
         public string EndTime { get; set; }
-
         public string StartTime { get; set; }
-        public string NameSalon { get; set; }
-        public string Service_Name { get; set; }
-        public int Prices { get; set; }
-        public int Time_Needed { get; set; }
+        public string SalonName { get; set; }
+        public string ServiceName { get; set; }
+        public int Price { get; set; }
+        public int TimeNeed { get; set; }
         public string Deseription { get; set; }
-        public string AccessToken_Barbar { get; set; }
+        public string BarberAccessToken { get; set; }
 
     }
 }

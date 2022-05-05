@@ -27,7 +27,7 @@
                     <Image Source="Logo.png"/>
                 </Grid>
                 <Label Grid.Column="1" Text="Hi," FontSize="20" Margin="0,30,0,0" HorizontalOptions="EndAndExpand"/>
-                <Label Grid.Column="2" Text="{Binding NameCustomer}" FontSize="20" Margin="0,30" />
+                <Label Grid.Column="2" Text="{Binding CustomerName}" FontSize="20" Margin="0,30" />
                 <Grid Grid.Column="3"
                       HorizontalOptions="EndAndExpand">
                     <ImageButton Source="notification.png"

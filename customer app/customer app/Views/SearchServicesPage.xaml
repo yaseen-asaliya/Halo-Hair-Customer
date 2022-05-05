@@ -9,7 +9,7 @@
 
     <ContentPage.Content>
         <StackLayout>
-            <cont:navigationComponent Titles="Search Services" CommandParameter="{Binding BackPage}"/>
+            <cont:navigationComponent Titles="Search Services" CommandParameter="{Binding BackButton}"/>
             <Frame Padding="0"
                    Margin="20"
                    HasShadow="True" 
@@ -47,15 +47,14 @@
                                         </StackLayout>
 
                                         <StackLayout Orientation="Vertical" HorizontalOptions="StartAndExpand">
-                                            <Label Text="{Binding Service_Name}" VerticalOptions="StartAndExpand" FontAttributes="Bold"/>
+                                            <Label Text="{Binding ServiceName}" VerticalOptions="StartAndExpand" FontAttributes="Bold"/>
                                             <StackLayout Orientation="Horizontal">
-                                                <Label Text="{Binding Prices}" VerticalOptions="CenterAndExpand" Margin="10,5,0,0"/>
+                                                <Label Text="{Binding Price}" VerticalOptions="CenterAndExpand" Margin="10,5,0,0"/>
                                                 <Label Text="₪" Margin="0,5,0,0" FontSize="12"/>
                                             </StackLayout>
                                             
                                         </StackLayout>
                                         <StackLayout VerticalOptions="CenterAndExpand">
-                                            <!--CheckChanged="checkbox_CheckChanged" -->
 
                                             <input:CheckBox Text="{Binding Name}"
                                                                  CommandParameter="{TemplateBinding CheckBox}"

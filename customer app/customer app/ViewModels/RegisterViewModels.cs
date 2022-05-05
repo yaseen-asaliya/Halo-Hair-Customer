@@ -11,7 +11,7 @@ namespace customer_app.ViewModels
     public class RegisterViewModels
     {
         FireBaseHaloHair _firebase;
-        IAuth auth;
+        private IAuth _auth;
         public string Email { get; set; }
         public string Password { get; set; }
         public string Name { get; set; }
@@ -21,33 +21,29 @@ namespace customer_app.ViewModels
 
         public RegisterViewModels()
         {
-            auth = DependencyService.Get<IAuth>();
+            _auth = DependencyService.Get<IAuth>();
             _firebase = new FireBaseHaloHair();
-            SigUpCommad = new Command(async () => await signUp(Email, Password));
+            SigUpCommad = new Command(async () => await SignUp(Email, Password));
         }
-        private async void addUser(string AccessToken_User)
+        private async void AddUser(string CustomerAccessToken)
         {
             AuthenticationModel addUser = new AuthenticationModel();
             {
-                addUser.PersonName = Name;
+                addUser.CustomerName = Name;
                 addUser.Phone = Phone;
-                addUser.AccessToken_User = AccessToken_User;
-
-
+                addUser.CustomerAccessToken = CustomerAccessToken;
             }
             await _firebase.AddNewUser(addUser);
         }
-
-
-        private async Task signUp(string email, string password)
+        private async Task SignUp(string email, string password)
         {
 
             if (Password == ConfirmPassword)
             {
-                string acccessToken = await auth.SignUpWithEmailAndPassword(email, password);
+                string acccessToken = await _auth.SignUpWithEmailAndPassword(email, password);
                 if (null != acccessToken)
                 {
-                    addUser(acccessToken);
+                    AddUser(acccessToken);
                     await Application.Current.MainPage.DisplayAlert("Successful", "Register User", "ok");
                     await Application.Current.MainPage.Navigation.PushModalAsync(new LoginPage());
                 }
@@ -57,7 +53,5 @@ namespace customer_app.ViewModels
                 await Application.Current.MainPage.DisplayAlert("Failed", "Confirm password is incorrect", "ok");
             }
         }
-
-
     }
 }

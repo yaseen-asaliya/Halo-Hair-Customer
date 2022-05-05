@@ -14,30 +14,28 @@ namespace customer_app.ViewModels
 {
     public class HomePageViewModels : BaseViewModel
     {
-
-        FireBaseHaloHair firebase;
-        public string NameCustomer { get; set; }
+        private FireBaseHaloHair _firebase;
+        public string CustomerName { get; set; }
         public ObservableCollection<OfferModel> OfferImages { get; set; }
         public ObservableCollection<OfferModel> Offer { get; set; }
-        public ObservableCollection<OfferModel> myOffers { get; set; }
+        public ObservableCollection<OfferModel> MyOffers { get; set; }
         public ICommand SearchBarberPage { get; }
         public HomePageViewModels()
         {
             GetName();
             OfferImages = new ObservableCollection<OfferModel>();
-            firebase = new FireBaseHaloHair();
+            _firebase = new FireBaseHaloHair();
             Offer = new ObservableCollection<OfferModel>();
-            myOffers = new ObservableCollection<OfferModel>();
-            myOffers = firebase.GetAllOfferImgs();
-            myOffers.CollectionChanged += filltedservices;
-            SearchBarberPage = new Command(onSearchBarberPage);
+            MyOffers = new ObservableCollection<OfferModel>();
+            MyOffers = _firebase.GetAllOfferImgs();
+            MyOffers.CollectionChanged += Filltedservices;
+            SearchBarberPage = new Command(OnSearchBarberPage);
         }
-        private async void onSearchBarberPage()
+        private async void OnSearchBarberPage()
         {
             await Application.Current.MainPage.Navigation.PushModalAsync(new SearchBarberPage());
         }
-
-        private void filltedservices(object sender, NotifyCollectionChangedEventArgs e)
+        private void Filltedservices(object sender, NotifyCollectionChangedEventArgs e)
         {
             if (e.Action == NotifyCollectionChangedAction.Add)
             {
@@ -48,15 +46,12 @@ namespace customer_app.ViewModels
             }
 
         }
-
         private async Task GetName()
         {
             try
             {
                 var name = await SecureStorage.GetAsync("NameUser");
-                NameCustomer = name;
-
-
+                CustomerName = name;
             }
             catch (Exception ex)
             {

@@ -24,11 +24,11 @@
                 </StackLayout>
                 <Label Margin="20,0,0,0" Text="Email" />
                 <StackLayout>
-                    <controls:EntryComponents Text="{Binding Email }"/>
+                    <controls:EntryComponents Text="{Binding Email}"/>
                 </StackLayout>
                 <Label Margin="20,0,0,0" Text="Phone Number" />
                 <StackLayout>
-                    <controls:EntryComponents Text="{Binding Phone }"/>
+                    <controls:EntryComponents Text="{Binding Phone}"/>
                 </StackLayout>
                 <Label Margin="20,0,0,0" Text="Password" />
                 <StackLayout>

@@ -26,7 +26,7 @@ namespace customer_app.Views
             if (string.IsNullOrWhiteSpace(e.NewTextValue))
                 SearchBarber.ItemsSource = _container.Salon;
             else
-                SearchBarber.ItemsSource = _container.Salon.Where(i => i.NameSalon.Contains(e.NewTextValue));
+                SearchBarber.ItemsSource = _container.Salon.Where(i => i.SalonName.Contains(e.NewTextValue));
 
 
         }

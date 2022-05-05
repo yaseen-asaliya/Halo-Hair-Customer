@@ -15,19 +15,22 @@ namespace customer_app.ViewModels
     {
         FireBaseHaloHair _firebase;
         private ObservableCollection<ProfilePageModel> _profile;
-
+        private ObservableCollection<ProfilePageModel> _myProfile;
+        private string language;
+        private bool isVisibleAbout;
+        private bool isVisibleSettings;
+        public string Action { get; set; }
         public string Location { get; set; }
         private static string _accessToken { get; set; }
-        public ICommand BackPage { get; }
+        public ICommand BackButton { get; }
         public ICommand LogOut { get; }
         public ICommand ProfileAboutPage { get; }
         public ICommand EditPhoneCommand { get; }
         public ICommand EditNameCommand { get; }
         public ICommand Aboutbutton { get; }
         public ICommand Settingsbutton { get; }
-        public ICommand TapLanguage { get; }
-        public string Action { get; set; }
-        private string language;
+        public ICommand TapLanguageButton { get; }
+        
         public string Language
         {
             get
@@ -40,7 +43,6 @@ namespace customer_app.ViewModels
                 OnPropertyChanged();
             }
         }
-        private bool isVisibleAbout;
         public bool IsVisibleAbout
         {
             get
@@ -53,7 +55,6 @@ namespace customer_app.ViewModels
                 OnPropertyChanged();
             }
         }
-        private bool isVisibleSettings;
         public bool IsVisibleSettings
         {
             get
@@ -75,7 +76,6 @@ namespace customer_app.ViewModels
                 OnPropertyChanged();
             }
         }
-        private ObservableCollection<ProfilePageModel> _myProfile;
         public ObservableCollection<ProfilePageModel> Myprofile
         {
             get
@@ -88,7 +88,29 @@ namespace customer_app.ViewModels
                 OnPropertyChanged();
             }
         }
-        private async Task AccessToken()
+       
+        public ProfileAboutViewModels()
+        {
+            AccessToken();
+            _firebase = new FireBaseHaloHair();
+            Myprofile = new ObservableCollection<ProfilePageModel>();
+            Profile = new ObservableCollection<ProfilePageModel>();
+            Profile = _firebase.ProfilePage();
+            Profile.CollectionChanged += Serviceschanged;
+            LogOut = new Command(PerformLogOut);
+            BackButton = new Command(BackPage);
+            ProfileAboutPage = new Command(OnProfileAboutPage);
+            EditNameCommand = new Command(OnEditNameCommand);
+            EditPhoneCommand = new Command(OnEditPhoneCommand);
+            LogOut = new Command(PerformLogOut);
+            Aboutbutton = new Command(About);
+            Settingsbutton = new Command(Setting);
+            TapLanguageButton = new Command(TapLanguage);
+            Language = "English";
+            IsVisibleAbout = true;
+            IsVisibleSettings = false;
+        }
+        private async void AccessToken()
         {
             try
             {
@@ -100,42 +122,17 @@ namespace customer_app.ViewModels
                 Console.WriteLine(ex.Message);
             }
         }
-
-        public ProfileAboutViewModels()
-        {
-            AccessToken();
-            _firebase = new FireBaseHaloHair();
-            Myprofile = new ObservableCollection<ProfilePageModel>();
-            Profile = new ObservableCollection<ProfilePageModel>();
-            Profile = _firebase.ProfilePage();
-            Profile.CollectionChanged += serviceschanged;
-            LogOut = new Command(PerformLogOut);
-            BackPage = new Command(backPage);
-            ProfileAboutPage = new Command(onProfileAboutPage);
-            EditNameCommand = new Command(onEditNameCommand);
-            EditPhoneCommand = new Command(onEditPhoneCommand);
-            LogOut = new Command(PerformLogOut);
-            Aboutbutton = new Command(About_button);
-            Settingsbutton = new Command(Settings_button);
-            TapLanguage = new Command(Tap_Language);
-            Language = "English";
-            IsVisibleAbout = true;
-            IsVisibleSettings = false;
-        }
-
-        private void Settings_button(object obj)
+        private void Setting(object obj)
         {
             IsVisibleAbout = false;
             IsVisibleSettings = true;
         }
-
-        private void About_button(object obj)
+        private void About(object obj)
         {
             IsVisibleSettings = false;
             IsVisibleAbout = true;
         }
-
-        private async void Tap_Language(object obj)
+        private async void TapLanguage(object obj)
         {
             Action = await Application.Current.MainPage.DisplayActionSheet("Select Language", "Cancel", null, "English", "Arabic");
             if (Action == "Cancel")
@@ -144,22 +141,17 @@ namespace customer_app.ViewModels
             }
             Language = Action;
         }
-
-        private async void onEditNameCommand(object obj)
+        private async void OnEditNameCommand(object obj)
         {
-
-
-
             string result = await App.Current.MainPage.DisplayPromptAsync("Edit Name", "New Name");
             if (result != null)
             {
-                Myprofile[0].PersonName = result;
+                Myprofile[0].CustomerName = result;
                 await _firebase.UpdatePerson(Myprofile[0]);
 
             }
         }
-
-        private async void onEditPhoneCommand(object sender)
+        private async void OnEditPhoneCommand(object sender)
         {
             string result = await App.Current.MainPage.DisplayPromptAsync("Edit Phone", "New Phone");
             if (result != null)
@@ -168,43 +160,34 @@ namespace customer_app.ViewModels
                 await _firebase.UpdatePerson(Myprofile[0]);
             }
             }
-
-        private async void onProfileAboutPage()
+        private async void OnProfileAboutPage()
         {
             await Application.Current.MainPage.Navigation.PushModalAsync(new ProfileAboutPage());
         }
-
-        private async void backPage(object obj)
+        private async void BackPage(object obj)
         {
             await Application.Current.MainPage.Navigation.PopModalAsync();
         }
-        private void serviceschanged(object sender, NotifyCollectionChangedEventArgs e)
+        private void Serviceschanged(object sender, NotifyCollectionChangedEventArgs e)
         {
             if (e.Action == NotifyCollectionChangedAction.Add)
             {
                 ProfilePageModel profilePageModel = e.NewItems[0] as ProfilePageModel;
-                Console.WriteLine(e.NewItems[0]);
-                Console.WriteLine(e.NewItems[0].GetType());
-                if (profilePageModel.AccessToken_User == _accessToken)
+                if (profilePageModel.CustomerAccessToken == _accessToken)
                 {
                     Myprofile.Remove(profilePageModel);
                     Myprofile.Add(profilePageModel);
-                    SecureStorage.SetAsync("NameUser", profilePageModel.PersonName.ToString());
+                    SecureStorage.SetAsync("NameUser", profilePageModel.CustomerName.ToString());
                 }
             }
         }
         private async void PerformLogOut()
         {
+            var oauthToken = SecureStorage.Remove("oauth_token");
             var auth = DependencyService.Resolve<IAuth>();
             auth.IsSigOut();
-            //await Xamarin.Forms.Shell.Current.GoToAsync("//LoginPage");
             await Application.Current.MainPage.DisplayAlert("Logout", "you are logout", "ok");
             await Application.Current.MainPage.Navigation.PushModalAsync(new LoginPage());
         }
-        private string PersonName { get; set; }
-        //    private string NameSalon { get; set; }
-        private string Phone { get; set; }
-        private string location { get; set; }
-
     }
 }

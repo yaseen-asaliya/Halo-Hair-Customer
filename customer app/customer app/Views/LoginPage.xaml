@@ -53,7 +53,7 @@
                                 <Label.FormattedText>
                                     <FormattedString>
                                         <Span Text="Sign Up"
-                                      TextColor="#603D8F" >
+                                      TextColor="#603D8F">
                                             <Span.GestureRecognizers>
                                                 <TapGestureRecognizer Command="{Binding RegisterPage}"/>
                                             </Span.GestureRecognizers>
@@ -63,6 +63,9 @@
                             </Label>
                         </StackLayout>
                     </StackLayout>
+                </StackLayout>
+                <StackLayout Margin="20">
+                    <ActivityIndicator IsRunning="{Binding IsBusy}"/>
                 </StackLayout>
             </StackLayout>
         </StackLayout>

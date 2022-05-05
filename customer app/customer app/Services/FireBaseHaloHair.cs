@@ -38,7 +38,7 @@ namespace customer_app.Services
         }
         public ObservableCollection<TimeModel> GetDTimeSalon()
         {
-            var TimeSalons = _firebaseClient.Child("TIME").AsObservable<TimeModel>().AsObservableCollection();
+            var TimeSalons = _firebaseClient.Child("Worktime").AsObservable<TimeModel>().AsObservableCollection();
             return TimeSalons;
         }
         public async Task AddTime(string calendarSelectedDate, string liststring, string selectedTime, string accesstokenbarbar, string nameSoaln, bool isAvabile, int id)
@@ -49,21 +49,41 @@ namespace customer_app.Services
             {
                 scheduleTimeModel.DateSelected = calendarSelectedDate;
                 scheduleTimeModel.ListOfService = liststring;
-                scheduleTimeModel.time = selectedTime;
-                scheduleTimeModel.PersonName = PersonName;
-                scheduleTimeModel.NameSolan = nameSoaln;
-                scheduleTimeModel.AccessToken_Barbar = accesstokenbarbar;
-                scheduleTimeModel.AccessToken_User = userAccessToken;
-                scheduleTimeModel.ID_History = ID;
-                scheduleTimeModel.ID_Reservations = ID;
-                scheduleTimeModel.id = id;
+                scheduleTimeModel.TimeSelected = selectedTime;
+                scheduleTimeModel.CustomerName = PersonName;
+                scheduleTimeModel.SalonName = nameSoaln;
+                scheduleTimeModel.BarberAccessToken = accesstokenbarbar;
+                scheduleTimeModel.CustomerAccessToken = userAccessToken;
+                scheduleTimeModel.HistoryId = ID;
+                scheduleTimeModel.ReservationsId = ID;
+                scheduleTimeModel.Id = id;
             }
-            //   await UpdatePerson(id, selectedTime, accesstokenbarbar);
+            await Update(id, selectedTime, accesstokenbarbar);
 
             await _firebaseClient.Child("ReservationsRequest").PostAsync(scheduleTimeModel);
             await _firebaseClient.Child("History").PostAsync(scheduleTimeModel);
 
         }
+        public async Task Update(int Id, string selectedTime, string Accesstoken)
+        {
+
+            TimeModel timeModel = new TimeModel();
+            {
+                timeModel.Item1 = selectedTime;
+                timeModel.Item2 = true;
+            }
+
+
+            var toUpdateChild = (await _firebaseClient.Child("Worktime").OnceAsync<TimeModel>())
+                   .FirstOrDefault(item => item.Object.Time[Id].Item1 == selectedTime && item.Object.BarberAccessToken == Accesstoken);
+
+            await _firebaseClient
+                  .Child($"Worktime")
+                  .Child(toUpdateChild.Key)
+                  .Child($"Time/{Id}")
+                  .PutAsync(timeModel);                        
+        }
+
         private async Task accessToken()
         {
             try
@@ -86,22 +106,12 @@ namespace customer_app.Services
         }
         public async Task AddNewUser(AuthenticationModel addUser)
         {
-
-            addUser.AccessToken_User = userAccessToken;
-            await _firebaseClient.Child("Users").PostAsync(addUser);
-
-         //   addUser.PersonName = Name;
-                //    addUser.Phone = phone;
-                  //  addUser.AccessToken_User = url;
-                   // addUser.location = location;
-
-
-
+            await _firebaseClient.Child("Customers").PostAsync(addUser);
         }
         public async Task OnDeleteAppointment(int Id_Appointmentm)
         {
             var todelete = (await _firebaseClient.Child("ReservationsRequest").OnceAsync<DataReservationsModel>())
-                                .FirstOrDefault(item => item.Object.ID_Reservations == Id_Appointmentm);
+                                .FirstOrDefault(item => item.Object.ReservationsId == Id_Appointmentm);
             try
             {
                 await _firebaseClient.Child("ReservationsRequest").Child(todelete.Key).DeleteAsync();
@@ -120,25 +130,24 @@ namespace customer_app.Services
         public async Task DeleteHistory(DataReservationsModel control)
         {
             var todelete = (await _firebaseClient.Child("History").OnceAsync<DataReservationsModel>())
-                    .FirstOrDefault(item => item.Object.ID_History == control.ID_History);
+                    .FirstOrDefault(item => item.Object.HistoryId == control.HistoryId);
             await _firebaseClient.Child("History").Child(todelete.Key).DeleteAsync();
         }
         public ObservableCollection<ProfilePageModel> ProfilePage()
         {
-            var Users_Customer = _firebaseClient.Child("Users_Customer").AsObservable<ProfilePageModel>().AsObservableCollection();
+            var Users_Customer = _firebaseClient.Child("Customers").AsObservable<ProfilePageModel>().AsObservableCollection();
 
 
             return Users_Customer;
         }
         public async Task UpdatePerson(ProfilePageModel profilePageModel)
         {
-
-            var todelete = (await _firebaseClient.Child("Users_Customer").OnceAsync<ProfilePageModel>())
-                   .FirstOrDefault(item => item.Object.AccessToken_User == userAccessToken);
+            var todelete = (await _firebaseClient.Child("Customers").OnceAsync<ProfilePageModel>())
+                   .FirstOrDefault(item => item.Object.CustomerAccessToken == userAccessToken);
             try
             {
                 await _firebaseClient
-                     .Child($"Users_Customer")
+                     .Child("Customers")
                      .Child(todelete.Key)
                      .PutAsync(profilePageModel);
             }

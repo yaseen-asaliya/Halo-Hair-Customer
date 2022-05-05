@@ -10,7 +10,7 @@
     </ContentPage.BindingContext>
     <ContentPage.Content>
         <StackLayout>
-            <comp:navigationComponent Titles="Profile" isVisible="false" CommandParameter="{Binding BackPage}"/>
+            <comp:navigationComponent Titles="Profile" isVisible="false" CommandParameter="{Binding BackButton}"/>
             <StackLayout>
                 <StackLayout Margin="0,50,0,0" >
                     <Frame CornerRadius="100" 
@@ -24,24 +24,42 @@
                        VerticalOptions="Center" />
                     </Frame>
                 </StackLayout>
-                <StackLayout  Margin="60,15,50,15">
+                <StackLayout Margin="70,15,50,15">
                     <StackLayout Orientation="Horizontal" Margin="0,20,0,0">
                         <StackLayout Orientation="Vertical" x:Name="Button1">
-                            <Button x:Name="aboutbutton" Text="About" Command="{Binding Aboutbutton}" BackgroundColor="White"
-                                    TextColor="Black" BorderColor="White"
-                                    Padding="0" HeightRequest="20" WidthRequest="70" />
-                            <BoxView x:Name="BoxAbout" Color="#603D8F" HeightRequest="3" WidthRequest="90" HorizontalOptions="CenterAndExpand" IsVisible="{Binding IsVisibleAbout}" />
+                            <Button x:Name="aboutbutton" 
+                                    Text="About" Command="{Binding Aboutbutton}" BackgroundColor="White"
+                                    TextColor="Black" 
+                                    BorderColor="White"
+                                    Padding="0" 
+                                    HeightRequest="20" 
+                                    WidthRequest="70" />
+                            <BoxView x:Name="BoxAbout" 
+                                     Color="#603D8F" 
+                                     HeightRequest="3" WidthRequest="90" 
+                                     HorizontalOptions="CenterAndExpand" 
+                                     IsVisible="{Binding IsVisibleAbout}" />
                         </StackLayout>
                         <StackLayout Orientation="Vertical" Margin="80,0,50,0" >
-                            <Button x:Name="settingsbutton" Text="SETTINGS" Command="{Binding Settingsbutton}" BackgroundColor="White"
-                                    TextColor="Black" BorderColor="White" 
-                                    Padding="0" HeightRequest="20" WidthRequest="70"  />
-                            <BoxView x:Name="BoxSettings" Color="#603D8F" HeightRequest="3" WidthRequest="90" 
-                                     HorizontalOptions="CenterAndExpand" IsVisible="{Binding IsVisibleSettings}" />
+                            <Button x:Name="settingsbutton" 
+                                    Text="SETTINGS" 
+                                    Command="{Binding Settingsbutton}" 
+                                    BackgroundColor="White"
+                                    TextColor="Black" 
+                                    BorderColor="White" 
+                                    Padding="0" 
+                                    HeightRequest="20" 
+                                    WidthRequest="70"/>
+                            <BoxView x:Name="BoxSettings" 
+                                     Color="#603D8F" 
+                                     HeightRequest="3" 
+                                     WidthRequest="90" 
+                                     HorizontalOptions="CenterAndExpand" 
+                                     IsVisible="{Binding IsVisibleSettings}" />
                         </StackLayout>
                     </StackLayout>
                     <StackLayout x:Name="aboutview" Orientation="Vertical" Padding="0,40,0,0" IsVisible="{Binding IsVisibleAbout}" HeightRequest="350" >
-                        <ListView x:Name="Myprofile" HasUnevenRows="True"   ItemsSource="{Binding Myprofile}">
+                        <ListView x:Name="Myprofile" HasUnevenRows="True" ItemsSource="{Binding Myprofile}">
                             <ListView.ItemTemplate>
                                 <DataTemplate>
                                     <ViewCell>
@@ -51,20 +69,22 @@
                                                     <StackLayout Orientation="Horizontal">
                                                         <StackLayout>
                                                             <Label Text="Customer Name :"/>
-                                                            <Label Text= "{Binding PersonName}"/>
+                                                            <Label Text= "{Binding CustomerName}"/>
                                                         </StackLayout>
                                                         <StackLayout Orientation="Vertical" VerticalOptions="CenterAndExpand" HorizontalOptions="EndAndExpand">
-                                                            <Button Text="EDIT" Command="{Binding Path=BindingContext.EditNameCommand,Source={x:Reference Myprofile}}" BackgroundColor="White"
-                                        TextColor="Black" BorderColor="White" HorizontalOptions="CenterAndExpand"
-                                        Padding="0,0,0,0" HeightRequest="20" WidthRequest="50"/>
-                                                            <BoxView Color="#603D8F" HeightRequest="3" WidthRequest="40" 
-                                         HorizontalOptions="CenterAndExpand" />
+                                                            <Button Text="EDIT" 
+                                                                    Command="{Binding Path=BindingContext.EditNameCommand,Source={x:Reference Myprofile}}" 
+                                                                    BackgroundColor="White"
+                                                                    TextColor="Black" 
+                                                                    BorderColor="White" 
+                                                                    HorizontalOptions="CenterAndExpand"
+                                                                    Padding="0,0,0,0" 
+                                                                    HeightRequest="20" 
+                                                                    WidthRequest="50"/>
+                                                            <BoxView Color="#603D8F" HeightRequest="3" WidthRequest="40" HorizontalOptions="CenterAndExpand" />
                                                         </StackLayout>
-
                                                     </StackLayout>
                                                 </Frame>
-
-
                                                 <Frame>
                                                     <StackLayout Orientation="Horizontal">
                                                         <StackLayout>
@@ -72,13 +92,17 @@
                                                             <Label Text= "{Binding Phone}"/>
                                                         </StackLayout>
                                                         <StackLayout Orientation="Vertical" VerticalOptions="CenterAndExpand" HorizontalOptions="EndAndExpand">
-                                                            <Button Text="EDIT" Command="{Binding Path=BindingContext.EditPhoneCommand,Source={x:Reference Myprofile}}" BackgroundColor="White"
-                                        TextColor="Black" BorderColor="White" HorizontalOptions="CenterAndExpand"
-                                        Padding="0,0,0,0" HeightRequest="20" WidthRequest="50"/>
-                                                            <BoxView Color="#603D8F" HeightRequest="3" WidthRequest="40" 
-                                         HorizontalOptions="CenterAndExpand" />
+                                                            <Button Text="EDIT" 
+                                                                    Command="{Binding Path=BindingContext.EditPhoneCommand,Source={x:Reference Myprofile}}" 
+                                                                    BackgroundColor="White"
+                                                                    TextColor="Black" 
+                                                                    BorderColor="White" 
+                                                                    HorizontalOptions="CenterAndExpand"
+                                                                    Padding="0,0,0,0" 
+                                                                    HeightRequest="20" 
+                                                                    WidthRequest="50"/>
+                                                            <BoxView Color="#603D8F" HeightRequest="3" WidthRequest="40" HorizontalOptions="CenterAndExpand" />
                                                         </StackLayout>
-
                                                     </StackLayout>
                                                 </Frame>
                                             </StackLayout>
@@ -93,7 +117,7 @@
                         <StackLayout Orientation="Vertical" >
                             <Frame Padding="12">
                                 <Frame.GestureRecognizers>
-                                    <TapGestureRecognizer Command="{Binding TapLanguage}" />
+                                    <TapGestureRecognizer Command="{Binding TapLanguageButton}" />
                                 </Frame.GestureRecognizers>
                                 <StackLayout Orientation="Horizontal" >
                                     <Label Text="Language :" FontSize="Medium"/>
@@ -115,7 +139,6 @@
                             </Frame>
                         </StackLayout>
                         <comp:ButtonComponent NameButton="Log out" CommandParameter="{Binding LogOut}" Padding="20" Margin="50,40,50,0"/>
-
                     </StackLayout>
                 </StackLayout>
             </StackLayout>

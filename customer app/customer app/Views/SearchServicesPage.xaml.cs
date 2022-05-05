@@ -25,8 +25,8 @@ namespace customer_app.Views
             SearchServicesViewModels ServicesViewModel = new SearchServicesViewModels(data);
             BindingContext = ServicesViewModel;
             selectedList = new ObservableCollection<DataSalon>();
-            accesstoken_barbar = data.AccessToken_Barbar;
-            NameSolan = data.NameSalon;
+            accesstoken_barbar = data.BarberAccessToken;
+            NameSolan = data.SalonName;
             start = data.StartTime;
             end = data.EndTime;
             BindingContext = new SearchServicesViewModels(data);
@@ -38,16 +38,14 @@ namespace customer_app.Views
 
         private void checkbox_CheckChanged(object sender, EventArgs e)
         {
-
             var checkbox = (Plugin.InputKit.Shared.Controls.CheckBox)sender;
             var ob = checkbox.BindingContext as DataSalon;
             if (ob != null)
             {
-                count += ob.Prices;
+                count += ob.Price;
                 AddOrUpdatetheResult(ob, checkbox);
 
             }
-
         }
 
         public static readonly BindableProperty CommandProperty = BindableProperty.Create(nameof(Command),
@@ -74,10 +72,7 @@ namespace customer_app.Views
         {
             if (checkbox.IsChecked)
             {
-
-
                 selectedList.Add(ob);
-
             }
             if (!checkbox.IsChecked)
             {
@@ -92,7 +87,7 @@ namespace customer_app.Views
             if (string.IsNullOrWhiteSpace(e.NewTextValue))
                 SearchServices.ItemsSource = _container.FilltedServices;
             else
-                SearchServices.ItemsSource = _container.FilltedServices.Where(i => i.Service_Name.Contains(e.NewTextValue));
+                SearchServices.ItemsSource = _container.FilltedServices.Where(i => i.ServiceName.Contains(e.NewTextValue));
 
 
         }

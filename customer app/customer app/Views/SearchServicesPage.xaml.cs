@@ -23,62 +23,10 @@ namespace customer_app.Views
         {
             InitializeComponent();
             SearchServicesViewModels ServicesViewModel = new SearchServicesViewModels(data);
-            BindingContext = ServicesViewModel;
-            selectedList = new ObservableCollection<DataSalon>();
-            accesstoken_barbar = data.BarberAccessToken;
-            NameSolan = data.SalonName;
-            start = data.StartTime;
-            end = data.EndTime;
             BindingContext = new SearchServicesViewModels(data);
 
-        }
-        private ObservableCollection<DataSalon> selectedList;
-
-        private int count = 0;
-
-        private void checkbox_CheckChanged(object sender, EventArgs e)
-        {
-            var checkbox = (Plugin.InputKit.Shared.Controls.CheckBox)sender;
-            var ob = checkbox.BindingContext as DataSalon;
-            if (ob != null)
-            {
-                count += ob.Price;
-                AddOrUpdatetheResult(ob, checkbox);
-
-            }
-        }
-
-        public static readonly BindableProperty CommandProperty = BindableProperty.Create(nameof(Command),
-        typeof(ICommand),
-          typeof(SearchServicesPage),
-         default(ICommand));
-        public static readonly BindableProperty CommandParameterProperty = BindableProperty.Create(nameof(CommandParameter),
-      typeof(object),
-      typeof(SearchServicesPage),
-      default);
-        public ICommand Command
-        {
-            get => (ICommand)GetValue(CommandProperty);
-            set => SetValue(CommandProperty, value);
-        }
-
-        public object CommandParameter
-        {
-            get => GetValue(CommandParameterProperty);
-            set => SetValue(CommandParameterProperty, value);
-        }
-
-        private async Task AddOrUpdatetheResult(DataSalon ob, Plugin.InputKit.Shared.Controls.CheckBox checkbox)
-        {
-            if (checkbox.IsChecked)
-            {
-                selectedList.Add(ob);
-            }
-            if (!checkbox.IsChecked)
-            {
-                selectedList.Remove(ob);
-            }
-        }
+        }     
+   
 
         private void SearchBar_TextChanged(object sender, Xamarin.Forms.TextChangedEventArgs e)
         {
@@ -91,14 +39,7 @@ namespace customer_app.Views
 
 
         }
-        private void Button_ClickedAsync(object sender, EventArgs e)
-        {
-
-            Navigation.PushModalAsync(new SearchTimePage(selectedList, accesstoken_barbar, NameSolan, start, end));
-
-        }
-
-
+       
     }
 
 }

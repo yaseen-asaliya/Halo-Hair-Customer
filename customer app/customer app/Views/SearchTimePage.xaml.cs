@@ -19,7 +19,6 @@ namespace customer_app.Views
         public SearchTimePage(ObservableCollection<DataSalon> selectedList, string BarbarAccesstoken, string NameSolan, string start, string end)
         {
             InitializeComponent();
-            selectedList = selectedList;
             SearchTimeViewModels searchTimeViewModels = new SearchTimeViewModels(selectedList, BarbarAccesstoken, NameSolan, start, end);
             BindingContext = searchTimeViewModels;
         }

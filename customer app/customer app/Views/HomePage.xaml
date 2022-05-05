@@ -5,18 +5,13 @@
              Shell.NavBarIsVisible="False"
              x:Class="customer_app.Views.HomePage">
 
-
-
     <ContentPage.BindingContext>
         <viewmodels:HomePageViewModels/>
     </ContentPage.BindingContext>
 
-
     <ContentPage.Content>
         <StackLayout>
             <Grid>
-
-
                 <Grid.RowDefinitions>
                     <RowDefinition Height="*" />
                 </Grid.RowDefinitions>
@@ -45,7 +40,7 @@
             <Label Text="Search for barbers or services" FontSize="Medium" Margin="10" Font="Segoe UI"/>
             <ImageButton Margin="50,0,50,0" Source="search.png" Command="{Binding SearchBarberPage}"/>
             <Frame HeightRequest="170" 
-                   BorderColor="Purple" 
+                   BorderColor="#603D8F" 
                    Margin="20,60,20,40"
                    CornerRadius="30">
                 <CollectionView ItemsSource="{Binding Offer}" 
@@ -61,13 +56,13 @@
                                 <Image Source="{Binding ImageUrl}" 
                                            HorizontalOptions="Center"
                                            HeightRequest="200"
-                                           BackgroundColor="Purple"/>
+                                           BackgroundColor="#603D8F"/>
                             </StackLayout>
                         </DataTemplate>
                     </CollectionView.ItemTemplate>
                 </CollectionView>
             </Frame>
-            <Frame Margin="20,30,20,0" CornerRadius="20" HasShadow="True" BorderColor="MediumPurple">
+            <Frame Margin="20,30,20,0" CornerRadius="20" HasShadow="True" BorderColor="#603D8F">
                 <StackLayout Orientation="Horizontal" HorizontalOptions="Center">
                     <Label Text="Your next appointment after :" FontSize="18"/>
                     <Label Text="10h" FontSize="18"/>

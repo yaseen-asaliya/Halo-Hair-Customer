@@ -14,7 +14,7 @@
             <cont:navigationComponent Titles="History" isVisible="false" CommandParameter="{Binding BackPage}"/>
             
             <StackLayout HeightRequest="600">
-                <Frame Margin="20,10,20,10" CornerRadius="20" BorderColor="Purple">
+                <Frame Margin="20,10,20,10" CornerRadius="20" BorderColor="#603D8F">
                     <StackLayout>
                         <CollectionView x:Name="History" ItemsSource="{Binding FilltedHistory}">
                             <CollectionView.ItemTemplate>

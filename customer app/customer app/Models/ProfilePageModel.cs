@@ -6,8 +6,8 @@ namespace customer_app.Models
 {
     public class ProfilePageModel
     {
-        public string AccessToken_User { get; set; }
-        public string PersonName { get; set; }
+        public string CustomerAccessToken { get; set; }
+        public string CustomerName { get; set; }
         public string Phone { get; set; }
     }
 }

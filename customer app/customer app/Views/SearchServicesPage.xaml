@@ -52,7 +52,7 @@
                                                 <Label Text="{Binding Price}" VerticalOptions="CenterAndExpand" Margin="10,5,0,0"/>
                                                 <Label Text="₪" Margin="0,5,0,0" FontSize="12"/>
                                             </StackLayout>
-                                            
+
                                         </StackLayout>
                                         <StackLayout VerticalOptions="CenterAndExpand">
 
@@ -61,7 +61,8 @@
                                                                 Type="Check" Color="White" 
                                                                 BoxBackgroundColor="White" 
                                                                 TextColor="White" 
-                                                                 CheckChanged="checkbox_CheckChanged"
+                                                                  CheckChangedCommand="{Binding Path=BindingContext.CheckCommand,Source={x:Reference SearchServices}}"
+                                                              
                                                                 BindingContext="{Binding .}"/>
                                         </StackLayout>
                                     </StackLayout>
@@ -72,7 +73,7 @@
                 </Frame>
             </StackLayout>
 
-            <Button Clicked="Button_ClickedAsync"
+            <Button Command="{Binding NextButton}"
                     Text="Next"
                     TextColor="#FFFFFF"
                     FontAttributes="Bold"

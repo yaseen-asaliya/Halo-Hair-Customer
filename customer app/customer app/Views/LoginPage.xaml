@@ -11,13 +11,10 @@
     </ContentPage.BindingContext>
     <ContentPage.Content>
         <StackLayout>
-
-
-
             <StackLayout>
                 <StackLayout>
                     <Image Source="Logo.png" VerticalOptions="Center" HorizontalOptions="Center"
-                   HeightRequest="150" WidthRequest="150" Margin="0,50,0,0"/>
+                   HeightRequest="150" WidthRequest="150" Margin="0,35,0,0"/>
                     <StackLayout Orientation="Vertical" HorizontalOptions="Center">
                         <Label Text="Welcome back!" FontSize="Large" TextColor="black"/>
                         <Label Text="Login to your Account" TextColor="Gray"/>
@@ -64,7 +61,7 @@
                         </StackLayout>
                     </StackLayout>
                 </StackLayout>
-                <StackLayout Margin="20">
+                <StackLayout Margin="10">
                     <ActivityIndicator IsRunning="{Binding IsBusy}"/>
                 </StackLayout>
             </StackLayout>

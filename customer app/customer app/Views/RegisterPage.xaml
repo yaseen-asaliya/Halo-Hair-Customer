@@ -2,10 +2,7 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
              xmlns:viewmodel="clr-namespace:customer_app.ViewModels" 
-
-             xmlns:controls="clr-namespace:customer_app.Views.Components" 
-
-            
+             xmlns:controls="clr-namespace:customer_app.Views.Components"             
 
              x:Class="customer_app.Views.RegisterPage">
     <ContentPage.BindingContext>
@@ -17,7 +14,7 @@
                 <Label Text="Welcome!" FontSize="Title" HorizontalOptions="CenterAndExpand" Margin="0,10"/>
                 <Label Text="Create Your Account" FontSize="Small"/>
             </StackLayout>
-            <StackLayout Margin="10,80,10,10">
+            <StackLayout Margin="10,40,10,10">
                 <Label Margin="20,0,0,0" Text="Customer Name" />
                 <StackLayout>
                     <controls:EntryComponents  Text="{Binding Name}"/>
@@ -39,7 +36,7 @@
                     <controls:EntryComponentPassword Text="{Binding ConfirmPassword}"/>
                 </StackLayout>
 
-                <controls:ButtonComponent NameButton="Sign Up" CommandParameter="{Binding SigUpCommad}" Padding="20" Margin="100,0,100,0"/>
+                <controls:ButtonComponent NameButton="Sign Up" CommandParameter="{Binding SigUpCommad}" Padding="20" Margin="100,40,100,0"/>
 
             </StackLayout>
 

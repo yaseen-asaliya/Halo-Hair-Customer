@@ -54,12 +54,13 @@
                                                             <Label Text= "{Binding PersonName}"/>
                                                         </StackLayout>
                                                         <StackLayout Orientation="Vertical" VerticalOptions="CenterAndExpand" HorizontalOptions="EndAndExpand">
-                                                            <Button Text="EDIT" Command="{Binding .}" BackgroundColor="White"
+                                                            <Button Text="EDIT" Command="{Binding Path=BindingContext.EditNameCommand,Source={x:Reference Myprofile}}" BackgroundColor="White"
                                         TextColor="Black" BorderColor="White" HorizontalOptions="CenterAndExpand"
                                         Padding="0,0,0,0" HeightRequest="20" WidthRequest="50"/>
                                                             <BoxView Color="#603D8F" HeightRequest="3" WidthRequest="40" 
                                          HorizontalOptions="CenterAndExpand" />
                                                         </StackLayout>
+
                                                     </StackLayout>
                                                 </Frame>
 
@@ -71,31 +72,15 @@
                                                             <Label Text= "{Binding Phone}"/>
                                                         </StackLayout>
                                                         <StackLayout Orientation="Vertical" VerticalOptions="CenterAndExpand" HorizontalOptions="EndAndExpand">
-                                                            <Button Text="EDIT" Command="{Binding .}" BackgroundColor="White"
+                                                            <Button Text="EDIT" Command="{Binding Path=BindingContext.EditPhoneCommand,Source={x:Reference Myprofile}}" BackgroundColor="White"
                                         TextColor="Black" BorderColor="White" HorizontalOptions="CenterAndExpand"
                                         Padding="0,0,0,0" HeightRequest="20" WidthRequest="50"/>
                                                             <BoxView Color="#603D8F" HeightRequest="3" WidthRequest="40" 
                                          HorizontalOptions="CenterAndExpand" />
                                                         </StackLayout>
+
                                                     </StackLayout>
                                                 </Frame>
-
-                                                <Frame>
-                                                    <StackLayout Orientation="Horizontal">
-                                                        <StackLayout>
-                                                            <Label Text="Email :"/>
-                                                            <Label Text= "{Binding Email}"/>
-                                                        </StackLayout>
-                                                        <StackLayout Orientation="Vertical" VerticalOptions="CenterAndExpand" HorizontalOptions="EndAndExpand">
-                                                            <Button Text="EDIT" Command="{Binding}" BackgroundColor="White"
-                                        TextColor="Black" BorderColor="White" HorizontalOptions="CenterAndExpand"
-                                        Padding="0,0,0,0" HeightRequest="20" WidthRequest="50"/>
-                                                            <BoxView Color="#603D8F" HeightRequest="3" WidthRequest="40" 
-                                         HorizontalOptions="CenterAndExpand" />
-                                                        </StackLayout>
-                                                    </StackLayout>
-                                                </Frame>
-
                                             </StackLayout>
                                         </ScrollView>
                                     </ViewCell>

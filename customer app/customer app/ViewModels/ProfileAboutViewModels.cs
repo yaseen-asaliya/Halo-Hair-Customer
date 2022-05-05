@@ -84,16 +84,9 @@ namespace customer_app.ViewModels
             string result = await App.Current.MainPage.DisplayPromptAsync("Edit Name", "New Name");
             if (result != null)
             {
-                ProfilePageModel profilePage = new ProfilePageModel();
-                {
-                    profilePage.AccessToken_User = _accessToken;
-                    //  profilePage.PersonName = PersonName;
-                    profilePage.Phone = Phone;
-                    profilePage.PersonName = result;
-                    //    profilePage.location = location;
+                Myprofile[0].PersonName = result;
+                await _firebase.UpdatePerson(Myprofile[0]);
 
-                }
-                _firebase.UpdatePerson(profilePage);
             }
         }
 
@@ -102,40 +95,10 @@ namespace customer_app.ViewModels
             string result = await App.Current.MainPage.DisplayPromptAsync("Edit Phone", "New Phone");
             if (result != null)
             {
-                ProfilePageModel profilePage = new ProfilePageModel();
-                {
-                    profilePage.AccessToken_User = _accessToken;
-                    //profilePage.NameSalon = NameSalon;
-                    profilePage.Phone = result;
-                    profilePage.PersonName = PersonName;
-                    //   profilePage.location = location;
-
-                }
-                _firebase.UpdatePerson(profilePage);
+                Myprofile[0].Phone = result;
+                await _firebase.UpdatePerson(Myprofile[0]);
             }
-
-        }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+            }
 
         private async void onProfileAboutPage()
         {
@@ -155,6 +118,7 @@ namespace customer_app.ViewModels
                 Console.WriteLine(e.NewItems[0].GetType());
                 if (profilePageModel.AccessToken_User == _accessToken)
                 {
+                    Myprofile.Remove(profilePageModel);
                     Myprofile.Add(profilePageModel);
                     SecureStorage.SetAsync("NameUser", profilePageModel.PersonName.ToString());
                 }
@@ -167,7 +131,6 @@ namespace customer_app.ViewModels
             //await Xamarin.Forms.Shell.Current.GoToAsync("//LoginPage");
             await Application.Current.MainPage.DisplayAlert("Logout", "you are logout", "ok");
             await Application.Current.MainPage.Navigation.PushModalAsync(new LoginPage());
-
         }
         private string PersonName { get; set; }
         //    private string NameSalon { get; set; }

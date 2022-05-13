@@ -1,0 +1,73 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"               
+             xmlns:viewmodels="clr-namespace:customer_app.ViewModels"
+             Shell.NavBarIsVisible="False"
+             x:Class="customer_app.Views.HomePage">
+
+    <ContentPage.BindingContext>
+        <viewmodels:HomePageViewModels/>
+    </ContentPage.BindingContext>
+
+    <ContentPage.Content>
+        <StackLayout>
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*" />
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="60" />
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="*" />
+                </Grid.ColumnDefinitions>
+                <Grid WidthRequest="70" Grid.Column="0"
+                      HeightRequest="70" 
+                      HorizontalOptions="Start">
+                    <Image Source="Logo.png"/>
+                </Grid>
+                <Label Grid.Column="1" Text="Hi," FontSize="20" Margin="0,30,0,0" HorizontalOptions="EndAndExpand"/>
+                <Label Grid.Column="2" Text="{Binding CustomerName}" FontSize="20" Margin="0,30" />
+                <Grid Grid.Column="3"
+                      HorizontalOptions="EndAndExpand">
+                    <ImageButton Source="notification.png"
+                                 BackgroundColor="White"
+                                 Margin="0,0,20,0" 
+                                 WidthRequest="30"
+                                 HeightRequest="10"/>
+                </Grid>
+            </Grid>
+            <Label Text="Search for barbers or services" FontSize="Medium" Margin="10" Font="Segoe UI"/>
+            <ImageButton Margin="50,0,50,0" Source="search.png" Command="{Binding SearchBarberPage}"/>
+            <Frame HeightRequest="170" 
+                   BorderColor="#603D8F" 
+                   Margin="20,60,20,40"
+                   CornerRadius="30">
+                <CollectionView ItemsSource="{Binding Offer}" 
+                                HeightRequest="300"
+                                ItemSizingStrategy="MeasureAllItems" Margin="10,0,10,0"                                    
+                                ItemsUpdatingScrollMode="KeepLastItemInView">
+                    <CollectionView.ItemsLayout>
+                        <GridItemsLayout Orientation="Horizontal"/>
+                    </CollectionView.ItemsLayout>
+                    <CollectionView.ItemTemplate>
+                        <DataTemplate>
+                            <StackLayout Padding="2">
+                                <Image Source="{Binding ImageUrl}" 
+                                           HorizontalOptions="Center"
+                                           HeightRequest="200"
+                                           BackgroundColor="#603D8F"/>
+                            </StackLayout>
+                        </DataTemplate>
+                    </CollectionView.ItemTemplate>
+                </CollectionView>
+            </Frame>
+            <Frame Margin="20,30,20,0" CornerRadius="20" HasShadow="True" BorderColor="#603D8F">
+                <StackLayout Orientation="Horizontal" HorizontalOptions="Center">
+                    <Label Text="Your next appointment after :" FontSize="18"/>
+                    <Label Text="10h" FontSize="18"/>
+                </StackLayout>
+            </Frame>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage> 

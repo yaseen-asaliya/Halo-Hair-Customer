@@ -1,0 +1,88 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:viewmodels="clr-namespace:customer_app.ViewModels"
+             Shell.NavBarIsVisible="False"
+             xmlns:cont="clr-namespace:customer_app.Views.Components" 
+             xmlns:input="clr-namespace:Plugin.InputKit.Shared.Controls;assembly=Plugin.InputKit" 
+             x:Class="customer_app.Views.SearchServicesPage">
+
+    <ContentPage.Content>
+        <StackLayout>
+            <cont:navigationComponent Titles="Search Services" CommandParameter="{Binding BackButton}"/>
+            <Frame Padding="0"
+                   Margin="20"
+                   HasShadow="True" 
+                   BorderColor="Black" 
+                   CornerRadius="15" 
+                   HeightRequest="46" 
+                   HorizontalOptions="Center"
+                   WidthRequest="340">
+                <SearchBar BackgroundColor="#E9E8E8"  
+                           Placeholder="Type here to search"
+                           TextChanged="SearchBar_TextChanged"
+                           TextTransform="Lowercase"/>
+            </Frame>
+            <!--<cont:SearchBarComponent Margin="10"/> -->
+
+            <StackLayout HeightRequest="500">
+                <Frame Margin="20,0,20,10" CornerRadius="20" BorderColor="Purple">
+                    <CollectionView ItemsSource="{Binding FilltedServices}" x:Name="SearchServices"  >
+                        <CollectionView.ItemTemplate>
+                            <DataTemplate>
+                                <StackLayout>
+                                    <Line Stroke="black" Margin="10"/>
+                                    <StackLayout Orientation="Horizontal" >
+                                        <StackLayout>
+                                            <Frame CornerRadius="100" 
+                                                   HeightRequest="50"
+                                                   WidthRequest="50"
+                                                   HorizontalOptions="Center"
+                                                   Padding="0"
+                                                   IsClippedToBounds="True">
+                                                <Image Source="{Binding Image}" 
+                                                       HorizontalOptions="Center"
+                                                       VerticalOptions="Center" />
+                                            </Frame>
+                                        </StackLayout>
+
+                                        <StackLayout Orientation="Vertical" HorizontalOptions="StartAndExpand">
+                                            <Label Text="{Binding ServiceName}" VerticalOptions="StartAndExpand" FontAttributes="Bold"/>
+                                            <StackLayout Orientation="Horizontal">
+                                                <Label Text="{Binding Price}" VerticalOptions="CenterAndExpand" Margin="10,5,0,0"/>
+                                                <Label Text="₪" Margin="0,5,0,0" FontSize="12"/>
+                                            </StackLayout>
+
+                                        </StackLayout>
+                                        <StackLayout VerticalOptions="CenterAndExpand">
+
+                                            <input:CheckBox Text="{Binding Name}"
+                                                                 CommandParameter="{TemplateBinding CheckBox}"
+                                                                Type="Check" Color="White" 
+                                                                BoxBackgroundColor="White" 
+                                                                TextColor="White" 
+                                                                  CheckChangedCommand="{Binding Path=BindingContext.CheckCommand,Source={x:Reference SearchServices}}"
+                                                              
+                                                                BindingContext="{Binding .}"/>
+                                        </StackLayout>
+                                    </StackLayout>
+                                </StackLayout>
+                            </DataTemplate>
+                        </CollectionView.ItemTemplate>
+                    </CollectionView>
+                </Frame>
+            </StackLayout>
+
+            <Button Command="{Binding NextButton}"
+                    Text="Next"
+                    TextColor="#FFFFFF"
+                    FontAttributes="Bold"
+                    BackgroundColor="#603D8F"
+                    CornerRadius="20"
+                    Font="Segoe UI"
+                    Margin="230,10,20,10"
+                    FontSize="16" />
+
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

@@ -1,0 +1,71 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+             xmlns:viewmodel="clr-namespace:customer_app.ViewModels"
+             xmlns:controls="clr-namespace:customer_app.Views.Components"
+             Shell.NavBarIsVisible="False"
+             x:Class="customer_app.Views.LoginPage">
+
+    <ContentPage.BindingContext>
+        <viewmodel:LoginViewModels/>
+    </ContentPage.BindingContext>
+    <ContentPage.Content>
+        <StackLayout>
+            <StackLayout>
+                <StackLayout>
+                    <Image Source="Logo.png" VerticalOptions="Center" HorizontalOptions="Center"
+                   HeightRequest="150" WidthRequest="150" Margin="0,35,0,0"/>
+                    <StackLayout Orientation="Vertical" HorizontalOptions="Center">
+                        <Label Text="Welcome back!" FontSize="Large" TextColor="black"/>
+                        <Label Text="Login to your Account" TextColor="Gray"/>
+                    </StackLayout>
+                    <StackLayout Orientation="Vertical" Margin="30">
+                        <Label Margin="20,0,0,0" Text="Email" />
+                        <StackLayout>
+                            <controls:EntryComponents Placeholder="Email" HeightRequest="50" WidthRequest="60"  Text="{Binding Email}"/>
+                        </StackLayout>
+                        <Label Margin="20,0,0,0" Text="Password" />
+                        <StackLayout>
+                            <controls:EntryComponentPassword Text="{Binding Password}" Placeholder="Password"  />
+                        </StackLayout>
+                        <Label Margin="0,15,0,0">
+                            <Label.FormattedText>
+                                <FormattedString>
+                                    <Span Text="Forget Password ?"
+                              TextColor="#603D8F" >
+                                        <Span.GestureRecognizers>
+                                            <TapGestureRecognizer  Command="{Binding ResetPasswordCommad}"/>
+                                        </Span.GestureRecognizers>
+                                    </Span>
+                                </FormattedString>
+                            </Label.FormattedText>
+                        </Label>
+                    </StackLayout>
+                    <controls:ButtonComponent NameButton="Sign in" CommandParameter="{Binding SubmitCommand}" Padding="20" Margin="100,0,100,0"/>
+
+                    <StackLayout Orientation="Vertical" HorizontalOptions="Center">
+                        <StackLayout Orientation="Horizontal">
+                            <Label Text="Dont have an account ?" HorizontalOptions="Center" VerticalOptions="Center"/>
+                            <Label>
+                                <Label.FormattedText>
+                                    <FormattedString>
+                                        <Span Text="Sign Up"
+                                      TextColor="#603D8F">
+                                            <Span.GestureRecognizers>
+                                                <TapGestureRecognizer Command="{Binding RegisterPage}"/>
+                                            </Span.GestureRecognizers>
+                                        </Span>
+                                    </FormattedString>
+                                </Label.FormattedText>
+                            </Label>
+                        </StackLayout>
+                    </StackLayout>
+                </StackLayout>
+                <StackLayout Margin="10">
+                    <ActivityIndicator IsRunning="{Binding IsBusy}"/>
+                </StackLayout>
+            </StackLayout>
+        </StackLayout>
+
+    </ContentPage.Content>
+</ContentPage>

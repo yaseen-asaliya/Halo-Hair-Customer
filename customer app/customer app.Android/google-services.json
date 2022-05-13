@@ -1,0 +1,83 @@
+{
+  "project_info": {
+    "project_number": "1011867255487",
+    "firebase_url": "https://halo-hair-676ed-default-rtdb.firebaseio.com",
+    "project_id": "halo-hair-676ed",
+    "storage_bucket": "halo-hair-676ed.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1011867255487:android:dc70c8cbf3cc7e79413c0a",
+        "android_client_info": {
+          "package_name": "com.example.halohair"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1011867255487-16jqr1vbj40uh3umbhlkfr31ndhof8pq.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyC4mwjtfCY8m50dP87Af1fGvNIrvbplUdM"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1011867255487-16jqr1vbj40uh3umbhlkfr31ndhof8pq.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "1011867255487-ba8ekm43rtqgmhh20q19j0nfvu6encjn.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.halohair.ios"
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1011867255487:android:1acd92ad4ed41ead413c0a",
+        "android_client_info": {
+          "package_name": "com.halohair"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1011867255487-16jqr1vbj40uh3umbhlkfr31ndhof8pq.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyC4mwjtfCY8m50dP87Af1fGvNIrvbplUdM"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1011867255487-16jqr1vbj40uh3umbhlkfr31ndhof8pq.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "1011867255487-ba8ekm43rtqgmhh20q19j0nfvu6encjn.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.halohair.ios"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

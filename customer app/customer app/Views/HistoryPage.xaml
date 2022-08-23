@@ -1,0 +1,70 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             Shell.NavBarIsVisible="False"
+             xmlns:cont="clr-namespace:customer_app.Views.Components"
+             xmlns:viewmodel="clr-namespace:customer_app.ViewModels"
+             x:Class="customer_app.Views.HistoryPage">
+
+    <ContentPage.BindingContext>
+        <viewmodel:HistoryViewModels/>
+    </ContentPage.BindingContext>
+    <ContentPage.Content>
+        <StackLayout>
+            <cont:navigationComponent Titles="History" isVisible="false" CommandParameter="{Binding BackButton}"/>
+            
+            <StackLayout HeightRequest="600">
+                <Frame Margin="20,10,20,10" CornerRadius="20" BorderColor="#603D8F">
+                    <StackLayout>
+                        <CollectionView x:Name="History" ItemsSource="{Binding FilltedHistory}">
+                            <CollectionView.ItemTemplate>
+                                <DataTemplate>
+                                    <StackLayout>
+                                        <Line Margin="0,5,0,5"/>
+                                        <StackLayout Orientation="Horizontal">                                           
+                                            <StackLayout Orientation="Vertical" HorizontalOptions="StartAndExpand">                                               
+                                                <Label Text="{Binding SalonName}" VerticalOptions="EndAndExpand" FontAttributes="Bold" FontSize="18"/>
+                                                <StackLayout Margin="10,0">
+                                                    <StackLayout Orientation="Horizontal">
+                                                        <Label Text="Date:"/>
+                                                        <Label Text="{Binding DateSelected}" VerticalOptions="EndAndExpand" FontFamily="Segoe UI" TextColor="#0E0909" />                                                        
+                                                    </StackLayout>
+                                                    <StackLayout Orientation="Horizontal">
+                                                        <Label Text="Time:"/>
+                                                        <Label Text="{Binding TimeSelected}" VerticalOptions="EndAndExpand" FontFamily="Segoe UI" TextColor="#0E0909" />
+                                                        
+                                                    </StackLayout>
+
+                                                    <Label Text="Services : " FontAttributes="Bold"/>
+                                                    <Label Text="{Binding ListOfService}" Margin="10,0"/>
+                                                </StackLayout>
+                                            </StackLayout>
+                                            <StackLayout VerticalOptions="CenterAndExpand">
+                                                <Button Text="Delete" 
+                                                                VerticalOptions="EndAndExpand"
+                                                                Command="{Binding Path=BindingContext.DeleteCommand,Source={x:Reference History}}"
+                                                                CommandParameter="{Binding .}"
+                                                                BackgroundColor="White"
+                                                                TextColor="Red" 
+                                                                BorderColor="White" 
+                                                                HorizontalOptions="CenterAndExpand"
+                                                                Padding="0,0,0,0" 
+                                                                HeightRequest="20" 
+                                                                WidthRequest="50"/>
+                                            </StackLayout>
+                                        </StackLayout>
+                                    </StackLayout>
+
+                                </DataTemplate>
+                            </CollectionView.ItemTemplate>
+                        </CollectionView>
+                    </StackLayout>
+                </Frame>
+            </StackLayout>
+
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
+
+
+

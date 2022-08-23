@@ -1,0 +1,22 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentView xmlns="http://xamarin.com/schemas/2014/forms" 
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="customer_app.Views.Components.ButtonComponent">
+    <ContentView.ControlTemplate>
+        <ControlTemplate>
+            <StackLayout WidthRequest="80"
+                         HeightRequest="40">
+                <Button  
+                         Text= "{TemplateBinding NameButton}"
+                         TextColor="#FFFFFF"
+                         FontAttributes="Bold"
+                         BackgroundColor="#603D8F"
+                         CornerRadius="20"
+                         Font="Segoe UI"
+                         FontSize="16" 
+                         Command="{TemplateBinding CommandParameter}">
+                </Button>
+            </StackLayout>
+        </ControlTemplate>
+    </ContentView.ControlTemplate>
+</ContentView>

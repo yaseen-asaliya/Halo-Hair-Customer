@@ -1,0 +1,53 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentView xmlns="http://xamarin.com/schemas/2014/forms" 
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="customer_app.Views.Components.ServicesList">
+    <ContentView.Content>
+        <StackLayout HeightRequest="500">
+            <Frame Margin="20,10,20,10" CornerRadius="20" BorderColor="Purple">
+                <ListView ItemsSource="{TemplateBinding Services}" HasUnevenRows="True" >
+                    <ListView.ItemTemplate>
+                        <DataTemplate>
+                            <ViewCell>
+                                <StackLayout>
+                                    <Line Margin="0,5,0,5"/>
+                                    <StackLayout Orientation="Horizontal" >
+                                        <StackLayout>
+                                            <Frame CornerRadius="100" 
+                                                   HeightRequest="50"
+                                                   WidthRequest="50"
+                                                   HorizontalOptions="Center"
+                                                   Padding="0"
+                                                   IsClippedToBounds="True">
+                                                <Image Source="" 
+                                                       HorizontalOptions="Center"
+                                                       VerticalOptions="Center" />
+                                            </Frame>
+                                        </StackLayout>
+                                        <StackLayout Orientation="Vertical" HorizontalOptions="StartAndExpand">
+                                            <Label Text="{TemplateBinding Service_Name}" VerticalOptions="StartAndExpand" FontAttributes="Bold"/>
+                                            <StackLayout Orientation="Horizontal">
+                                                <Label Text="{TemplateBinding Prices}" VerticalOptions="CenterAndExpand" Margin="10,0"/>
+                                                <Label Text="₪" Margin="0,5,0,0" FontSize="12"/>
+                                            </StackLayout>
+                                            <StackLayout Orientation="Horizontal">
+                                                <Label Text="{TemplateBinding Time_Needed}" Margin="10,0,0,0"/>
+                                                <Label Text="min" Margin="0,5,0,0" FontSize="12"/>
+                                            </StackLayout>
+                                        </StackLayout>
+                                        <StackLayout VerticalOptions="CenterAndExpand">
+                                            <CheckBox  Color="Black" />
+                                        </StackLayout>
+
+                                    </StackLayout>
+
+                                </StackLayout>
+                            </ViewCell>
+
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                </ListView>
+            </Frame>
+        </StackLayout>
+    </ContentView.Content>
+</ContentView>

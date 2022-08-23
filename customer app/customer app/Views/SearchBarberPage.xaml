@@ -1,0 +1,87 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:viewmodels="clr-namespace:customer_app.ViewModels"
+             xmlns:loca="clr-namespace:customer_app.Views" 
+             xmlns:cont="clr-namespace:customer_app.Views.Components"
+             x:Class="customer_app.Views.SearchBarberPage">
+    <ContentPage.BindingContext>
+        <viewmodels:SearchBarberViewModels/>
+    </ContentPage.BindingContext>
+    <ContentPage.Content>
+        <StackLayout>
+            <cont:navigationComponent Titles="Search Barbers" CommandParameter="{Binding BackButton}"/>
+            
+            <Frame Padding="0"
+                   Margin="20"
+                   HasShadow="True" 
+                   BorderColor="Black" 
+                   CornerRadius="15" 
+                   HeightRequest="46" 
+                   HorizontalOptions="Center"
+                   WidthRequest="340">
+                <SearchBar BackgroundColor="#E9E8E8"  
+                           Placeholder="Type here to search"
+                           TextChanged="SearchBar_TextChanged"
+                           TextTransform="Lowercase"/>
+            </Frame>
+            <!--<cont:SearchBarComponent Margin="10"/> -->
+            
+            <StackLayout HeightRequest="500">
+                <Frame Margin="20,10,20,10" CornerRadius="20" BorderColor="Purple">
+                    <StackLayout>
+                        <CollectionView x:Name="SearchBarber"  ItemsSource="{Binding Salon}" >
+                            <CollectionView.ItemTemplate>
+                                <DataTemplate>
+                                    <StackLayout>
+                                        <Line Margin="0,5,0,5"/>
+                                        <StackLayout Orientation="Horizontal">
+                                            <StackLayout>
+                                                <Frame CornerRadius="100" 
+                                                   HeightRequest="50"
+                                                   WidthRequest="50"
+                                                   HorizontalOptions="Center"
+                                                   Padding="0" 
+                                                   IsClippedToBounds="True">
+                                                    <Image Source="monkey.jpg" 
+                                                       HorizontalOptions="Center"
+                                                       VerticalOptions="Center" />
+                                                </Frame>
+                                            </StackLayout>
+                                            <StackLayout Orientation="Vertical" HorizontalOptions="StartAndExpand" >
+                                                <Label Text="{Binding SalonName}" VerticalOptions="EndAndExpand" FontAttributes="Bold"/>
+                                                <Label Text="{Binding Location}" VerticalOptions="CenterAndExpand"/>
+                                                <StackLayout Orientation="Horizontal">
+                                                    <Label Text="Open : "/>
+                                                    <Label Text="{Binding StartTime}" VerticalOptions="StartAndExpand"/>
+                                                    <Label Text="-" FontSize="15"/>
+                                                    <Label Text="{Binding EndTime}" VerticalOptions="EndAndExpand"/>
+                                                </StackLayout>
+                                                <Label Text="{Binding BarberAccessToken}" IsVisible="false" />
+
+                                            </StackLayout>
+                                            <StackLayout VerticalOptions="CenterAndExpand">
+                                                <Button Text="Services" 
+                                                        Command="{Binding Path=BindingContext.ShowBarbarCommand,Source={x:Reference SearchBarber}}"
+                                                        CommandParameter="{Binding .}"
+                                                        BackgroundColor="White"
+                                                        TextColor="Black" 
+                                                        BorderColor="White" 
+                                                        HorizontalOptions="CenterAndExpand"
+                                                        Padding="0,0,0,0" 
+                                                        HeightRequest="20" 
+                                                        WidthRequest="70"/>
+                                            </StackLayout>
+                                        </StackLayout>
+                                    </StackLayout>
+                                </DataTemplate>
+                            </CollectionView.ItemTemplate>
+                        </CollectionView>
+                    </StackLayout>
+                </Frame>
+            </StackLayout>
+
+        </StackLayout>
+    </ContentPage.Content>
+
+</ContentPage>

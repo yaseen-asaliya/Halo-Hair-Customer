@@ -1,0 +1,52 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentView xmlns="http://xamarin.com/schemas/2014/forms" 
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="customer_app.Views.Components.BarbersList">
+    <ContentView.ControlTemplate>
+        <ControlTemplate>
+            <StackLayout HeightRequest="500">
+
+                <Frame Margin="20,10,20,10" CornerRadius="40">
+                    <StackLayout>
+                        <StackLayout>
+                            <Line Margin="0,5,0,5"/>
+                            <StackLayout Orientation="Horizontal">
+                                <StackLayout>
+                                    <Frame CornerRadius="100" 
+                                                   HeightRequest="70"
+                                                   WidthRequest="70"
+                                                   HorizontalOptions="Center"
+                                                   Padding="0" 
+                                                   IsClippedToBounds="True">
+                                        <Image Source="monkey.jpg" 
+                                                       HorizontalOptions="Center"
+                                                       VerticalOptions="Center" />
+                                    </Frame>
+                                </StackLayout>
+                                <StackLayout Orientation="Vertical" HorizontalOptions="StartAndExpand" >
+                                    <Label Text="{TemplateBinding Name_Solan}" VerticalOptions="EndAndExpand" FontAttributes="Bold" Padding="0,5"/>
+                                    <Label Text="{TemplateBinding Location}" VerticalOptions="CenterAndExpand" Padding="10,0"/>
+                                    <StackLayout Orientation="Horizontal">
+                                        <Label Text="Open:" Padding="10,0"/>
+                                        <Label Text="{TemplateBinding StartTime}" />
+                                        <Label Text="AM"/>
+                                        <Label Text="-" FontSize="15"/>
+                                        <Label Text="{TemplateBinding EndTime}"/>
+                                        <Label Text="PM"/>
+                                    </StackLayout>
+                                </StackLayout>
+                                <StackLayout VerticalOptions="CenterAndExpand">
+                                    <Frame CornerRadius="0" BackgroundColor="Yellow">
+                                        <ImageButton Source="" 
+                                                       HorizontalOptions="Center"
+                                                       VerticalOptions="Center"/>
+                                    </Frame>
+                                </StackLayout>
+                            </StackLayout>
+                        </StackLayout>
+                    </StackLayout>
+                </Frame>
+            </StackLayout>
+        </ControlTemplate>
+    </ContentView.ControlTemplate>
+</ContentView>

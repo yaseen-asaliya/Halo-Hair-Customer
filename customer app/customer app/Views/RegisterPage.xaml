@@ -1,0 +1,45 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+             xmlns:viewmodel="clr-namespace:customer_app.ViewModels" 
+             xmlns:controls="clr-namespace:customer_app.Views.Components"             
+
+             x:Class="customer_app.Views.RegisterPage">
+    <ContentPage.BindingContext>
+        <viewmodel:RegisterViewModels/>
+    </ContentPage.BindingContext>
+    <ContentPage.Content>
+        <StackLayout>
+            <StackLayout Orientation="Vertical" HorizontalOptions="CenterAndExpand">
+                <Label Text="Welcome!" FontSize="Title" HorizontalOptions="CenterAndExpand" Margin="0,10"/>
+                <Label Text="Create Your Account" FontSize="Small"/>
+            </StackLayout>
+            <StackLayout Margin="10,40,10,10">
+                <Label Margin="20,0,0,0" Text="Customer Name" />
+                <StackLayout>
+                    <controls:EntryComponents  Text="{Binding Name}"/>
+                </StackLayout>
+                <Label Margin="20,0,0,0" Text="Email" />
+                <StackLayout>
+                    <controls:EntryComponents Text="{Binding Email}"/>
+                </StackLayout>
+                <Label Margin="20,0,0,0" Text="Phone Number" />
+                <StackLayout>
+                    <controls:EntryComponents Text="{Binding Phone}"/>
+                </StackLayout>
+                <Label Margin="20,0,0,0" Text="Password" />
+                <StackLayout>
+                    <controls:EntryComponentPassword Text="{Binding Password}"/>
+                </StackLayout>
+                <Label Margin="20,0,0,0" Text="Confirm Password" />
+                <StackLayout>
+                    <controls:EntryComponentPassword Text="{Binding ConfirmPassword}"/>
+                </StackLayout>
+
+                <controls:ButtonComponent NameButton="Sign Up" CommandParameter="{Binding SigUpCommad}" Padding="20" Margin="100,40,100,0"/>
+
+            </StackLayout>
+
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

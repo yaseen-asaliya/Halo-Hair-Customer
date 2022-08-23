@@ -1,0 +1,65 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="customer_app.Views.SearchTimePage"
+             xmlns:viewmodels="clr-namespace:customer_app.ViewModels"
+             xmlns:xc="clr-namespace:XCalendar;assembly=XCalendar" 
+             xmlns:cont="clr-namespace:customer_app.Views.Components" 
+             xmlns:controls="clr-namespace:XamForms.Controls;assembly=XamForms.Controls.Calendar">
+    <ContentPage.BindingContext>
+        <viewmodels:SearchTimeViewModels/>
+    </ContentPage.BindingContext>
+
+    <ContentPage.Content>
+        <StackLayout>
+            <cont:navigationComponent Titles="Search Times" CommandParameter="{Binding BackButton}"/>
+            <Frame CornerRadius="10" Margin="10">
+                <StackLayout>
+                    <xc:CalendarView    
+                        WidthRequest="371"
+                        HeightRequest="340"
+                        BackgroundColor="White"
+                        NavigationBackgroundColor="#603D8F"
+                        DayNameTextColor="#603D8F">
+                    </xc:CalendarView>
+                </StackLayout>
+            </Frame>
+
+
+            <CollectionView x:Name="Times" 
+                            Margin="20"
+                            ItemsSource="{Binding times}"
+                            HeightRequest="100">
+                <CollectionView.ItemsLayout>
+                    <GridItemsLayout Orientation="Horizontal"/>
+                </CollectionView.ItemsLayout>
+                <CollectionView.ItemTemplate>
+                    
+                    <DataTemplate>
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="*"/>
+                            </Grid.ColumnDefinitions>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="50" />
+                            </Grid.RowDefinitions>
+                            <Label IsVisible="false" Text="{Binding id}"></Label>
+                            <Button Grid.Column="0" 
+                                    Command="{Binding Path=BindingContext.TimesCommand,Source={x:Reference Times}}"
+                                    CommandParameter="{Binding .}"
+                                    Text="{Binding TimeSelected}" 
+                                    HorizontalOptions="Center"
+                                    Margin="3"
+                                    BackgroundColor="#603D8F"/>
+                        </Grid>
+                    </DataTemplate>
+                </CollectionView.ItemTemplate>
+            </CollectionView>
+
+            
+
+
+            <cont:ButtonComponent Margin="30,0,30,0" NameButton="Book an appointment" CommandParameter="{Binding Appointment}"/>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

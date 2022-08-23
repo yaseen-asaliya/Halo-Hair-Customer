@@ -1,0 +1,20 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentView xmlns="http://xamarin.com/schemas/2014/forms" 
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="customer_app.Views.Components.SearchBarComponent">
+    <ContentView.Content>
+        <StackLayout>
+            <Frame Padding="0"
+                   HasShadow="True" 
+                   BorderColor="Black" 
+                   CornerRadius="15" 
+                   HeightRequest="46" 
+                   HorizontalOptions="Center"
+                   WidthRequest="340">
+                <SearchBar BackgroundColor="#E9E8E8"  
+                           Placeholder="Type here to search"
+                           TextTransform="Lowercase"/>
+            </Frame>
+        </StackLayout>
+    </ContentView.Content>
+</ContentView>
